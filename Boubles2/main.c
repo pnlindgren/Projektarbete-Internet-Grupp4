@@ -3,6 +3,8 @@
 
 #include "main.h"
 
+// Github check
+
 bool init();
 bool loadMedia();
 void close();
