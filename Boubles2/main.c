@@ -77,7 +77,7 @@ bool loadMedia()
     bool success = true;
     
 
-    gHelloWorld = SDL_LoadBMP("/Users/Nicklas/Google Drive/Skola/Projekt-Internet-Grupp4/Projektarbete-Internet-Grupp4/Boubles2/ball.bmp");
+    gHelloWorld = SDL_LoadBMP("ball.bmp");
 
     if (gHelloWorld == NULL)
     {
