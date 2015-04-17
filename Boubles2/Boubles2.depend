@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1429218545 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles2\boubles2\main.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+
+1429258619 c:\users\mr.loser\documents\internet projekt\programmet\boubles2\boubles2\main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+
