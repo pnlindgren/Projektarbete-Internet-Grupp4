@@ -3,9 +3,11 @@
 
 #include "main.h"
 
+// HEJHEJ
+
 bool init();
 bool loadMedia();
-void close();
+void close1();
 
 SDL_Window* gWindow = NULL;
 
@@ -38,7 +40,7 @@ int main(int argc, char * argv[])
         }
     }
 
-    close();
+    close1();
 
     return 0;
 }
@@ -77,14 +79,14 @@ bool loadMedia()
 
     if (gHelloWorld == NULL)
     {
-        printf("Unable to load image %s! SDL_Error: %s\n", "ball.bmp", SDL_GetError());
+        printf("Unable to load image %s! SDL_Error: %s\n", "", SDL_GetError());
         success = false;
     }
 
     return success;
 }
 
-void close()
+void close1()
 {
     SDL_FreeSurface(gHelloWorld);
     gHelloWorld = NULL;
