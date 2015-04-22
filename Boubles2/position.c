@@ -2,7 +2,7 @@
 #include <stdbool.h>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
+//#include <windows.h>
 
 #include "position.h"
 
@@ -23,7 +23,7 @@ int drop()              // Hur den faller
 }
 void collisionDetection()
 {
-    return 0;
+    //return 0;
 }
 
 void updateSurface()
@@ -72,5 +72,5 @@ void nextMove(int x,int y, bool moved, int direction)
 
     collisionDetection(x,y);   // kollar om spöket ska stå stilla pga en collision eller inte
 
-    Sleep(1000);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
+    //Sleep(1000);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
 }

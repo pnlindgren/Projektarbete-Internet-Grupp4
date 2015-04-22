@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <pthread.h>
+//#include <pthread.h>
 
 #include "main.h"
 #include "position.h"
 
 bool init();
 bool loadMedia();
-void close();
+void close1();
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -107,7 +107,7 @@ int main(int argc, char * argv[])
         }
     }
 
-    close();
+    close1();
 
     return 0;
 }
@@ -157,7 +157,7 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("bild.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
@@ -174,7 +174,7 @@ bool loadMedia()
     return success;
 }
 
-void close()
+void close1()
 {
     SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör
 
@@ -190,7 +190,7 @@ void close()
 
 SDL_Surface* loadSurface(char path[100])
 {
-    SDL_Surface* loadedSurface = SDL_LoadBMP(path);
+    SDL_Surface* loadedSurface = IMG_Load(path);
 
     if( loadedSurface == NULL )
     {
