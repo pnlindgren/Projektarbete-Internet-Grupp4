@@ -11,3 +11,15 @@
 	<SDL2/SDL.h>
 	<SDL2_net/SDL_net.h>
 
+1429273731 source:c:\users\sandy\desktop\projektet\projektarbete-internet-grupp4\boubles2\main.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+
+1429261218 c:\users\sandy\desktop\projektet\projektarbete-internet-grupp4\boubles2\main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+
