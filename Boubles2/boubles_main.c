@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-#include <pthread.h>
+//#include <pthread.h>
 
 #include "main.h"
 #include "position.h"
@@ -157,7 +157,7 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("index.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
@@ -190,7 +190,7 @@ void close()
 
 SDL_Surface* loadSurface(char path[100])
 {
-    SDL_Surface* loadedSurface = SDL_LoadBMP(path);
+    SDL_Surface* loadedSurface = *IMG_Load(path)
 
     if( loadedSurface == NULL )
     {
