@@ -41,11 +41,10 @@
 
 1429707543 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
 
-1429707292 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1429712519 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
 	<time.h>
-	<windows.h>
 	"position.h"
 

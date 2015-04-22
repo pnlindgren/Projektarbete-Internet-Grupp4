@@ -83,12 +83,16 @@ int main(int argc, char * argv[])
                             break;*/
 
                             case SDLK_LEFT:
+                            SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+                            SDL_UpdateWindowSurface(gWindow);
                             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
                             SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
                             SDL_UpdateWindowSurface(gWindow);
                             break;
 
                             case SDLK_RIGHT:
+                            SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+                            SDL_UpdateWindowSurface(gWindow);
                             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
                             SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
                             SDL_UpdateWindowSurface(gWindow);
