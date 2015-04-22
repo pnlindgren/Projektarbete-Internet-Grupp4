@@ -157,7 +157,7 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("index.png");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("bild.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
@@ -190,12 +190,12 @@ void close()
 
 SDL_Surface* loadSurface(char path[100])
 {
-    SDL_Surface* loadedSurface = *IMG_Load(path)
+    SDL_Surface* loadedSurface = IMG_Load(path);
 
-    if( loadedSurface == NULL )
+    /*if( loadedSurface == NULL )
     {
         printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
-    }
+    }*/
 
     return loadedSurface;
 }
