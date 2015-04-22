@@ -150,21 +150,21 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("ghostR.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("ghostR.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] == NULL)
     {
         printf( "Failed to load default image!\n" );
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("bild.png");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("ghostR.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("ghostR.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] == NULL)
     {
         printf( "Failed to load RIGHT image!\n" );
