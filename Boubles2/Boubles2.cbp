@@ -31,10 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="main.c">
+		<Unit filename="boubles_main2.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="keyInput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="keyInput.h" />
 		<Unit filename="main.h" />
+		<Unit filename="position.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="position.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
