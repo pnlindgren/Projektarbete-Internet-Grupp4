@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <pthread.h>
 
 #include "main.h"
+#include "position.h"
 
 bool init();
 bool loadMedia();

@@ -23,11 +23,12 @@
 	<SDL2/SDL.h>
 	<SDL2_net/SDL_net.h>
 
-1429706439 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main.c
+1429707231 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
 	"main.h"
+	"position.h"
 
 1429258619 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
 	<SDL2/SDL.h>
@@ -35,4 +36,14 @@
 	<SDL_image.h>
 	<SDL2/SDL.h>
 	<SDL2_net/SDL_net.h>
+
+1429707543 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
+
+1429707292 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"position.h"
 
