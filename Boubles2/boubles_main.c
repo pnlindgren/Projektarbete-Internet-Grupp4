@@ -157,7 +157,7 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("bild.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
