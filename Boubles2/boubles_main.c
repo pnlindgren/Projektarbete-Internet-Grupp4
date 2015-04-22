@@ -37,6 +37,7 @@ SDL_Surface* gCurrentSurface = NULL;
 
 int main(int argc, char * argv[])
 {
+    
     if(!init())
     {
         printf("Failed to initialize!\n");
@@ -174,6 +175,7 @@ bool loadMedia()
         printf( "Failed to load RIGHT image!\n" );
         success = false;
     }
+   
 
     return success;
 }
