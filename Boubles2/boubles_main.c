@@ -68,7 +68,7 @@ int main(int argc, char * argv[])
                     {
                         switch(e.key.keysym.sym)
                         {
-                            case SDLK_UP:
+                            /*case SDLK_UP:
                             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_UP];
                             SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
                             SDL_UpdateWindowSurface(gWindow);
@@ -78,7 +78,7 @@ int main(int argc, char * argv[])
                             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN];
                             SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, NULL);
                             SDL_UpdateWindowSurface(gWindow);
-                            break;
+                            break;*/
 
                             case SDLK_LEFT:
                             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
@@ -148,35 +148,21 @@ bool loadMedia()
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("ball1.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("ghostR.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] == NULL)
     {
         printf( "Failed to load default image!\n" );
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] = loadSurface("ball2.bmp");
-    if(gKeyPressSurfaces[KEY_PRESS_SURFACE_UP] == NULL)
-    {
-        printf( "Failed to load UP image!\n" );
-        success = false;
-    }
-
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] = loadSurface("ball3.bmp");
-    if(gKeyPressSurfaces[KEY_PRESS_SURFACE_DOWN] == NULL)
-    {
-        printf( "Failed to load DOWN image!\n" );
-        success = false;
-    }
-
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ball4.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
     {
         printf( "Failed to load LEFT image!\n" );
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("ball5.bmp");
+    gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("ghostR.png");
     if(gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] == NULL)
     {
         printf( "Failed to load RIGHT image!\n" );
