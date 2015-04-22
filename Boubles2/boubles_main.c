@@ -8,7 +8,7 @@
 
 bool init();
 bool loadMedia();
-void close();
+void close1();
 
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
@@ -107,7 +107,7 @@ int main(int argc, char * argv[])
         }
     }
 
-    close();
+    close1();
 
     return 0;
 }
@@ -174,7 +174,7 @@ bool loadMedia()
     return success;
 }
 
-void close()
+void close1()
 {
     SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör
 
