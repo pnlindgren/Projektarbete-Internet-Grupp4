@@ -7,4 +7,4 @@ extern SDL_Surface* gBackground;
 
 void close1();
 
-#endif //CLOSE
+#endif
