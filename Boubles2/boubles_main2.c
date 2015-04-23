@@ -4,6 +4,10 @@
 //#include <pthread.h>
 
 #include "main.h"
+#include "initFunctions.h"
+#include "close.h"
+#include "keyInput.h"
+#include "position.h"
 
 bool init();
 bool loadMedia();
