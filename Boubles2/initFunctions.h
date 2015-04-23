@@ -1,9 +1,9 @@
 #ifndef INITFUNCTIONS
 #define INITFUNCTIONS
 
-#define BACKGROUND "NewBackground.bmp"
-#define GHOST_RIGHT "ghostR.png"
-#define GHOST_LEFT "ghostL.png"
+#define BACKGROUND "pictures/NewBackground.bmp"
+#define GHOST_RIGHT "pictures/ghostR.png"
+#define GHOST_LEFT "pictures/ghostL.png"
 
 bool initBuild();
 bool init();

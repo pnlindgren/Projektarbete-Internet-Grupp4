@@ -10,20 +10,14 @@
 #include "position.h"
 
 SDL_Surface* loadSurface(char path[100]);
-
 SDL_Window* gWindow = NULL;
-
 SDL_Surface* gScreenSurface = NULL;
-
 SDL_Surface* gBackground = NULL;
-
 SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
-
 SDL_Surface* gCurrentSurface = NULL;
 
 int main(int argc, char * argv[])
 {
-
     if(initBuild())
     {
         gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
