@@ -41,7 +41,7 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1429794802 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
+1429802035 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
 
 1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
@@ -50,11 +50,14 @@
 	<time.h>
 	"position.h"
 
-1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
+1429801757 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
 	"main.h"
+	"initFunctions.h"
+	"close.h"
+	"keyInput.h"
 	"position.h"
 
 1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.c
@@ -152,5 +155,5 @@
 	"main.h"
 	"initFunctions.h"
 
-1429801448 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
+1429802016 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
 
