@@ -4,7 +4,6 @@
 #include "main.h"
 #include "initFunctions.h"
 
-
 bool initBuild()
 {
     bool buildSuccess = true;
@@ -54,35 +53,34 @@ bool loadMedia()
 {
     bool success = true;
 
-    gBackground = SDL_LoadBMP("Background.bmp");
+    gBackground = SDL_LoadBMP(BACKGROUND);
 
     if (gBackground == NULL)
     {
-        printf("Unable to load image %s! SDL_Error: %s\n", "Background.bmp", SDL_GetError());
+        printf("Unable to load image %s! SDL_Error: %s\n", BACKGROUND, SDL_GetError());
         success = false;
     }
 
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] = loadSurface("ghostR.png");
-    if(gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT] == NULL)
+    success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
+
+    success = loadImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
+
+    success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
+
+
+    return success;
+}
+
+bool loadImage(char path[100], int pressed_key)
+{
+    bool success = true;
+
+    gKeyPressSurfaces[pressed_key] = loadSurface(path);
+    if(gKeyPressSurfaces[pressed_key] == NULL)
     {
-        printf( "Failed to load default image!\n" );
+        printf( "Failed to load %s image!\n", path);
         success = false;
     }
-
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] = loadSurface("ghostL.png");
-    if(gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT] == NULL)
-    {
-        printf( "Failed to load LEFT image!\n" );
-        success = false;
-    }
-
-    gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] = loadSurface("ghostR.png");
-    if(gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT] == NULL)
-    {
-        printf( "Failed to load RIGHT image!\n" );
-        success = false;
-    }
-
 
     return success;
 }
