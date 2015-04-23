@@ -2,8 +2,8 @@
 #define INITFUNCTIONS
 
 #define BACKGROUND "NewBackground.bmp"
-#define GHOST_RIGHT "bubbla2.png"
-#define GHOST_LEFT "bubbla2.png"
+#define GHOST_RIGHT "ghostR.png"
+#define GHOST_LEFT "ghostL.png"
 
 bool initBuild();
 bool init();
