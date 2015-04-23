@@ -41,29 +41,29 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1429719895 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
+1429794802 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
 
-1429717859 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
 	<time.h>
 	"position.h"
 
-1429721360 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
+1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
 	"main.h"
 	"position.h"
 
-1429721552 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.c
+1429794802 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"keyInput.h"
 
-1429721349 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.h
+1429794802 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.h
 
 1429794734 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
@@ -137,4 +137,20 @@
 	<stdlib.h>
 	<time.h>
 	"position.h"
+
+1429800116 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"close.h"
+
+1429800116 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.h
+
+1429796474 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"initFunctions.h"
+
+1429796474 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
 

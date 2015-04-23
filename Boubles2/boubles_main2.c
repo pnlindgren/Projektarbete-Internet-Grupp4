@@ -4,7 +4,6 @@
 //#include <pthread.h>
 
 #include "main.h"
-#include "position.h"
 
 bool init();
 bool loadMedia();
@@ -41,21 +40,6 @@ int main(int argc, char * argv[])
     close1();
 
     return 0;
-}
-
-
-void close1()
-{
-    SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör
-
-    SDL_FreeSurface(gBackground);
-
-    gBackground = NULL;
-
-    SDL_DestroyWindow(gWindow);
-    gWindow = NULL;
-
-    SDL_Quit();
 }
 
 SDL_Surface* loadSurface(char path[100])
