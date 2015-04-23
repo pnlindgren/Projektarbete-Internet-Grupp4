@@ -43,6 +43,7 @@ int main(int argc, char * argv[])
     return 0;
 }
 
+
 void close1()
 {
     SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör

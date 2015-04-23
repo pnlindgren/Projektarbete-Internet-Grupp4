@@ -6,6 +6,7 @@
 
 #include "position.h"
 
+
 #define right 1
 #define left 0
 

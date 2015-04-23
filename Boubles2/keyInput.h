@@ -1,5 +1,6 @@
 #ifndef KEYINPUT
 #define KEYINPUT
+
 void keyInput();
 
 extern SDL_Window* gWindow;

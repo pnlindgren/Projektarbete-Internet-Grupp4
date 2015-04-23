@@ -1,5 +1,6 @@
 #ifndef POSITION
 #define POSITION
+
 bool wallDetection();
 int drop();
 void collisionDetection();

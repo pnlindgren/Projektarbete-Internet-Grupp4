@@ -1,5 +1,6 @@
 #ifndef INITFUNCTIONS
 #define INITFUNCTIONS
+
 bool initBuild();
 bool init();
 bool loadMedia();
