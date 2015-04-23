@@ -9,13 +9,6 @@
 #include "keyInput.h"
 #include "position.h"
 
-bool init();
-bool loadMedia();
-void close1();
-
-const int SCREEN_WIDTH = 640;
-const int SCREEN_HEIGHT = 480;
-
 SDL_Surface* loadSurface(char path[100]);
 
 SDL_Window* gWindow = NULL;

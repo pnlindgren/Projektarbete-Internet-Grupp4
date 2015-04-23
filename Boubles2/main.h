@@ -18,8 +18,11 @@
 
 #endif // __APPLE__
 
-#ifndef ENUMKEYS
-#define ENUMKEYS
+#ifndef CONSTANTS
+#define CONSTANTS
+
+#define SCREEN_WIDTH 640
+#define SCREEN_HEIGHT 480
 
 enum KeyPressSurfaces
 {
