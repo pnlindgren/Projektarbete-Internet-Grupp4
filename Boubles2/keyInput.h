@@ -1,4 +1,4 @@
-#ifndef KEINPUT
+#ifndef KEYINPUT
 #define KEYINPUT
 void keyInput();
 
@@ -12,4 +12,4 @@ extern SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 
 extern SDL_Surface* gCurrentSurface;
 
-#endif // KEINPUT
+#endif // KEYINPUT
