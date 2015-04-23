@@ -7,6 +7,7 @@
 bool initBuild()
 {
     bool buildSuccess = true;
+
     if(!init())
     {
         printf("Failed to initialize!\n");
@@ -20,6 +21,7 @@ bool initBuild()
             buildSuccess = false;
         }
     }
+
     return buildSuccess;
 }
 
@@ -62,9 +64,7 @@ bool loadMedia()
     }
 
     success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
-
     success = loadImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
-
     success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
 
 
