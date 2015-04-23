@@ -4,8 +4,6 @@
 #include "main.h"
 #include "keyInput.h"
 
-
-
 void keyInput()
 {
     bool quit = false;
