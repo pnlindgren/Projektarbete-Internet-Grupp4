@@ -21,8 +21,4 @@ extern SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 
 extern SDL_Surface* gCurrentSurface;
 
-/*extern const int SCREEN_WIDTH;
-
-extern const int SCREEN_HEIGHT;*/
-
 #endif
