@@ -9,14 +9,13 @@ void keyInput2()
     bool quit = false;
 
     SDL_Event e;
-    SDL_Surface* gXOut = NULL;
     SDL_Renderer* gRenderer = NULL;
 
     SDL_Rect dstrect;
     dstrect.x = 640/2;
     dstrect.y = 480/2;
-    dstrect.w = 100;
-    dstrect.h = 100;
+    dstrect.w = 50;
+    dstrect.h = 50;
 
     gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
 
@@ -24,7 +23,6 @@ void keyInput2()
     SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect );
     //Update the surface
     SDL_UpdateWindowSurface( gWindow );
-
 
     //While application is running
     while( !quit){
@@ -55,12 +53,10 @@ void keyInput2()
                         dstrect.x += 2;
                         break;
                 }
-                SDL_FillRect(gScreenSurface, NULL, 0x000000);
-                SDL_Rect fillRect = { 100, 100, 20, 60 };
-                SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF );
-                SDL_RenderFillRect(gRenderer, &fillRect);
+                SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+                SDL_UpdateWindowSurface(gWindow);
                 SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
-                SDL_UpdateWindowSurface( gWindow );
+                SDL_UpdateWindowSurface(gWindow);
             }
 
         }
