@@ -19,4 +19,6 @@ extern SDL_Surface* gBackground;
 
 extern SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 
+extern SDL_Surface* gCurrentSurface;
+
 #endif

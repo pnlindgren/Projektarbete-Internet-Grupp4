@@ -18,17 +18,12 @@ SDL_Surface* gCurrentSurface = NULL;
 
 int main(int argc, char * argv[])
 {
-    if(initBuild())
+    if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
-        gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
-
-        SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
-        SDL_UpdateWindowSurface(gWindow);
-
-        keyInput();
+        keyInput(); // Funktion för att ta hand om knapptryckningar
     }
 
-    close1();
+    close1();       // funktion för att stänga av programmet med röda krysset
 
     return 0;
 }

@@ -20,6 +20,13 @@ bool initBuild()
             printf("Failed to load media!\n");
             buildSuccess = false;
         }
+        else
+        {
+            gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
+
+            SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+            SDL_UpdateWindowSurface(gWindow);
+        }
     }
 
     return buildSuccess;
