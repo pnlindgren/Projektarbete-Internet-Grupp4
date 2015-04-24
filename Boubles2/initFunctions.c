@@ -34,7 +34,7 @@ bool initBuild()
 
     return buildSuccess;
 }
-
+// Funktion tagen från LAZY FOO
 bool init()
 {
     bool success = true;
