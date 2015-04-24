@@ -8,8 +8,8 @@
 #include "position.h"
 
 
-#define right 1
-#define left 0
+#define RIGHT 1
+#define LEFT 0
 
 bool wallDetection()    // funktion för att hålla koll på om fienden har stött på en vägg
 {
@@ -30,8 +30,12 @@ void updateSurface()
     //SDL_UpdateWindowSurface(gWindow);
 }
 
-void nextMove(bool moved, int direction)
+void nextMove()
 {
+    int direction = LEFT;
+
+    bool moved = false;
+
     SDL_Rect enemy;
 
     enemy.x = 100;
@@ -48,20 +52,20 @@ void nextMove(bool moved, int direction)
 
     if(wallDetection() == true)
     {
-        if(direction == right)
+        if(direction == RIGHT)
         {
-            direction = left;
+            direction = LEFT;
             enemy.x--;
         }
         else
         {
-            direction = right;
+            direction = RIGHT;
             enemy.x++;
         }
     }
     else
     {
-        if(direction == right)
+        if(direction == RIGHT)
         {
             enemy.x++;    // lista ut senare hur mycket
         }
