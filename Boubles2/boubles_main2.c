@@ -9,14 +9,29 @@
 #include "position.h"
 #include "keyInput2.h"
 
-SDL_Surface* loadSurface(char path[100]);
-SDL_Window* gWindow = NULL;
-SDL_Surface* gScreenSurface = NULL;
-SDL_Surface* gBackground = NULL;
+SDL_Surface* loadSurface(char path[100]);       // Behövs
+SDL_Window*  gWindow = NULL;                    // Behövs
+SDL_Surface* gScreenSurface = NULL;             // Behövs för att bakgrundsbilden genereras genom processorn
+SDL_Surface* gBackground = NULL;                // Behövs
 SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 SDL_Surface* gCurrentSurface = NULL;
 
 SDL_Surface* gEnemySurface = NULL;
+
+// Nytt *******************************************************
+
+SDL_Renderer* gRenderer = NULL;
+SDL_Texture* mBlueCrocodile = NULL;
+SDL_Texture* mBackground = NULL;
+SDL_Texture* mGhost = NULL;
+
+SDL_Rect gSpriteClips[13];
+
+SDL_Rect character_rect;
+SDL_Rect background_rect;
+SDL_Rect ghost_rect;
+
+// Nytt *******************************************************
 
 int main(int argc, char * argv[])
 {

@@ -38,15 +38,20 @@ void nextMove(void * pointer)
 
     SDL_Rect enemy;
 
-    enemy.x = 100;
-    enemy.y = 100;
+    enemy.x = 30;
+    enemy.y = 97;
     enemy.w = 50;
     enemy.h = 50;
 
-    //Apply the image
-    SDL_BlitSurface(gKeyPressSurfaces[KEY_PRESS_SURFACE_UP], NULL, gScreenSurface, &enemy );
-    //Update the surface
-    SDL_UpdateWindowSurface( gWindow );
+    while(1)
+    {
+        //Apply the image
+        //SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[7],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
+    }
+
+
+
+
 
     srand(time(NULL));
 
