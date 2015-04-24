@@ -46,6 +46,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="keyInput.h" />
+		<Unit filename="keyInput2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="keyInput2.h" />
 		<Unit filename="main.h" />
 		<Unit filename="position.c">
 			<Option compilerVar="CC" />
