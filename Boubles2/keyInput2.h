@@ -1,5 +1,7 @@
 #ifndef KEYINPUT
 #define KEYINPUT
+#define RIGHT 1
+#define LEFT 0
 
 void keyInput2();
 

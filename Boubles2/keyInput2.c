@@ -7,6 +7,7 @@
 void keyInput2()
 {
     bool quit = false;
+    bool lookDirection = RIGHT;
 
     SDL_Event e;
     SDL_Renderer* gRenderer = NULL;
@@ -48,14 +49,25 @@ void keyInput2()
                         break;
                     case SDLK_LEFT:
                         dstrect.x -= 2;
+                        lookDirection = LEFT;
                         break;
                     case SDLK_RIGHT:
                         dstrect.x += 2;
+                        lookDirection = RIGHT;
                         break;
                 }
                 SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
                 SDL_UpdateWindowSurface(gWindow);
-                SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
+                if(lookDirection == LEFT)
+                {
+                    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
+                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
+                }
+                else if((lookDirection == RIGHT))
+                {
+                    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
+                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
+                }
                 SDL_UpdateWindowSurface(gWindow);
             }
 
