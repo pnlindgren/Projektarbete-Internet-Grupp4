@@ -61,8 +61,8 @@ void keyInput2()
                         lookDirection = RIGHT;
                         break;
                 }
-                SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
-                SDL_UpdateWindowSurface(gWindow);
+                /*SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+                SDL_UpdateWindowSurface(gWindow);*/
                 if(lookDirection == LEFT)
                 {
                     gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
@@ -75,7 +75,6 @@ void keyInput2()
                 }
                 SDL_UpdateWindowSurface(gWindow);
             }
-
         }
     }
 }
