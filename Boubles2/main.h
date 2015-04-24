@@ -1,6 +1,3 @@
-#include <stdio.h>
-
-
 #ifdef _WIN32
 
 #include <SDL2/SDL.h>
@@ -14,7 +11,6 @@
 #include <SDL2/SDL.h>
 #include <SDL2_net/SDL_net.h>
 #include <SDL2_image/SDL_image.h>
-
 
 #endif // __APPLE__
 

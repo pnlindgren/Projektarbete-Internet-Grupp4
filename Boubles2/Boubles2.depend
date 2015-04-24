@@ -32,8 +32,7 @@
 	"main.h"
 	"position.h"
 
-1429803854 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
-	<stdio.h>
+1429863823 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
