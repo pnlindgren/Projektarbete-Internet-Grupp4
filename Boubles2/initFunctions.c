@@ -22,9 +22,12 @@ bool initBuild()
         }
         else
         {
+            // Vi börjar med att göra current surface till default position
             gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_DEFAULT];
 
+            // Här kopierar vi bakgrunden till skärm-surfacen
             SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
+            // Här associerar vi surfaces till window
             SDL_UpdateWindowSurface(gWindow);
         }
     }
@@ -43,6 +46,7 @@ bool init()
     }
     else
     {
+        // här skapar vi spelfönstret med odefinerad position (X,Y) och inte minimerat
         gWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
         if(gWindow == NULL)
         {
@@ -51,6 +55,7 @@ bool init()
         }
         else
         {
+            // sätter screenSurfacen till windowens yta
             gScreenSurface = SDL_GetWindowSurface(gWindow);
         }
     }
@@ -62,6 +67,7 @@ bool loadMedia()
 {
     bool success = true;
 
+    // sätter bakgrundssurfacen till bakgrundsbilden
     gBackground = SDL_LoadBMP(BACKGROUND);
 
     if (gBackground == NULL)
@@ -70,10 +76,19 @@ bool loadMedia()
         success = false;
     }
 
-    success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
-    success = loadImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
-    success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
-
+    // laddar bilder associerade med knapptryckningar
+    if(success == true)
+    {
+        success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
+    }
+    else if(success == true)
+    {
+        success = loadImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
+    }
+    else if(success == true)
+    {
+        success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
+    }
 
     return success;
 }
