@@ -84,3 +84,15 @@ bool loadImage(char path[100], int pressed_key)
 
     return success;
 }
+
+SDL_Surface* loadSurface(char path[100])
+{
+    SDL_Surface* loadedSurface = IMG_Load(path);
+
+    if( loadedSurface == NULL )
+    {
+        printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
+    }
+
+    return loadedSurface;
+}

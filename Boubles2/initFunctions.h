@@ -8,8 +8,8 @@
 bool initBuild();
 bool init();
 bool loadMedia();
-
 bool loadImage(char path[100], int pressed_key);
+SDL_Surface* loadSurface(char path[100]);
 
 extern SDL_Window* gWindow;
 

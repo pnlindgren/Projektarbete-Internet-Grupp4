@@ -32,15 +32,3 @@ int main(int argc, char * argv[])
 
     return 0;
 }
-
-SDL_Surface* loadSurface(char path[100])
-{
-    SDL_Surface* loadedSurface = IMG_Load(path);
-
-    if( loadedSurface == NULL )
-    {
-        printf("Unable to load image %s! SDL Error: %s\n", path, SDL_GetError());
-    }
-
-    return loadedSurface;
-}
