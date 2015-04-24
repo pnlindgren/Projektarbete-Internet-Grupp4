@@ -8,6 +8,7 @@
 #include "close.h"
 #include "keyInput.h"
 #include "position.h"
+#include "keyInput2.h"
 
 SDL_Surface* loadSurface(char path[100]);
 SDL_Window* gWindow = NULL;
@@ -20,7 +21,7 @@ int main(int argc, char * argv[])
 {
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
-        keyInput(); // Funktion för att ta hand om knapptryckningar
+        keyInput2(); // Funktion för att ta hand om knapptryckningar
     }
 
     close1();       // funktion för att stänga av programmet med röda krysset
