@@ -78,7 +78,7 @@ bool loadMedia()
     return success;
 }
 
-bool loadImage(char path[100], int pressed_key)
+bool loadImage(char path[100], int pressed_key) // funktion för att ladda bilder associerade till knapptryckningar
 {
     bool success = true;
 
