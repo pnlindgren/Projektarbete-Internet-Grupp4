@@ -30,7 +30,7 @@ void updateSurface()
     //SDL_UpdateWindowSurface(gWindow);
 }
 
-void nextMove()
+void nextMove(void * pointer)
 {
     int direction = LEFT;
 
@@ -42,6 +42,11 @@ void nextMove()
     enemy.y = 100;
     enemy.w = 50;
     enemy.h = 50;
+
+    //Apply the image
+    SDL_BlitSurface(gKeyPressSurfaces[KEY_PRESS_SURFACE_UP], NULL, gScreenSurface, &enemy );
+    //Update the surface
+    SDL_UpdateWindowSurface( gWindow );
 
     srand(time(NULL));
 

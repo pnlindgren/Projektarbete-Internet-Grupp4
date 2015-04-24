@@ -89,6 +89,10 @@ bool loadMedia()
     {
         success = loadKeyImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
     }
+    //else if(success == true)
+    {
+        success = loadKeyImage(GHOST_UP, KEY_PRESS_SURFACE_UP);
+    }
 
     return success;
 }

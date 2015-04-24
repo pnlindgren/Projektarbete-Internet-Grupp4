@@ -32,7 +32,7 @@
 	"main.h"
 	"position.h"
 
-1429874898 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
+1429878705 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
@@ -40,9 +40,9 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1429875943 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
+1429878794 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
 
-1429875912 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1429878660 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -50,7 +50,7 @@
 	"main.h"
 	"position.h"
 
-1429874966 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
+1429877833 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
@@ -67,7 +67,7 @@
 	"main.h"
 	"keyInput.h"
 
-1429802273 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.h
+1429878714 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.h
 
 1429794734 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
@@ -150,13 +150,13 @@
 
 1429802273 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.h
 
-1429867360 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
+1429878013 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"initFunctions.h"
 
-1429867287 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
+1429877976 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
 
 1429870584 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput2.h
 

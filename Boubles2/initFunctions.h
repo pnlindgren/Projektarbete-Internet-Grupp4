@@ -4,6 +4,7 @@
 #define BACKGROUND "pictures/NewBackground.bmp"
 #define GHOST_RIGHT "pictures/ghostR.png"
 #define GHOST_LEFT "pictures/ghostL.png"
+#define GHOST_UP "pictures/bluecrocL.png"
 
 bool initBuild();
 bool init();

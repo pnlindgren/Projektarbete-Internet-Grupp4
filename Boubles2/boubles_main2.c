@@ -16,13 +16,15 @@ SDL_Surface* gBackground = NULL;
 SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 SDL_Surface* gCurrentSurface = NULL;
 
+SDL_Surface* gEnemySurface = NULL;
+
 int main(int argc, char * argv[])
 {
     SDL_Thread *enemy;
 
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
-        //enemy = SDL_CreateThread(nextMove(), "enemyThread", (void *)NULL);
+        enemy = SDL_CreateThread(nextMove, "enemyThread", (void *)NULL);
 
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }
