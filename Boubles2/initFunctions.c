@@ -77,23 +77,24 @@ bool loadMedia()
     }
 
     // laddar bilder associerade med knapptryckningar
-    if(success == true)
+    //if(success == true)
     {
-        success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
+        success = loadKeyImage(GHOST_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
     }
-    else if(success == true)
+    //else if(success == true)
     {
-        success = loadImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
+        success = loadKeyImage(GHOST_LEFT, KEY_PRESS_SURFACE_LEFT);
     }
-    else if(success == true)
+    //else if(success == true)
     {
-        success = loadImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
+        success = loadKeyImage(GHOST_RIGHT, KEY_PRESS_SURFACE_RIGHT);
     }
 
     return success;
 }
 
-bool loadImage(char path[100], int pressed_key) // funktion för att ladda bilder associerade till knapptryckningar
+// funktion för att ladda bilder associerade till knapptryckningar
+bool loadKeyImage(char path[100], int pressed_key)
 {
     bool success = true;
 
@@ -107,6 +108,8 @@ bool loadImage(char path[100], int pressed_key) // funktion för att ladda bilder
     return success;
 }
 
+// funktion baserad på lazy foos sdl tutorial nr 4
+// Syftet är att ladda en bild till en surface och sedan returnera surfacen
 SDL_Surface* loadSurface(char path[100])
 {
     SDL_Surface* loadedSurface = IMG_Load(path);
