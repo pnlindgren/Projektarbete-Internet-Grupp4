@@ -18,8 +18,10 @@ void keyInput2()
     dstrect.w = 100;
     dstrect.h = 100;
 
+    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
+
     //Apply the image
-    SDL_BlitSurface(SDL_LoadBMP("ghost.bmp" ), NULL, gScreenSurface, &dstrect );
+    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect );
     //Update the surface
     SDL_UpdateWindowSurface( gWindow );
 
@@ -57,13 +59,10 @@ void keyInput2()
                 SDL_Rect fillRect = { 100, 100, 20, 60 };
                 SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF );
                 SDL_RenderFillRect(gRenderer, &fillRect);
-                SDL_BlitSurface(SDL_LoadBMP("ghost.bmp"), NULL, gScreenSurface, &dstrect);
+                SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
                 SDL_UpdateWindowSurface( gWindow );
             }
 
         }
-
-
-
     }
 }
