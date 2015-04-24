@@ -22,7 +22,7 @@ int main(int argc, char * argv[])
 
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
-        enemy = SDL_CreateThread(nextMove(), "enemyThread", (void *)NULL);
+        //enemy = SDL_CreateThread(nextMove(), "enemyThread", (void *)NULL);
 
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }

@@ -3,7 +3,7 @@
 
 bool wallDetection();
 int drop();
-void collisionDetection();
+void collisionDetection(SDL_Rect enemy);
 void updateSurface();   //lets find a better name
-void nextMove(int x,int y, bool moved, int direction);
+void nextMove(bool moved, int direction);
 #endif

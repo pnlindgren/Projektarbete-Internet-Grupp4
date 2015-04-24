@@ -4,15 +4,12 @@
 #include <time.h>
 //#include <windows.h>
 
+#include "main.h"
 #include "position.h"
 
 
 #define right 1
 #define left 0
-
-/*struct position{
-    int x, y;
-}; typedef struct position Position*/
 
 bool wallDetection()    // funktion för att hålla koll på om fienden har stött på en vägg
 {
@@ -22,7 +19,7 @@ int drop()              // Hur den faller
 {
     return 1;
 }
-void collisionDetection()
+void collisionDetection(SDL_Rect enemy)
 {
     //return 0;
 }
@@ -33,8 +30,15 @@ void updateSurface()
     //SDL_UpdateWindowSurface(gWindow);
 }
 
-void nextMove(int x,int y, bool moved, int direction)
+void nextMove(bool moved, int direction)
 {
+    SDL_Rect enemy;
+
+    enemy.x = 100;
+    enemy.y = 100;
+    enemy.w = 50;
+    enemy.h = 50;
+
     srand(time(NULL));
 
     if(moved == false)
@@ -47,31 +51,31 @@ void nextMove(int x,int y, bool moved, int direction)
         if(direction == right)
         {
             direction = left;
-            x--;
+            enemy.x--;
         }
         else
         {
             direction = right;
-            x++;
+            enemy.x++;
         }
     }
     else
     {
         if(direction == right)
         {
-            x++;    // lista ut senare hur mycket
+            enemy.x++;    // lista ut senare hur mycket
         }
         else
         {
-            x--;    // lista ut senare hur mycket
+            enemy.x--;    // lista ut senare hur mycket
         }
     }
 
-    y = drop(x);        // här returnerar drop samma y värde om gubben inte faller
+    enemy.y = drop(enemy.x);        // här returnerar drop samma y värde om gubben inte faller
 
     updateSurface();
 
-    collisionDetection(x,y);   // kollar om spöket ska stå stilla pga en collision eller inte
+    collisionDetection(enemy);   // kollar om spöket ska stå stilla pga en collision eller inte
 
-    //Sleep(1000);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
+    SDL_Delay(1000);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
 }

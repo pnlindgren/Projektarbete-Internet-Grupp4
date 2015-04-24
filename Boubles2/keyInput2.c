@@ -13,6 +13,7 @@ void keyInput2()
     SDL_Renderer* gRenderer = NULL;
 
     SDL_Rect character;
+
     character.x = 640/2;
     character.y = 480/2;
     character.w = 50;
