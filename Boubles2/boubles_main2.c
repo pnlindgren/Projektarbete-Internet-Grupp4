@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
-//#include <pthread.h>
 
 #include "main.h"
 #include "initFunctions.h"
@@ -19,8 +18,12 @@ SDL_Surface* gCurrentSurface = NULL;
 
 int main(int argc, char * argv[])
 {
+    SDL_Thread *enemy;
+
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
+        enemy = SDL_CreateThread(nextMove(), "enemyThread", (void *)NULL);
+
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }
 

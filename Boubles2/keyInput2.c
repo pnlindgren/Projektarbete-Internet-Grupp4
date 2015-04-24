@@ -12,16 +12,16 @@ void keyInput2()
     SDL_Event e;
     SDL_Renderer* gRenderer = NULL;
 
-    SDL_Rect dstrect;
-    dstrect.x = 640/2;
-    dstrect.y = 480/2;
-    dstrect.w = 50;
-    dstrect.h = 50;
+    SDL_Rect character;
+    character.x = 640/2;
+    character.y = 480/2;
+    character.w = 50;
+    character.h = 50;
 
     gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
 
     //Apply the image
-    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect );
+    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &character );
     //Update the surface
     SDL_UpdateWindowSurface( gWindow );
 
@@ -42,17 +42,21 @@ void keyInput2()
                 switch( e.key.keysym.sym )
                 {
                     case SDLK_UP:
-                        dstrect.y -= 2;
+                        character.y -= 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
                         break;
                     case SDLK_DOWN:
-                        dstrect.y += 2;
+                        character.y += 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
                         break;
                     case SDLK_LEFT:
-                        dstrect.x -= 2;
+                        character.x -= 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
                         lookDirection = LEFT;
                         break;
                     case SDLK_RIGHT:
-                        dstrect.x += 2;
+                        character.x += 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
                         lookDirection = RIGHT;
                         break;
                 }
@@ -61,12 +65,12 @@ void keyInput2()
                 if(lookDirection == LEFT)
                 {
                     gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_LEFT];
-                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
+                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &character);
                 }
                 else if((lookDirection == RIGHT))
                 {
                     gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
-                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
+                    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &character);
                 }
                 SDL_UpdateWindowSurface(gWindow);
             }
