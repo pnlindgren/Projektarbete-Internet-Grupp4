@@ -8,7 +8,7 @@ void screenUpdateFunction(void * pointer)
         SDL_RenderClear(gRenderer);
         SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
         SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[frame],&character_rect , 0, NULL, flip);
-        SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[7],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
+        SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[10],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
         SDL_RenderPresent(gRenderer);
     }
 }

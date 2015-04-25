@@ -12,7 +12,7 @@
 
 SDL_Surface* loadSurface(char path[100]);       // Behövs
 SDL_Window*  gWindow = NULL;                    // Behövs
-SDL_Surface* gScreenSurface = NULL;             // Behövs för att bakgrundsbilden genereras genom processorn
+SDL_Surface* gScreenSurface = NULL;             // Behövs
 SDL_Surface* gBackground = NULL;                // Behövs
 SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
 SDL_Surface* gCurrentSurface = NULL;
