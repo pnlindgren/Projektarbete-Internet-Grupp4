@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1429892463 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\boubles_main2.c
+1429951425 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
@@ -9,6 +9,7 @@
 	"keyInput.h"
 	"position.h"
 	"keyInput2.h"
+	"screenUpdater.h"
 
 1429878705 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\main.h
 	<SDL2/SDL.h>
@@ -24,9 +25,9 @@
 
 1429878714 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\keyinput.h
 
-1429892271 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\position.h
+1429950714 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\position.h
 
-1429893183 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\keyinput2.h
+1429950884 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\keyinput2.h
 
 1429800116 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\close.c
 	<stdio.h>
@@ -34,13 +35,13 @@
 	"main.h"
 	"close.h"
 
-1429894008 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\initfunctions.c
+1429951328 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\initfunctions.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"initFunctions.h"
 
-1429892999 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\position.c
+1429950643 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -48,9 +49,15 @@
 	"main.h"
 	"position.h"
 
-1429893453 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\keyinput2.c
+1429951352 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\keyinput2.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"keyInput2.h"
+
+1429950900 c:\users\mr.loser\documents\internet projekt\programmet\boubles3\screenupdater.h
+
+1429951240 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles3\screenupdater.c
+	"main.h"
+	"screenUpdater.h"
 

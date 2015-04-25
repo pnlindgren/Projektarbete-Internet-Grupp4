@@ -13,17 +13,8 @@ void keyInput2()
 
     // NYTT ***********************************************************
 
-    SDL_RendererFlip flip = SDL_FLIP_VERTICAL;
-    int frame = 6;
-
     // NYTT ***********************************************************
 
-    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
-
-    //Apply the image
-    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &character_rect );
-    //Update the surface
-    SDL_UpdateWindowSurface( gWindow );
 
     //While application is running
     while( !quit){
@@ -64,12 +55,6 @@ void keyInput2()
                         lookDirection = RIGHT;
                         break;
                 }
-
-                SDL_RenderClear(gRenderer);
-                SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, flip);
-                SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[frame],&character_rect , 0, NULL, flip);
-                SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[7],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-                SDL_RenderPresent(gRenderer);
             }
         }
     }
