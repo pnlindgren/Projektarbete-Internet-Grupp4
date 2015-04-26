@@ -32,7 +32,7 @@ bool initBuild()
             background_rect.w = 640;
             background_rect.h = 480;
 
-            ghost_rect.x = 30;
+            ghost_rect.x = 300;
             ghost_rect.y = 97;
             ghost_rect.w = 50;
             ghost_rect.h = 50;
