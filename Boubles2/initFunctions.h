@@ -6,7 +6,7 @@
 #define CROCODILE_LEFT "pictures/bluecrocL.png"
 #define GHOST_RIGHT "pictures/ghostR.png"
 #define BLUE_CROCODILE "pictures/bluecroc.png"
-#define GHOST "pictures/pinkcroc1.png"
+#define GHOST "pictures/ghost.png"
 
 bool initBuild();
 bool init();
