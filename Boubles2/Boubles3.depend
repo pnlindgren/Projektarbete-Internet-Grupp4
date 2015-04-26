@@ -131,3 +131,13 @@
 	"main.h"
 	"wallDetector.h"
 
+1430055212 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"initFunctions.h"
+
+1430055221 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
+	"main.h"
+	"screenUpdater.h"
+
