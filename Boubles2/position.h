@@ -1,7 +1,6 @@
 #ifndef POSITION
 #define POSITION
 
-bool wallDetection();
 int drop();
 void collisionDetection(SDL_Rect enemy);
 void nextMove(void * pointer);

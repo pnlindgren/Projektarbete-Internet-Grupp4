@@ -55,6 +55,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="screenUpdater.h" />
+		<Unit filename="wallDetector.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wallDetector.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

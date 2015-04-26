@@ -5,15 +5,11 @@
 
 #include "main.h"
 #include "position.h"
-
+#include "wallDetector.h"
 
 #define RIGHT 1
 #define LEFT 0
 
-bool wallDetection()    // funktion för att hålla koll på om fienden har stött på en vägg
-{
-    return false;
-}
 int drop()              // Hur den faller
 {
     return 97;
@@ -57,7 +53,7 @@ void nextMove(void * pointer)
             {
                 ghost_rect.x = ghost_rect.x - 4;    // lista ut senare hur mycket
             }
-            else
+            else if(direction == LEFT)
             {
                 ghost_rect.x = ghost_rect.x + 4;    // lista ut senare hur mycket
             }
