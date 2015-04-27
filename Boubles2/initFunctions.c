@@ -95,6 +95,7 @@ bool loadMedia()
     SDL_Surface* gGhost = IMG_Load(GHOST);
     mGhost = SDL_CreateTextureFromSurface(gRenderer, gGhost);
 
+    // Crocodile
     gSpriteClips[ 0 ].x = 0;
     gSpriteClips[ 0 ].y = 0;
     gSpriteClips[ 0 ].w = 50;
