@@ -2,9 +2,6 @@
 #define INITFUNCTIONS
 
 #define BACKGROUND "pictures/NewBackground.bmp"
-#define CROCODILE_RIGHT "pictures/bluecrocR.png"
-#define CROCODILE_LEFT "pictures/bluecrocL.png"
-#define GHOST_RIGHT "pictures/ghostR.png"
 #define BLUE_CROCODILE "pictures/bluecroc.png"
 #define GHOST "pictures/ghost.png"
 

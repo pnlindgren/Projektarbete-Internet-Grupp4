@@ -36,12 +36,6 @@ bool initBuild()
             ghost_rect.y = 97;
             ghost_rect.w = 50;
             ghost_rect.h = 50;
-
-            SDL_RenderClear(gRenderer);
-            SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[3],&character_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[8],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderPresent(gRenderer);
         }
     }
 
