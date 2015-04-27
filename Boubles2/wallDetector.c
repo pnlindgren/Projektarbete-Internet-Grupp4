@@ -4,7 +4,6 @@
 #include "main.h"
 #include "wallDetector.h"
 
-// Baserad på lazyfoo.net/SDL_tutorials/lesson17/
 bool wallDetection()
 {
     bool collision = false;
