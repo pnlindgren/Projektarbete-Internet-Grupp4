@@ -38,6 +38,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="close.h" />
+		<Unit filename="dropFunction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="dropFunction.h" />
 		<Unit filename="initFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
