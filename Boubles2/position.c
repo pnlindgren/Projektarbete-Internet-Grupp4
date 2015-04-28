@@ -34,7 +34,7 @@ void nextMove(void * pointer)
 
     while(1)
     {
-        if(wallDetection(ghost_rect) == true)
+        if(collisions(ghost_rect) == true)
         {
             if(direction == RIGHT)
             {

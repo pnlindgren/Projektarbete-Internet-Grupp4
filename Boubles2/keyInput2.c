@@ -43,9 +43,9 @@ void keyInput2()
                         break;*/
                     case SDLK_LEFT:
                         character_rect.x -= 4;
-                        if(wallDetection(character_rect))
+                        if(collisions(character_rect))
                         {
-                            character_rect.x += 16;
+                            character_rect.x += 4;
                         }
                         flip = SDL_FLIP_NONE;
                         frame = 2;
@@ -54,9 +54,9 @@ void keyInput2()
                         break;
                     case SDLK_RIGHT:
                         character_rect.x += 4;
-                        if(wallDetection(character_rect))
+                        if(collisions(character_rect))
                         {
-                            character_rect.x -= 16;
+                            character_rect.x -= 4;
                         }
                         flip = SDL_FLIP_NONE;
                         frame = 3;

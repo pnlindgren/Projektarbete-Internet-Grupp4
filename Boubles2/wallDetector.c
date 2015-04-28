@@ -4,13 +4,14 @@
 #include "main.h"
 #include "wallDetector.h"
 
-bool wallDetection(SDL_Rect rectangle)
+bool collisions(SDL_Rect rectangle)
 {
     bool collision = false;
 
-    if((rectangle.x == ghost_rect.x && rectangle.y == ghost_rect.y) && SDL_HasIntersection(&character_rect, &rectangle))
+    if(SDL_HasIntersection(&ghost_rect, &character_rect))
     {
         collision = true;
+        frame = 5;
     }
     if(SDL_HasIntersection(&left_wall, &rectangle))
     {

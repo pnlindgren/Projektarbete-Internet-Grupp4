@@ -6,7 +6,7 @@
 
 void close1()
 {
-    SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör
+    //SDL_Delay(1000);    // För att av knappen ska hinna visa vad den gör
 
     SDL_FreeSurface(gBackground);
 
