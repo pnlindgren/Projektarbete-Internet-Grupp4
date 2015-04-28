@@ -34,10 +34,6 @@
 		<Unit filename="boubles_main2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="close.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="close.h" />
 		<Unit filename="initFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
