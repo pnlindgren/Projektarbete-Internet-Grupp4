@@ -1,8 +1,6 @@
 #ifndef POSITION
 #define POSITION
 
-int drop();
-void collisionDetection(SDL_Rect enemy);
 void nextMove(void * pointer);
 
 extern SDL_Window* gWindow;

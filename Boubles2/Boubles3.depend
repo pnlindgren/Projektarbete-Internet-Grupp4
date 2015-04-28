@@ -70,7 +70,7 @@
 	"main.h"
 	"wallDetector.h"
 
-1430233759 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
+1430237413 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
@@ -98,11 +98,12 @@
 
 1429878714 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput.h
 
-1430051852 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
+1430236679 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.h
 
 1429950884 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput2.h
 
-1430231285 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.h
+1430237611 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.h
+	<stdbool.h>
 
 1430233355 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.c
 	<stdio.h>
@@ -117,7 +118,7 @@
 	"keyInput2.h"
 	"wallDetector.h"
 
-1430233123 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1430236666 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -126,7 +127,7 @@
 	"position.h"
 	"wallDetector.h"
 
-1430233834 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.h
+1430237502 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.h
 
 1430233910 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.c
 	<stdio.h>
@@ -140,9 +141,10 @@
 	"main.h"
 	"initFunctions.h"
 
-1430231285 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
+1430235842 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
+	<stdbool.h>
 
 1430231282 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.c
 	<stdio.h>

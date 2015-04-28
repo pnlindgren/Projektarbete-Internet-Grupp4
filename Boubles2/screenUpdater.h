@@ -1,5 +1,6 @@
 #ifndef SCREEN_UPDATES
 #define SCREEN_UPDATES
+#include <stdbool.h>
 
 int screenUpdateFunction(void * pointer);
 
@@ -15,5 +16,6 @@ extern SDL_Rect ghost_rect;
 extern SDL_Rect wall_rect;
 extern SDL_RendererFlip flip;
 extern int frame;
+extern bool characterCollision;
 
 #endif

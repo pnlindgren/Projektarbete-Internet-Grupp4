@@ -11,7 +11,7 @@ bool collisions(SDL_Rect rectangle)
     if(SDL_HasIntersection(&ghost_rect, &character_rect))
     {
         collision = true;
-        frame = 5;
+        characterCollision = true;
     }
     if(SDL_HasIntersection(&left_wall, &rectangle))
     {
