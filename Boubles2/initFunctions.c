@@ -36,6 +36,21 @@ bool initBuild()
             ghost_rect.y = 97;
             ghost_rect.w = 50;
             ghost_rect.h = 50;
+
+            left_wall.x = 0;
+            left_wall.y = 0;
+            left_wall.w = 16;
+            left_wall.h = 480;
+
+            right_wall.x = 622;
+            right_wall.y = 0;
+            right_wall.w = 16;
+            right_wall.h = 480;
+
+            wall_rect.x = 0;
+            wall_rect.y = 0;
+            wall_rect.w = 16;
+            wall_rect.h = 480;
         }
     }
 
@@ -89,11 +104,14 @@ bool loadMedia()
         success = false;
     }
 
-    SDL_Surface* gSpacemanSurface = IMG_Load(BLUE_CROCODILE);
-    mBlueCrocodile = SDL_CreateTextureFromSurface(gRenderer, gSpacemanSurface);
+    SDL_Surface* gBlueCrocodile = IMG_Load(BLUE_CROCODILE);
+    mBlueCrocodile = SDL_CreateTextureFromSurface(gRenderer, gBlueCrocodile);
 
     SDL_Surface* gGhost = IMG_Load(GHOST);
     mGhost = SDL_CreateTextureFromSurface(gRenderer, gGhost);
+
+    SDL_Surface* gWall = IMG_Load(WALL);
+    mWall = SDL_CreateTextureFromSurface(gRenderer, gWall);
 
     // Crocodile
     gSpriteClips[ 0 ].x = 0;
@@ -142,24 +160,12 @@ bool loadMedia()
     gSpriteClips[ 8 ].y = 0;
     gSpriteClips[ 8 ].w = 50;
     gSpriteClips[ 8 ].h = 50;
-/*
-    // laddar bilder associerade med knapptryckningar
-    //if(success == true)
-    {
-        success = loadKeyImage(CROCODILE_RIGHT, KEY_PRESS_SURFACE_DEFAULT);
-    }
-    //else if(success == true)
-    {
-        success = loadKeyImage(CROCODILE_LEFT, KEY_PRESS_SURFACE_LEFT);
-    }
-    //else if(success == true)
-    {
-        success = loadKeyImage(CROCODILE_RIGHT, KEY_PRESS_SURFACE_RIGHT);
-    }
-    else if(success == true)
-    {
-        success = loadKeyImage(GHOST_RIGHT, KEY_PRESS_SURFACE_UP);
-    }*/
+
+    // Right wall
+    gSpriteClips[ 9 ].x = 0;
+    gSpriteClips[ 9 ].y = 0;
+    gSpriteClips[ 9 ].w = 16;
+    gSpriteClips[ 9 ].h = 480;
 
     return success;
 }

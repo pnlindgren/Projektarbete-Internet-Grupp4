@@ -25,12 +25,16 @@ SDL_Renderer* gRenderer = NULL;
 SDL_Texture* mBlueCrocodile = NULL;
 SDL_Texture* mBackground = NULL;
 SDL_Texture* mGhost = NULL;
+SDL_Texture* mWall = NULL;
 
 SDL_Rect gSpriteClips[13];
 
 SDL_Rect character_rect;
 SDL_Rect background_rect;
 SDL_Rect ghost_rect;
+SDL_Rect wall_rect;
+SDL_Rect left_wall;
+SDL_Rect right_wall;
 
 SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
 
