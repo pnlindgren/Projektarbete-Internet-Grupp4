@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Boubles2" />
+		<Option title="Boubles3" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Boubles2" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Boubles3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Boubles2" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Boubles3" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -42,20 +42,27 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="initFunctions.h" />
-		<Unit filename="keyInput.c">
+		<Unit filename="keyInput2.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="keyInput.h" />
+		<Unit filename="keyInput2.h" />
 		<Unit filename="main.h" />
 		<Unit filename="position.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="position.h" />
+		<Unit filename="screenUpdater.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="screenUpdater.h" />
+		<Unit filename="wallDetector.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="wallDetector.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
-			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

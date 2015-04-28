@@ -1,9 +1,14 @@
 #ifndef POSITION
 #define POSITION
 
-bool wallDetection();
 int drop();
-void collisionDetection();
-void updateSurface();   //lets find a better name
-void nextMove(int x,int y, bool moved, int direction);
+void collisionDetection(SDL_Rect enemy);
+void nextMove(void * pointer);
+
+extern SDL_Window* gWindow;
+extern SDL_Renderer* gRenderer;
+extern SDL_Texture* mGhost;
+extern SDL_Rect gSpriteClips[13];
+extern SDL_Rect ghost_rect;
+
 #endif

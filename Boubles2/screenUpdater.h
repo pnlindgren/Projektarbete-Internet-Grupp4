@@ -1,15 +1,8 @@
-#ifndef KEYINPUT
-#define KEYINPUT
-#define RIGHT 1
-#define LEFT 0
+#ifndef SCREEN_UPDATES
+#define SCREEN_UPDATES
 
-void keyInput2();
+void screenUpdateFunction(void * pointer);
 
-extern SDL_Window* gWindow;
-extern SDL_Surface* gScreenSurface;
-extern SDL_Surface* gBackground;
-extern SDL_Surface* gKeyPressSurfaces[KEY_PRESS_SURFACE_TOTAL];
-extern SDL_Surface* gCurrentSurface;
 extern SDL_Renderer* gRenderer;
 extern SDL_Texture* mBlueCrocodile;
 extern SDL_Texture* mBackground;
@@ -22,4 +15,3 @@ extern SDL_RendererFlip flip;
 extern int frame;
 
 #endif
-

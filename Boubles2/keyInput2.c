@@ -7,22 +7,14 @@
 void keyInput2()
 {
     bool quit = false;
+    bool lookDirection = RIGHT;
 
     SDL_Event e;
-    SDL_Renderer* gRenderer = NULL;
 
-    SDL_Rect dstrect;
-    dstrect.x = 640/2;
-    dstrect.y = 480/2;
-    dstrect.w = 50;
-    dstrect.h = 50;
+    // NYTT ***********************************************************
 
-    gCurrentSurface = gKeyPressSurfaces[KEY_PRESS_SURFACE_RIGHT];
+    // NYTT ***********************************************************
 
-    //Apply the image
-    SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect );
-    //Update the surface
-    SDL_UpdateWindowSurface( gWindow );
 
     //While application is running
     while( !quit){
@@ -40,25 +32,30 @@ void keyInput2()
                 //Select surfaces based on key press
                 switch( e.key.keysym.sym )
                 {
-                    case SDLK_UP:
-                        dstrect.y -= 2;
+                    /*case SDLK_UP:
+                        character_rect.y -= 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
                         break;
                     case SDLK_DOWN:
-                        dstrect.y += 2;
-                        break;
+                        character_rect.y += 2;
+                        printf("Position: (%d,%d)\n", character.x, character.y);
+                        break;*/
                     case SDLK_LEFT:
-                        dstrect.x -= 2;
+                        character_rect.x -= 4;
+                        flip = SDL_FLIP_NONE;
+                        frame = 2;
+                        printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                        lookDirection = LEFT;
                         break;
                     case SDLK_RIGHT:
-                        dstrect.x += 2;
+                        character_rect.x += 4;
+                        flip = SDL_FLIP_NONE;
+                        frame = 3;
+                        printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                        lookDirection = RIGHT;
                         break;
                 }
-                SDL_BlitSurface(gBackground, NULL, gScreenSurface, NULL);
-                SDL_UpdateWindowSurface(gWindow);
-                SDL_BlitSurface(gCurrentSurface, NULL, gScreenSurface, &dstrect);
-                SDL_UpdateWindowSurface(gWindow);
             }
-
         }
     }
 }
