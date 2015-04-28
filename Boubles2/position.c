@@ -6,6 +6,7 @@
 #include "main.h"
 #include "position.h"
 #include "wallDetector.h"
+#include "dropFunction.h"
 
 #define RIGHT 1
 #define LEFT 0
@@ -16,6 +17,8 @@ void nextMove(void * pointer)
 
     bool moved = false;
 
+    SDL_Thread *droppingEnemy;
+
     srand(time(NULL));
 
     if(moved == false)
@@ -23,8 +26,11 @@ void nextMove(void * pointer)
         direction = rand() % 1;
     }
 
+    droppingEnemy = SDL_CreateThread(enemyDrop, "EnemyDrop", (void*)NULL); // drop detect
+
     while(1)
     {
+
         if(collisions(ghost_rect) == true)
         {
             if(direction == RIGHT)
