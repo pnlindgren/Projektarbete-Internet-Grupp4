@@ -142,20 +142,7 @@ bool loadMedia()
     gSpriteClips[ 8 ].y = 0;
     gSpriteClips[ 8 ].w = 50;
     gSpriteClips[ 8 ].h = 50;
-
-    gSpriteClips[ 9 ].x = 100;
-    gSpriteClips[ 9 ].y = 0;
-    gSpriteClips[ 9 ].w = 50;
-    gSpriteClips[ 9 ].h = 50;
-
-    gSpriteClips[ 10 ].x = 150;
-    gSpriteClips[ 10 ].y = 0;
-    gSpriteClips[ 10 ].w = 50;
-    gSpriteClips[ 10 ].h = 50;
-
-    /*
-
-
+/*
     // laddar bilder associerade med knapptryckningar
     //if(success == true)
     {

@@ -63,6 +63,6 @@ void nextMove(void * pointer)
 
         collisionDetection(ghost_rect);   // kollar om spöket ska stå stilla pga en collision eller inte
 
-        SDL_Delay(1000);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
+        SDL_Delay(500);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
     }
 }
