@@ -1,7 +1,7 @@
 #ifndef COLLISION
 #define COLLISION
 
-bool wallDetection();
+bool wallDetection(SDL_Rect rectangle);
 
 extern SDL_Rect ghost_rect;
 extern SDL_Rect character_rect;

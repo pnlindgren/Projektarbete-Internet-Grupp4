@@ -3,6 +3,7 @@
 
 #include "main.h"
 #include "keyInput2.h"
+#include "wallDetector.h"
 
 void keyInput2()
 {
@@ -42,6 +43,10 @@ void keyInput2()
                         break;*/
                     case SDLK_LEFT:
                         character_rect.x -= 4;
+                        if(wallDetection(character_rect))
+                        {
+                            character_rect.x += 16;
+                        }
                         flip = SDL_FLIP_NONE;
                         frame = 2;
                         printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
@@ -49,6 +54,10 @@ void keyInput2()
                         break;
                     case SDLK_RIGHT:
                         character_rect.x += 4;
+                        if(wallDetection(character_rect))
+                        {
+                            character_rect.x -= 16;
+                        }
                         flip = SDL_FLIP_NONE;
                         frame = 3;
                         printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);

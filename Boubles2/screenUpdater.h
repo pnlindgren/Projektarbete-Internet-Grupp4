@@ -1,7 +1,7 @@
 #ifndef SCREEN_UPDATES
 #define SCREEN_UPDATES
 
-void screenUpdateFunction(void * pointer);
+int screenUpdateFunction(void * pointer);
 
 extern SDL_Renderer* gRenderer;
 extern SDL_Texture* mBlueCrocodile;

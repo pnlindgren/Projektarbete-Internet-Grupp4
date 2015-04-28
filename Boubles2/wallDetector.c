@@ -8,7 +8,7 @@ bool wallDetection(SDL_Rect rectangle)
 {
     bool collision = false;
 
-    if(SDL_HasIntersection(&character_rect, &rectangle))
+    if((rectangle.x == ghost_rect.x && rectangle.y == ghost_rect.y) && SDL_HasIntersection(&character_rect, &rectangle))
     {
         collision = true;
     }

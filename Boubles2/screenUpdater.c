@@ -1,7 +1,7 @@
 #include "main.h"
 #include "screenUpdater.h"
 
-void screenUpdateFunction(void * pointer)
+int screenUpdateFunction(void * pointer)
 {
     while(1)
     {
