@@ -70,7 +70,7 @@
 	"main.h"
 	"wallDetector.h"
 
-1430227559 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
+1430231686 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
@@ -81,6 +81,8 @@
 	"position.h"
 	"keyInput2.h"
 	"screenUpdater.h"
+	"wallDetector.h"
+	"dropFunction.h"
 
 1430147533 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\main.h
 	<SDL2/SDL.h>
@@ -100,7 +102,7 @@
 
 1429950884 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput2.h
 
-1430230603 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.h
+1430231285 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.h
 
 1429800116 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.c
 	<stdio.h>
@@ -108,14 +110,14 @@
 	"main.h"
 	"close.h"
 
-1430231063 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput2.c
+1430231285 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\keyinput2.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"keyInput2.h"
 	"wallDetector.h"
 
-1430229908 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1430231285 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -124,9 +126,9 @@
 	"position.h"
 	"wallDetector.h"
 
-1430229850 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.h
+1430231285 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.h
 
-1430230147 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.c
+1430231285 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
@@ -138,7 +140,15 @@
 	"main.h"
 	"initFunctions.h"
 
-1430230607 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
+1430231285 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
+
+1430231282 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"dropFunction.h"
+
+1430231282 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.h
 

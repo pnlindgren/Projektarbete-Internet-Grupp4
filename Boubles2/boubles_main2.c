@@ -9,6 +9,8 @@
 #include "position.h"
 #include "keyInput2.h"
 #include "screenUpdater.h"
+#include "wallDetector.h"
+#include "dropFunction.h"
 
 SDL_Surface* loadSurface(char path[100]);       // Behövs
 SDL_Window*  gWindow = NULL;                    // Behövs
@@ -46,10 +48,13 @@ int main(int argc, char * argv[])
 {
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;
+    SDL_Thread *dropGravitation;
 
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {
-        updateScreen = SDL_CreateThread(screenUpdateFunction, "enemyThread", (void *)NULL);
+        updateScreen = SDL_CreateThread(screenUpdateFunction, "updateThread", (void *)NULL);
+
+        dropGravitation = SDL_CreateThread(dropFunction, "dropThread", (void*)NULL);
 
         enemy = SDL_CreateThread(nextMove, "enemyThread", (void *)NULL);
 

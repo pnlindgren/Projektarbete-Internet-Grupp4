@@ -22,7 +22,7 @@ bool initBuild()
         }
         else
         {
-            character_rect.x = 500;
+            character_rect.x = 396;
             character_rect.y = 97;
             character_rect.w = 50;
             character_rect.h = 50;
