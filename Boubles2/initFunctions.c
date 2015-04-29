@@ -107,6 +107,11 @@ bool loadMedia()
     SDL_Surface* gBlueCrocodile = IMG_Load(BLUE_CROCODILE);
     mBlueCrocodile = SDL_CreateTextureFromSurface(gRenderer, gBlueCrocodile);
 
+    if (gBlueCrocodile == NULL)
+    {
+        printf("Unable to load image %s! SDL_Error: %s\n", BLUE_CROCODILE, SDL_GetError());
+    }
+
     SDL_Surface* gGhost = IMG_Load(GHOST);
     mGhost = SDL_CreateTextureFromSurface(gRenderer, gGhost);
 

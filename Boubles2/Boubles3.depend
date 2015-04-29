@@ -92,7 +92,7 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1430227559 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
+1430295651 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.h
 
 1429802273 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\close.h
 
@@ -118,7 +118,7 @@
 	"keyInput2.h"
 	"wallDetector.h"
 
-1430236666 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
+1430247397 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\position.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -126,31 +126,32 @@
 	"main.h"
 	"position.h"
 	"wallDetector.h"
+	"dropFunction.h"
 
 1430237502 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.h
 
-1430233910 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.c
+1430237525 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\walldetector.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"wallDetector.h"
 
-1430231757 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
+1430295673 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\initfunctions.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"initFunctions.h"
 
-1430235842 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
+1430237477 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
 	<stdbool.h>
 
-1430231282 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.c
+1430247397 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"dropFunction.h"
 
-1430231282 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.h
+1430247397 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\dropfunction.h
 
