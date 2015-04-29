@@ -32,3 +32,10 @@ enum KeyPressSurfaces
 };
 
 #endif
+
+#if 0
+#!/bin/sh
+gcc -Wall `sdl-config --cflags` tcps.c -o tcps `sdl-config --libs` -lSDL_net
+
+exit
+#endif
