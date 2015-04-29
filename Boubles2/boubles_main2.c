@@ -47,12 +47,23 @@ bool characterCollision = false;
 
 int main(int argc, char * argv[])
 {
-    int serverIP[4] = {0}, serverPort = 0;
+    char serverIP[20] = {0};
+    int serverPort = 0;
+    TCPsocket socket;
 
     printf("Welcome!\nEnter IP:");
-    scanf("%d.%d.%d.%d", &serverIP[0], &serverIP[1], &serverIP[2], &serverIP[3]);
+    fgets(serverIP, sizeof(serverIP), stdin);
     printf("Enter port:");
     scanf("%d", &serverPort);
+
+    IPaddress ipaddress;
+
+    SDLNet_ResolveHost(&ipaddress, serverIP, serverPort);
+
+    if(socket = SDLNet_TCP_Open(&ipaddress))
+    {
+        printf("Connection success");
+    }
 
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;
