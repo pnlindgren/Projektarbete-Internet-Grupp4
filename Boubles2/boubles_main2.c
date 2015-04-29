@@ -47,6 +47,13 @@ bool characterCollision = false;
 
 int main(int argc, char * argv[])
 {
+    int serverIP[4] = {0}, serverPort = 0;
+
+    printf("Welcome!\nEnter IP:");
+    scanf("%d.%d.%d.%d", &serverIP[0], &serverIP[1], &serverIP[2], &serverIP[3]);
+    printf("Enter port:");
+    scanf("%d", &serverPort);
+
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;
     SDL_Thread *dropGravitation;
