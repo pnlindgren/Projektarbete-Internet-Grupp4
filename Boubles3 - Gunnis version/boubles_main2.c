@@ -31,6 +31,7 @@ SDL_Texture* mBlueCrocodile = NULL;
 SDL_Texture* mBackground = NULL;
 SDL_Texture* mGhost = NULL;
 SDL_Texture* mWall = NULL;
+SDL_Texture* mBubble = NULL;
 
 SDL_Rect gSpriteClips[13];
 
@@ -40,6 +41,7 @@ SDL_Rect ghost_rect;
 SDL_Rect wall_rect;
 SDL_Rect left_wall;
 SDL_Rect right_wall;
+SDL_Rect bubble_rect;
 
 SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
 
@@ -47,6 +49,7 @@ TCPsocket socket;
 
 int frame = 3;  // vilken frame blåa krokodilen börjar på
 bool characterCollision = false;
+bool bubble_view = false;
 
 // Nytt *******************************************************
 

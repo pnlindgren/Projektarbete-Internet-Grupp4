@@ -46,7 +46,7 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 void clientConnection(TCPsocket *socketPekare)
 {
     int len,result;
-    char msg[] ="Hello!";
+    char msg[] ="exit";
 
     len = strlen(msg) + 1; // add one for the terminating NULL
 

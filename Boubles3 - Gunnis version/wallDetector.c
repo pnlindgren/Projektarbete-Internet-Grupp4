@@ -16,12 +16,12 @@ bool collisions(SDL_Rect rectangle)
     if(SDL_HasIntersection(&left_wall, &rectangle))
     {
         collision = true;
-        printf("\nLeft wall\n");
+        //printf("\nLeft wall\n");
     }
     if(SDL_HasIntersection(&right_wall, &rectangle))
     {
         collision = true;
-        printf("\nRight wall\n");
+        //printf("\nRight wall\n");
     }
 
     return collision;

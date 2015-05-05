@@ -5,6 +5,7 @@
 #include "keyInput2.h"
 #include "wallDetector.h"
 
+
 void keyInput2()
 {
     bool quit = false;
@@ -31,11 +32,10 @@ void keyInput2()
                     /*case SDLK_UP:
                         character_rect.y -= 2;
                         printf("Position: (%d,%d)\n", character.x, character.y);
-                        break;
-                    case SDLK_DOWN:
-                        character_rect.y += 2;
-                        printf("Position: (%d,%d)\n", character.x, character.y);
                         break;*/
+                    case SDLK_SPACE:
+                        shootFunc();
+                        break;
                     case SDLK_LEFT:
                         character_rect.x -= 4;
                         if(collisions(character_rect))
@@ -44,7 +44,7 @@ void keyInput2()
                         }
                         flip = SDL_FLIP_NONE;
                         frame = 2;
-                        printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                        //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = LEFT;
                         break;
                     case SDLK_RIGHT:
@@ -55,7 +55,7 @@ void keyInput2()
                         }
                         flip = SDL_FLIP_NONE;
                         frame = 3;
-                        printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                        //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = RIGHT;
                         break;
                 }

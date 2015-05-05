@@ -118,6 +118,9 @@ bool loadMedia()
     SDL_Surface* gWall = IMG_Load(WALL);
     mWall = SDL_CreateTextureFromSurface(gRenderer, gWall);
 
+    SDL_Surface* gBubble = IMG_Load(BUBBLE);
+    mBubble = SDL_CreateTextureFromSurface(gRenderer, gBubble);
+
     // Crocodile
     gSpriteClips[ 0 ].x = 0;
     gSpriteClips[ 0 ].y = 0;

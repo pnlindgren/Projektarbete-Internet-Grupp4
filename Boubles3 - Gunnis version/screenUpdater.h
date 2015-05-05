@@ -19,5 +19,7 @@ extern SDL_Rect bubble_rect;
 extern SDL_RendererFlip flip;
 extern int frame;
 extern bool characterCollision;
+extern SDL_Rect bubble_rect;
+extern bool bubble_view;
 
 #endif
