@@ -5,6 +5,7 @@
 #define BLUE_CROCODILE "pictures/bluecroc.png"
 #define GHOST "pictures/ghost.png"
 #define WALL "pictures/wall.png"
+#define BUBBLE "pictures/bubble.png"
 
 bool initBuild();
 bool init();
@@ -22,6 +23,7 @@ extern SDL_Texture* mBlueCrocodile;
 extern SDL_Texture* mBackground;
 extern SDL_Texture* mGhost;
 extern SDL_Texture* mWall;
+extern SDL_Texture* mBubble;
 extern SDL_Rect gSpriteClips[13];
 extern SDL_Rect character_rect;
 extern SDL_Rect background_rect;
