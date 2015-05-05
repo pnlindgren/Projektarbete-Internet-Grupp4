@@ -175,6 +175,12 @@ bool loadMedia()
     gSpriteClips[ 9 ].w = 16;
     gSpriteClips[ 9 ].h = 480;
 
+    // Bubbla
+    gSpriteClips[ 10 ].x = 0;
+    gSpriteClips[ 10 ].y = 0;
+    gSpriteClips[ 10 ].w = 40;
+    gSpriteClips[ 10 ].h = 40;
+
     return success;
 }
 

@@ -6,4 +6,11 @@ void clientConnection(TCPsocket *socketPekare);
 
 extern TCPsocket socket;
 
+// ska skickas från klienten
+extern SDL_Rect bubble_rect;
+extern SDL_Rect character_rect;
+
+// ska tas emot från servern
+extern SDL_Rect ghost_rect;
+
 #endif

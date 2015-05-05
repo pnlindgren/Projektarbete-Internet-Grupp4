@@ -12,8 +12,8 @@ int shootFunc(){
 
     bubble_rect.x = character_rect.x;
     bubble_rect.y = character_rect.y;
-    bubble_rect.w = 30;
-    bubble_rect.h = 30;
+    bubble_rect.w = 40;
+    bubble_rect.h = 40;
 
     bubble_view = true;
     bubble_rect.x = bubble_rect.x - 40;
@@ -28,7 +28,7 @@ int shootFunc(){
         bubble_rect.x--;
     }
 
-
+    bubble_view = false;
 }
 
 

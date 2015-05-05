@@ -6,6 +6,12 @@
 #include "main.h"
 #include "tcp_socket.h"
 
+struct sendInformation
+{
+    SDL_Rect the_bubble;
+    SDL_Rect the_character;
+}; typedef struct sendInformation send_information;
+
 void tcp_socket_connect(TCPsocket *socketPekare)
 {
     char serverIP[20] = {0};
@@ -46,13 +52,17 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 void clientConnection(TCPsocket *socketPekare)
 {
     int len,result;
-    char msg[] ="exit";
 
-    len = strlen(msg) + 1; // add one for the terminating NULL
+    send_information klient_send;
 
-    //while(1)
+    while(1)
     {
-        result=SDLNet_TCP_Send(*socketPekare,msg,len);
+        klient_send.the_bubble = bubble_rect;
+        klient_send.the_character = character_rect;
+
+        len = sizeof(klient_send) + 1;
+
+        result=SDLNet_TCP_Send(*socketPekare,&klient_send,len);
         if(result < len)
         {
             printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
