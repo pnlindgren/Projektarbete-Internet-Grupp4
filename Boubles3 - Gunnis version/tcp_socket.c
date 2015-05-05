@@ -6,12 +6,6 @@
 #include "main.h"
 #include "tcp_socket.h"
 
-struct sendInformation
-{
-    SDL_Rect the_bubble;
-    SDL_Rect the_character;
-}; typedef struct sendInformation send_information;
-
 void tcp_socket_connect(TCPsocket *socketPekare)
 {
     char serverIP[20] = {0};
@@ -69,6 +63,6 @@ void clientConnection(TCPsocket *socketPekare)
             // It may be good to disconnect sock because it is likely invalid now.
         }
 
-        SDL_Delay(1000);
+        SDL_Delay(100);
     }
 }

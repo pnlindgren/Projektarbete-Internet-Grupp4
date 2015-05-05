@@ -28,9 +28,7 @@ extern SDL_Rect gSpriteClips[13];
 extern SDL_Rect character_rect;
 extern SDL_Rect background_rect;
 extern SDL_Rect ghost_rect;
-extern SDL_Rect wall_rect;
 extern SDL_Rect left_wall;
 extern SDL_Rect right_wall;
-extern SDL_Texture* mBubble;
 
 #endif
