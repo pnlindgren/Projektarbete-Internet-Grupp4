@@ -50,7 +50,7 @@ void clientConnection(TCPsocket *socketPekare)
 
     len = strlen(msg) + 1; // add one for the terminating NULL
 
-    while(1)
+    //while(1)
     {
         result=SDLNet_TCP_Send(*socketPekare,msg,len);
         if(result < len)

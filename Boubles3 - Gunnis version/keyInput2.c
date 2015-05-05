@@ -4,6 +4,7 @@
 #include "main.h"
 #include "keyInput2.h"
 #include "wallDetector.h"
+#include "shoot.h"
 
 
 void keyInput2()
@@ -12,6 +13,8 @@ void keyInput2()
     bool lookDirection = RIGHT;
 
     SDL_Event e;
+
+    SDL_Thread *bubble_thread;
 
     //While application is running
     while( !quit){
@@ -34,7 +37,7 @@ void keyInput2()
                         printf("Position: (%d,%d)\n", character.x, character.y);
                         break;*/
                     case SDLK_SPACE:
-                        shootFunc();
+                        bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
                         break;
                     case SDLK_LEFT:
                         character_rect.x -= 4;

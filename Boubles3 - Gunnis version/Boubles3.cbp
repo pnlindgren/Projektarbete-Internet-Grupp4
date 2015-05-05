@@ -59,6 +59,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="screenUpdater.h" />
+		<Unit filename="shoot.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="shoot.h" />
 		<Unit filename="tcp_socket.c">
 			<Option compilerVar="CC" />
 		</Unit>

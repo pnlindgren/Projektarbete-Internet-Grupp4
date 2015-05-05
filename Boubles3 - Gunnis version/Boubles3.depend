@@ -174,3 +174,113 @@
 
 1430736634 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\clientfunctions.h
 
+1430819779 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"close.h"
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.h
+
+1430819779 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\dropfunction.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"dropFunction.h"
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\dropfunction.h
+
+1430819779 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\position.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<time.h>
+	"main.h"
+	"position.h"
+	"wallDetector.h"
+	"dropFunction.h"
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\position.h
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\walldetector.h
+
+1430821572 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
+	"main.h"
+	"screenUpdater.h"
+	<stdbool.h>
+
+1430820771 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
+	<stdbool.h>
+
+1430820771 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+	"main.h"
+	"initFunctions.h"
+	"close.h"
+	"keyInput.h"
+	"position.h"
+	"keyInput2.h"
+	"screenUpdater.h"
+	"wallDetector.h"
+	"dropFunction.h"
+	"tcp_socket.h"
+	"clientFunctions.h"
+
+1430820771 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.h
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput.h
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.h
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.h
+
+1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\clientfunctions.h
+
+1430820771 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"initFunctions.h"
+
+1430821291 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"keyInput2.h"
+	"wallDetector.h"
+	"shoot.h"
+
+1430821148 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
+
+1430821366 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"shoot.h"
+	"position.h"
+
+1430820771 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	"main.h"
+	"tcp_socket.h"
+
+1430820771 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\walldetector.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"wallDetector.h"
+
