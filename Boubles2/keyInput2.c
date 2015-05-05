@@ -33,10 +33,10 @@ void keyInput2()
                 //Select surfaces based on key press
                 switch( e.key.keysym.sym )
                 {
-                    /*case SDLK_UP:
-                        character_rect.y -= 2;
-                        printf("Position: (%d,%d)\n", character.x, character.y);
+                    case SDLK_UP:
+                        jump();
                         break;
+                    /*
                     case SDLK_DOWN:
                         character_rect.y += 2;
                         printf("Position: (%d,%d)\n", character.x, character.y);
