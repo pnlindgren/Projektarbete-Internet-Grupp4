@@ -4,8 +4,8 @@
 #include <time.h>
 
 #include "main.h"
-#include "position.h"
-#include "wallDetector.h"
+#include "enemy.h"
+#include "collisionHandler.h"
 #include "dropFunction.h"
 
 void nextMove(void * pointer)

@@ -46,11 +46,6 @@ bool initBuild()
             right_wall.y = 0;
             right_wall.w = 16;
             right_wall.h = 480;
-
-            //wall_rect.x = 0;
-            //wall_rect.y = 0;
-            //wall_rect.w = 16;
-            //wall_rect.h = 480;
         }
     }
 
@@ -95,7 +90,7 @@ bool loadMedia()
     bool success = true;
 
     // sätter bakgrundssurfacen till bakgrundsbilden
-    gBackground = SDL_LoadBMP(BACKGROUND);
+    SDL_Surface* gBackground = SDL_LoadBMP(BACKGROUND);
     mBackground = SDL_CreateTextureFromSurface(gRenderer, gBackground);
 
     if (gBackground == NULL)
@@ -114,9 +109,6 @@ bool loadMedia()
 
     SDL_Surface* gGhost = IMG_Load(GHOST);
     mGhost = SDL_CreateTextureFromSurface(gRenderer, gGhost);
-
-    SDL_Surface* gWall = IMG_Load(WALL);
-    mWall = SDL_CreateTextureFromSurface(gRenderer, gWall);
 
     SDL_Surface* gBubble = IMG_Load(BUBBLE);
     mBubble = SDL_CreateTextureFromSurface(gRenderer, gBubble);
@@ -189,8 +181,8 @@ bool loadKeyImage(char path[100], int pressed_key)
 {
     bool success = true;
 
-    gKeyPressSurfaces[pressed_key] = loadSurface(path);
-    if(gKeyPressSurfaces[pressed_key] == NULL)
+    //gKeyPressSurfaces[pressed_key] = loadSurface(path);
+    //if(gKeyPressSurfaces[pressed_key] == NULL)
     {
         printf( "Failed to load %s image!\n", path);
         success = false;

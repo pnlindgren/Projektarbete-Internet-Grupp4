@@ -3,9 +3,8 @@
 
 #include "main.h"
 #include "keyInput2.h"
-#include "wallDetector.h"
+#include "collisionHandler.h"
 #include "shoot.h"
-
 
 void keyInput2()
 {
@@ -17,7 +16,8 @@ void keyInput2()
     SDL_Thread *bubble_thread;
 
     //While application is running
-    while( !quit){
+    while(!quit)
+    {
         //Handle events on queue
         while( SDL_PollEvent( &e ) != 0 )
         {
@@ -33,12 +33,17 @@ void keyInput2()
                 switch( e.key.keysym.sym )
                 {
                     case SDLK_UP:
+                    {
                         jump();
                         break;
+                    }
                     case SDLK_SPACE:
+                    {
                         bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
                         break;
+                    }
                     case SDLK_LEFT:
+                    {
                         character_rect.x -= 4;
                         if(collisions(character_rect))
                         {
@@ -49,7 +54,9 @@ void keyInput2()
                         //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = LEFT;
                         break;
+                    }
                     case SDLK_RIGHT:
+                    {
                         character_rect.x += 4;
                         if(collisions(character_rect))
                         {
@@ -60,6 +67,7 @@ void keyInput2()
                         //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = RIGHT;
                         break;
+                    }
                 }
             }
         }

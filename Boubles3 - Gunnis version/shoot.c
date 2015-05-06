@@ -3,7 +3,7 @@
 
 #include "main.h"
 #include "shoot.h"
-#include "position.h"
+#include "enemy.h"
 
 
 int shootFunc(){

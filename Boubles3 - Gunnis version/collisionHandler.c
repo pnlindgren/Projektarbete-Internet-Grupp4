@@ -2,7 +2,7 @@
 #include <stdbool.h>
 
 #include "main.h"
-#include "wallDetector.h"
+#include "collisionHandler.h"
 
 bool collisions(SDL_Rect rectangle)
 {

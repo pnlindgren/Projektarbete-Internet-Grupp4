@@ -38,10 +38,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="close.h" />
+		<Unit filename="collisionHandler.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="collisionHandler.h" />
 		<Unit filename="dropFunction.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="dropFunction.h" />
+		<Unit filename="enemy.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="enemy.h" />
 		<Unit filename="initFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -55,10 +63,6 @@
 		</Unit>
 		<Unit filename="keyInput2.h" />
 		<Unit filename="main.h" />
-		<Unit filename="position.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="position.h" />
 		<Unit filename="screenUpdater.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -71,10 +75,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tcp_socket.h" />
-		<Unit filename="wallDetector.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="wallDetector.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
