@@ -46,6 +46,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="initFunctions.h" />
+		<Unit filename="jump.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="jump.h" />
 		<Unit filename="keyInput2.c">
 			<Option compilerVar="CC" />
 		</Unit>
