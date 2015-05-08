@@ -67,25 +67,18 @@ void clientConnection(TCPsocket *socketPekare)
     }
 }
 
-
-
-
-
-
-
-
 int position_start_function(TCPsocket *socketPekare)
 {
     int len, result, startPosition = 2;
 
     len = sizeof(startPosition) + 1;
 
-    //result=SDLNet_TCP_Send(*socketPekare,&klient_send,len);
+    result=SDLNet_TCP_Recv(*socketPekare,&startPosition,len);
     if(result < len)
     {
         printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
         // It may be good to disconnect sock because it is likely invalid now.
     }
 
-    SDL_Delay(100);
+    return startPosition;
 }
