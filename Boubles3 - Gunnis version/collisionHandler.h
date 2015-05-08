@@ -11,4 +11,6 @@ extern SDL_Rect right_wall;
 extern int frame;
 extern bool characterCollision;
 
+extern recieved_Information recievedI;
+
 #endif

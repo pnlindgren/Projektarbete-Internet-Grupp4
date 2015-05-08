@@ -51,11 +51,11 @@ void clientConnection(TCPsocket *socketPekare)
     while(1)
     {
         result=SDLNet_TCP_Recv(*socketPekare,&recievedI,len);
-        if(result < len)
+        /*if(result < len)
         {
             printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
             // It may be good to disconnect sock because it is likely invalid now.
-        }
+        }*/
 
         ghost_rect = recievedI.ghostRect;
 

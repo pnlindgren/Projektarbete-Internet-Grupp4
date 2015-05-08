@@ -31,7 +31,7 @@ int enemyCollision()
 {
     while(1)
     {
-        if(SDL_HasIntersection(&ghost_rect, &character_rect))
+        if(SDL_HasIntersection(&ghost_rect, &character_rect) || SDL_HasIntersection(&ghost_rect, &recievedI.character_rects[1]))
         {
             characterCollision = true;
         }

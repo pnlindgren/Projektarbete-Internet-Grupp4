@@ -55,7 +55,6 @@ int main(int argc, char * argv[])
     socketPekare = &socket;
 
     tcp_socket_connect(socketPekare);
-
     positionStart = position_start_function(socketPekare);
 
     if(initBuild(positionStart)) // Om init och loadmedia fungerar körs programmet
@@ -64,7 +63,6 @@ int main(int argc, char * argv[])
         updateScreen        = SDL_CreateThread(screenUpdateFunction, "updateThread", (void *)NULL);
         dropGravitation     = SDL_CreateThread(dropFunction, "dropThread", (void*)NULL);
         enemy               = SDL_CreateThread(enemyCollision, "enemyCollision", (void*)NULL);
-        //enemy               = SDL_CreateThread(nextMove, "enemyThread", (void *)NULL);
 
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }
