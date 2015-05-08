@@ -35,5 +35,6 @@ int enemyCollision()
         {
             characterCollision = true;
         }
+        SDL_Delay(50);
     }
 }

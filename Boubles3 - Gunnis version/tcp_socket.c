@@ -45,40 +45,11 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 
 void clientConnection(TCPsocket *socketPekare)
 {
-    /*int len,result;
-
-    send_information klient_send;
-
-    while(1)
-    {
-        klient_send.the_bubble = bubble_rect;
-        klient_send.the_character = character_rect;
-
-        len = sizeof(klient_send) + 1;
-
-        result=SDLNet_TCP_Send(*socketPekare,&klient_send,len);
-        if(result < len)
-        {
-            printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
-            // It may be good to disconnect sock because it is likely invalid now.
-        }
-
-        SDL_Delay(100);
-    }*/
-
-
-
-
-
-
-
     int len,result;
     len = sizeof(recievedI) + 1;
 
     while(1)
     {
-        len = sizeof(recievedI) + 1;
-
         result=SDLNet_TCP_Recv(*socketPekare,&recievedI,len);
         if(result < len)
         {
