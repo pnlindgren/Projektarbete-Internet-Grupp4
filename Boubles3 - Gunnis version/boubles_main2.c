@@ -40,16 +40,20 @@ bool bubble_view = false;
 
 int main(int argc, char * argv[])
 {
+    int positionStart = 2;
+
+    SDL_Thread *enemy;
+    SDL_Thread *updateScreen;
+    SDL_Thread *dropGravitation;
+    SDL_Thread *serverInformation;
+
     TCPsocket socket;
     TCPsocket *socketPekare;
     socketPekare = &socket;
 
     tcp_socket_connect(socketPekare);
 
-    SDL_Thread *enemy;
-    SDL_Thread *updateScreen;
-    SDL_Thread *dropGravitation;
-    SDL_Thread *serverInformation;
+    positionStart = position_start_function(socketPekare);
 
     if(initBuild()) // Om init och loadmedia fungerar körs programmet
     {

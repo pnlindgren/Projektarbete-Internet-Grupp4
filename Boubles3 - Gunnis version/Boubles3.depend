@@ -220,7 +220,7 @@
 1430909655 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
 	<stdbool.h>
 
-1430916506 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
+1431075716 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
 	<stdio.h>
 	<stdbool.h>
 	<string.h>
@@ -240,7 +240,7 @@
 
 1430909552 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.h
 
-1430909776 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.h
+1431075748 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.h
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\clientfunctions.h
 
@@ -307,4 +307,114 @@
 	"dropFunction.h"
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\enemy.h
+
+1430916506 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\boubles_main2.c
+	<stdio.h>
+	<stdbool.h>
+	<string.h>
+	<stdlib.h>
+	"main.h"
+	"initFunctions.h"
+	"close.h"
+	"enemy.h"
+	"keyInput2.h"
+	"screenUpdater.h"
+	"dropFunction.h"
+	"tcp_socket.h"
+
+1430909612 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1430909488 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\initfunctions.h
+
+1430909451 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\close.h
+
+1430819779 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\enemy.h
+
+1430909552 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\keyinput2.h
+
+1430909655 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\screenupdater.h
+	<stdbool.h>
+
+1430819779 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\dropfunction.h
+
+1430909776 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\tcp_socket.h
+
+1430908031 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\close.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"close.h"
+
+1430916377 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\collisionhandler.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"collisionHandler.h"
+
+1430819779 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\collisionhandler.h
+
+1430842183 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\dropfunction.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"dropFunction.h"
+
+1430916395 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\enemy.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<time.h>
+	"main.h"
+	"enemy.h"
+	"collisionHandler.h"
+	"dropFunction.h"
+
+1430910180 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\initfunctions.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"initFunctions.h"
+
+1430907151 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\jump.c
+	"main.h"
+	"jump.h"
+	"dropFunction.h"
+
+1430842183 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\jump.h
+
+1430916555 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\keyinput2.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"keyInput2.h"
+	"collisionHandler.h"
+	"shoot.h"
+
+1430909690 c:\users\mr.loser\documents\internet projekt\programmet\boubles4\shoot.h
+
+1430907940 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\screenupdater.c
+	"main.h"
+	"screenUpdater.h"
+	<stdbool.h>
+
+1430916608 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\shoot.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"shoot.h"
+	"enemy.h"
+
+1430844225 source:c:\users\mr.loser\documents\internet projekt\programmet\boubles4\tcp_socket.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<string.h>
+	"main.h"
+	"tcp_socket.h"
 
