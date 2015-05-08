@@ -20,4 +20,6 @@ extern bool characterCollision;
 extern SDL_Rect bubble_rect;
 extern bool bubble_view;
 
+extern recieved_Information recievedI;
+
 #endif

@@ -6,7 +6,7 @@
 #define GHOST "pictures/ghost.png"
 #define BUBBLE "pictures/bubble.png"
 
-bool initBuild();
+bool initBuild(int positionStart);
 bool init();
 bool loadMedia();
 bool loadKeyImage(char path[100], int pressed_key);

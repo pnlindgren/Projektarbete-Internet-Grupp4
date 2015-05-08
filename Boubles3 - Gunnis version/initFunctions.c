@@ -4,7 +4,7 @@
 #include "main.h"
 #include "initFunctions.h"
 
-bool initBuild()
+bool initBuild(int positionStart)
 {
     bool buildSuccess = true;
 
@@ -22,20 +22,30 @@ bool initBuild()
         }
         else
         {
-            character_rect.x = 396;
-            character_rect.y = 97;
-            character_rect.w = 50;
-            character_rect.h = 50;
+            if(positionStart == 1)
+            {
+                character_rect.x = 550;
+                character_rect.y = 97;
+                character_rect.w = 50;
+                character_rect.h = 50;
+            }
+            else if(positionStart == 0)
+            {
+                character_rect.x = 40;
+                character_rect.y = 97;
+                character_rect.w = 50;
+                character_rect.h = 50;
+            }
 
             background_rect.x = 0;
             background_rect.y = 0;
             background_rect.w = 640;
             background_rect.h = 480;
 
-            ghost_rect.x = 250;
-            ghost_rect.y = 97;
-            ghost_rect.w = 50;
-            ghost_rect.h = 50;
+            //ghost_rect.x = 250;
+            //ghost_rect.y = 97;
+            //ghost_rect.w = 50;
+            //ghost_rect.h = 50;
 
             left_wall.x = 0;
             left_wall.y = 0;

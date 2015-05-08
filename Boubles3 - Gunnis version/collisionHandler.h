@@ -2,6 +2,7 @@
 #define COLLISION
 
 bool collisions(SDL_Rect rectangle);
+int enemyCollision();
 
 extern SDL_Rect ghost_rect;
 extern SDL_Rect character_rect;

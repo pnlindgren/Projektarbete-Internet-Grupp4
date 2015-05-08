@@ -8,11 +8,11 @@ bool collisions(SDL_Rect rectangle)
 {
     bool collision = false;
 
-    if(SDL_HasIntersection(&ghost_rect, &character_rect))
-    {
-        collision = true;
-        characterCollision = true;
-    }
+    //if(SDL_HasIntersection(&ghost_rect, &character_rect))
+    //{
+    //    collision = true;
+    //    characterCollision = true;
+    //}
     if(SDL_HasIntersection(&left_wall, &rectangle))
     {
         collision = true;
@@ -25,4 +25,15 @@ bool collisions(SDL_Rect rectangle)
     }
 
     return collision;
+}
+
+int enemyCollision()
+{
+    while(1)
+    {
+        if(SDL_HasIntersection(&ghost_rect, &character_rect))
+        {
+            characterCollision = true;
+        }
+    }
 }

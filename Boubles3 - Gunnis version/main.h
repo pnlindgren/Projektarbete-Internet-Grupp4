@@ -20,4 +20,10 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
+struct recievedInformation
+{
+    SDL_Rect character_rects[2];
+    SDL_Rect ghostRect;
+}; typedef struct recievedInformation recieved_Information;
+
 #endif

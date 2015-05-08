@@ -45,7 +45,7 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 
 void clientConnection(TCPsocket *socketPekare)
 {
-    int len,result;
+    /*int len,result;
 
     send_information klient_send;
 
@@ -64,6 +64,31 @@ void clientConnection(TCPsocket *socketPekare)
         }
 
         SDL_Delay(100);
+    }*/
+
+
+
+
+
+
+
+    int len,result;
+    len = sizeof(recievedI) + 1;
+
+    while(1)
+    {
+        len = sizeof(recievedI) + 1;
+
+        result=SDLNet_TCP_Recv(*socketPekare,&recievedI,len);
+        if(result < len)
+        {
+            printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
+            // It may be good to disconnect sock because it is likely invalid now.
+        }
+
+        ghost_rect = recievedI.ghostRect;
+
+        SDL_Delay(100);
     }
 }
 
@@ -76,7 +101,7 @@ int position_start_function(TCPsocket *socketPekare)
     result=SDLNet_TCP_Recv(*socketPekare,&startPosition,len);
     if(result < len)
     {
-        printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
+        printf("Position start error: %s\n", SDLNet_GetError());
         // It may be good to disconnect sock because it is likely invalid now.
     }
 

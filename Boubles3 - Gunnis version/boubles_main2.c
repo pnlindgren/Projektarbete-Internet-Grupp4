@@ -11,6 +11,7 @@
 #include "screenUpdater.h"
 #include "dropFunction.h"
 #include "tcp_socket.h"
+#include "collisionHandler.h"
 
 SDL_Window*  gWindow = NULL;
 
@@ -36,6 +37,8 @@ int frame = 3;  // vilken frame blåa krokodilen börjar på
 bool characterCollision = false;
 bool bubble_view = false;
 
+recieved_Information recievedI;
+
 // Nytt *******************************************************
 
 int main(int argc, char * argv[])
@@ -55,12 +58,13 @@ int main(int argc, char * argv[])
 
     positionStart = position_start_function(socketPekare);
 
-    if(initBuild()) // Om init och loadmedia fungerar körs programmet
+    if(initBuild(positionStart)) // Om init och loadmedia fungerar körs programmet
     {
         serverInformation   = SDL_CreateThread(clientConnection, "clientConnection", socketPekare);
         updateScreen        = SDL_CreateThread(screenUpdateFunction, "updateThread", (void *)NULL);
         dropGravitation     = SDL_CreateThread(dropFunction, "dropThread", (void*)NULL);
-        enemy               = SDL_CreateThread(nextMove, "enemyThread", (void *)NULL);
+        enemy               = SDL_CreateThread(enemyCollision, "enemyCollision", (void*)NULL);
+        //enemy               = SDL_CreateThread(nextMove, "enemyThread", (void *)NULL);
 
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }
