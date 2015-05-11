@@ -46,10 +46,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="dropFunction.h" />
-		<Unit filename="enemy.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="enemy.h" />
 		<Unit filename="initFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
