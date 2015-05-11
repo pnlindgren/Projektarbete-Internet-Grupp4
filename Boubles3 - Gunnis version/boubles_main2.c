@@ -21,6 +21,7 @@ SDL_Texture* mBackground = NULL;
 SDL_Texture* mGhost = NULL;
 SDL_Texture* mWall = NULL;
 SDL_Texture* mBubble = NULL;
+SDL_Texture* mGameOver = NULL;
 
 SDL_Rect gSpriteClips[13];
 

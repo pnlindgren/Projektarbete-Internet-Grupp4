@@ -5,6 +5,7 @@
 #define BLUE_CROCODILE "pictures/bluecroc.png"
 #define GHOST "pictures/ghost.png"
 #define BUBBLE "pictures/bubble.png"
+#define GAMEOVER "pictures/Game_Over.png"
 
 bool initBuild(int positionStart);
 bool init();
@@ -18,6 +19,7 @@ extern SDL_Texture* mBlueCrocodile;
 extern SDL_Texture* mBackground;
 extern SDL_Texture* mGhost;
 extern SDL_Texture* mBubble;
+extern SDL_Texture* mGameOver;
 extern SDL_Rect gSpriteClips[13];
 extern SDL_Rect character_rect;
 extern SDL_Rect background_rect;

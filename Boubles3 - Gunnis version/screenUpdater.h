@@ -9,6 +9,7 @@ extern SDL_Texture* mBlueCrocodile;
 extern SDL_Texture* mBackground;
 extern SDL_Texture* mGhost;
 extern SDL_Texture* mBubble;
+extern SDL_Texture* mGameOver;
 extern SDL_Rect gSpriteClips[13];
 extern SDL_Rect character_rect;
 extern SDL_Rect background_rect;

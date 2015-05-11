@@ -123,6 +123,9 @@ bool loadMedia()
     SDL_Surface* gBubble = IMG_Load(BUBBLE);
     mBubble = SDL_CreateTextureFromSurface(gRenderer, gBubble);
 
+    SDL_Surface* gGameOver = IMG_Load(GAMEOVER);
+    mGameOver = SDL_CreateTextureFromSurface(gRenderer, gGameOver);
+
     // Crocodile
     gSpriteClips[ 0 ].x = 0;
     gSpriteClips[ 0 ].y = 0;
@@ -182,6 +185,12 @@ bool loadMedia()
     gSpriteClips[ 10 ].y = 0;
     gSpriteClips[ 10 ].w = 40;
     gSpriteClips[ 10 ].h = 40;
+
+    // Game Over
+    gSpriteClips[ 11 ].x = 0;
+    gSpriteClips[ 11 ].y = 0;
+    gSpriteClips[ 11 ].w = 191;
+    gSpriteClips[ 11 ].h = 63;
 
     return success;
 }
