@@ -39,7 +39,10 @@ void keyInput2()
                     }
                     case SDLK_SPACE:
                     {
-                        bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
+                        if (lookDirection == RIGHT)
+                            bubble_thread = SDL_CreateThread(shootFuncRight, "clientConnection", (void *)NULL);
+                        else if (lookDirection == LEFT)
+                            bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
                         break;
                     }
                     case SDLK_LEFT:

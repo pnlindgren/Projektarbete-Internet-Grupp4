@@ -34,7 +34,7 @@ int screenUpdateFunction(void * pointer)
             SDL_RenderPresent(gRenderer);
         }
 
-        if(characterCollision == true)
+        if((characterCollision == true) || (ghosthit == 5))
         {
             quit = true;
         }

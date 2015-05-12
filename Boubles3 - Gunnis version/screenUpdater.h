@@ -20,6 +20,7 @@ extern int frame;
 extern bool characterCollision;
 extern SDL_Rect bubble_rect;
 extern bool bubble_view;
+extern int ghosthit;
 
 extern recieved_Information recievedI;
 

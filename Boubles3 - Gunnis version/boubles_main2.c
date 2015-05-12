@@ -37,6 +37,7 @@ SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
 int frame = 3;  // vilken frame blåa krokodilen börjar på
 bool characterCollision = false;
 bool bubble_view = false;
+int ghosthit = 0;
 
 recieved_Information recievedI;
 
