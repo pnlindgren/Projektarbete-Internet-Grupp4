@@ -45,31 +45,50 @@ void keyInput2()
                     case SDLK_LEFT:
                     {
                         character_rect.x -= 4;
+                        SDL_Delay(30);
                         if(collisions(character_rect))
                         {
                             character_rect.x += 4;
                         }
                         flip = SDL_FLIP_NONE;
-                        frame = 2;
+                        if(frame == 2)
+                            frame = 1;
+                        else if(frame == 1)
+                            frame = 0;
+                        else if (frame == 0)
+                            frame = 3;
+                        else
+                            frame = 2;
                         //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = LEFT;
+
                         break;
                     }
                     case SDLK_RIGHT:
                     {
                         character_rect.x += 4;
+                        SDL_Delay(30);
                         if(collisions(character_rect))
                         {
                             character_rect.x -= 4;
                         }
-                        flip = SDL_FLIP_NONE;
-                        frame = 3;
+                        flip = SDL_FLIP_HORIZONTAL;
+                        if(frame == 2)
+                            frame = 1;
+                        else if (frame == 1)
+                            frame = 0;
+                        else if (frame == 0)
+                            frame = 3;
+                        else
+                            frame = 2;
                         //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = RIGHT;
+
                         break;
                     }
                 }
             }
         }
+
     }
 }

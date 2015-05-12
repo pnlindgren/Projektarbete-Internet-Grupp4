@@ -2,7 +2,7 @@
 #define INITFUNCTIONS
 
 #define BACKGROUND "pictures/NewBackground.bmp"
-#define BLUE_CROCODILE "pictures/bluecroc.png"
+#define BLUE_CROCODILE "pictures/nykrok.png"
 #define GHOST "pictures/ghost.png"
 #define BUBBLE "pictures/bubble.png"
 #define GAMEOVER "pictures/Game_Over.png"
