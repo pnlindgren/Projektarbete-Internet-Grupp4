@@ -31,12 +31,11 @@ enum KeyPressSurfaces
     KEY_PRESS_SURFACE_TOTAL
 };
 
-struct transferInformation
+struct recievedInformation
 {
     SDL_Rect character_rects[2];
     SDL_Rect ghostRect;
-
-}; typedef struct transferInformation transfer_Information;
+}; typedef struct recievedInformation recieved_Information;
 
 #endif
 

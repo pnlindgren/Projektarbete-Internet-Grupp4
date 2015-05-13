@@ -31,18 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="clientStart.c">
+		<Unit filename="initFunctions.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="clientStart.h" />
-		<Unit filename="gameStart.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="gameStart.h" />
+		<Unit filename="initFunctions.h" />
 		<Unit filename="server_main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="server_main.h" />
+		<Unit filename="startClient.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="startClient.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
