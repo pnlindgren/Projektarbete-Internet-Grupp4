@@ -64,11 +64,12 @@
 
 1431532758 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
 
-1431536570 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+1431613680 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\server_main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<stdbool.h>
+	<time.h>
 	"SDL.h"
 	"SDL_net.h"
 	"server_main.h"
@@ -83,10 +84,11 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1431537465 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+1431555801 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.h
 
-1431537527 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+1431613710 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.c
 	<stdio.h>
+	<time.h>
 	<stdbool.h>
 	"server_main.h"
 	"startClient.h"
