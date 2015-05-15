@@ -261,12 +261,11 @@
 
 1431425519 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
 
-1430916608 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
+1431425487 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"shoot.h"
-	"enemy.h"
 
 1431100284 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.c
 	<stdio.h>
