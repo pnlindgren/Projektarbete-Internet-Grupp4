@@ -17,6 +17,10 @@ bool firstPosition;//Används i startClient vid init av startposition
 int client1Position;
 int clientNr; //För at hålla koll på vilken klient som har vilken socket öppen
 
+int klientPositionX[2];
+int klientPositionY[2];
+
+
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 
 int main(int argc, char **argv)
@@ -36,18 +40,18 @@ int main(int argc, char **argv)
     recieved_Information gameData;
     gameData.character_rects[0].x=123;
     gameData.character_rects[0].y=321;
-    gameData.character_rects[0].w=111;
-    gameData.character_rects[0].h=222;
+    gameData.character_rects[0].w=50;
+    gameData.character_rects[0].h=50;
 
-    gameData.character_rects[1].x=456;
-    gameData.character_rects[1].y=654;
-    gameData.character_rects[1].w=333;
-    gameData.character_rects[1].h=444;
+    gameData.character_rects[1].x=30;
+    gameData.character_rects[1].y=30;
+    gameData.character_rects[1].w=50;
+    gameData.character_rects[1].h=50;
 
-    gameData.ghostRect.x=789;
-    gameData.ghostRect.x=789;
-    gameData.ghostRect.w=777;
-    gameData.ghostRect.h=888;
+    gameData.ghostRect.x=300;
+    gameData.ghostRect.y=200;
+    gameData.ghostRect.w=50;
+    gameData.ghostRect.h=50;
 
 
     positionSetMutex = SDL_CreateMutex();
@@ -60,7 +64,7 @@ int main(int argc, char **argv)
 
 	waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
     client1 = SDL_CreateThread(startClient, "Client1", &gameData);
-    client2 = SDL_CreateThread(startClient, "Client1", &gameData);
+    client2 = SDL_CreateThread(startClient, "Client2", &gameData);
     while(true)
     {
 

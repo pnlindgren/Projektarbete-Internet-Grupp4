@@ -14,13 +14,44 @@ int startClient(recieved_Information *gameData)
 
     int sendNumberX, sendNumberY;
 
+    rect_objects gameRectangles;
+
+    int len = sizeof(gameRectangles);
+
+    char serialiseradStruct[len];
+
+
 
     while(1)
     {
-        sendNumberX=(rand()%999)+1;
-        sendNumberY=(rand()%2);
+        SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
+        memcpy(&gameRectangles, &serialiseradStruct, len);
 
-        SDLNet_TCP_Send(csd[positionNr], gameData, sizeof(*gameData));
+        printf("%d\n", gameRectangles.character_rect.x);
+
+        /*if(positionNr == 0)
+        {
+            klientPositionX[0] = gameRectangles.character_rect.x;
+            klientPositionY[0] = gameRectangles.character_rect.y;
+
+            gameRectangles.rival_rect.x = klientPositionX[1];
+            gameRectangles.rival_rect.y = klientPositionY[1];
+        }
+        else
+        {
+            klientPositionX[1] = gameRectangles.character_rect.x;
+            klientPositionY[1] = gameRectangles.character_rect.y;
+
+            gameRectangles.rival_rect.x = klientPositionX[0];
+            gameRectangles.rival_rect.y = klientPositionX[0];
+
+        }
+
+        memcpy(&serialiseradStruct, &gameRectangles, len);
+
+        result=SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
+        */
+        SDL_Delay(100);
 
     }
 
@@ -39,6 +70,17 @@ int setPosition()
         setNr = rand()%2;
         client1Position = setNr + 1;
 
+        klientPositionX[0]=15;
+        klientPositionY[0]=15;
+
+        klientPositionX[1]= 300;
+        klientPositionY[1]= 300;
+
+        int sendInfo = 0;
+
+        int len_int = sizeof(sendInfo)+1;
+        SDLNet_TCP_Send(csd[0], &sendInfo, len_int);
+
     }
     else
     {
@@ -50,6 +92,12 @@ int setPosition()
 
         x = client1Position % 2;
         //SDLNet_TCP_Send(csd[1], &x, sizeof(int));
+
+        int sendInfo = 1;
+
+
+        int len_int = sizeof(sendInfo)+1;
+        SDLNet_TCP_Send(csd[1], &sendInfo, len_int);
 
     }
 

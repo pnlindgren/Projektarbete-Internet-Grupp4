@@ -42,6 +42,7 @@ struct graphic_struct
 struct rect_struct
 {
     SDL_Rect character_rect;
+    SDL_Rect rival_rect;
     SDL_Rect background_rect;
     SDL_Rect ghost_rect;
     SDL_Rect left_wall;

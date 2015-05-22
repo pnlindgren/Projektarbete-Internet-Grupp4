@@ -46,19 +46,25 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 void clientConnection(TCPsocket *socketPekare)
 {
     int len,result;
-    len = sizeof(recievedI) + 1;
+    len = sizeof(gameRectangels);
+    char serialiseradStruct[len];
 
     while(1)
     {
-        result=SDLNet_TCP_Recv(*socketPekare,&recievedI,len);
+
+        memcpy(&serialiseradStruct, &gameRectangels, len);
+
+        result = SDLNet_TCP_Send(*socketPekare, &serialiseradStruct, len);
+
+        result=SDLNet_TCP_Recv(*socketPekare,&serialiseradStruct,len);
+
+        memcpy(&gameRectangels,&serialiseradStruct,len);
+
         /*if(result < len)
         {
             printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
             // It may be good to disconnect sock because it is likely invalid now.
         }*/
-
-        gameRectangels.ghost_rect = recievedI.ghostRect;
-
         SDL_Delay(100);
     }
 }
@@ -75,6 +81,7 @@ int position_start_function(TCPsocket *socketPekare)
         printf("Position start error: %s\n", SDLNet_GetError());
         // It may be good to disconnect sock because it is likely invalid now.
     }
+    printf("%d\n", startPosition);
 
     return startPosition;
 }
