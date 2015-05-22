@@ -29,12 +29,21 @@ int startClient(recieved_Information *gameData)
 
         //printf("%d\n", gameRectangles.character_rect.x);
 
+        if(gameRectangles.bubble_view == true)
+        {
+            printf("bubble view visar sig vara true\n");
+
+            bubbleX = gameRectangles.bubble_rect.x;
+            bubbleY = gameRectangles.bubble_rect.y;
+        }
+
+        gameRectangles.bubble_rect.x = bubbleX;
+        gameRectangles.bubble_rect.y = bubbleY;
+
         if(positionNr == 0)
         {
             klientPositionX[0] = gameRectangles.character_rect.x;
             klientPositionY[0] = gameRectangles.character_rect.y;
-
-            SDL_Delay(100);
 
             gameRectangles.rival_rect.x = klientPositionX[1];
             gameRectangles.rival_rect.y = klientPositionY[1];
@@ -44,8 +53,6 @@ int startClient(recieved_Information *gameData)
             klientPositionX[1] = gameRectangles.character_rect.x;
             klientPositionY[1] = gameRectangles.character_rect.y;
 
-            SDL_Delay(100);
-
             gameRectangles.rival_rect.x = klientPositionX[0];
             gameRectangles.rival_rect.y = klientPositionY[0];
 
@@ -54,8 +61,6 @@ int startClient(recieved_Information *gameData)
         memcpy(&serialiseradStruct, &gameRectangles, len);
 
         SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
-
-        SDL_Delay(100);
 
     }
 

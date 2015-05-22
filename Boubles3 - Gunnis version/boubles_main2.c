@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
 
@@ -25,7 +24,6 @@ SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
 
 int frame = 3;  // vilken frame blåa krokodilen börjar på
 bool characterCollision = false;
-bool bubble_view = false;
 int ghosthit = 0;
 
 recieved_Information recievedI;
@@ -35,6 +33,8 @@ recieved_Information recievedI;
 int main(int argc, char * argv[])
 {
     int positionStart = 2;
+
+    gameRectangels.bubble_view = false;
 
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;

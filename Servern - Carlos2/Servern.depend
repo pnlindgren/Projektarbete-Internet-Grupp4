@@ -14,7 +14,7 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1432288597 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+1432302848 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -50,9 +50,9 @@
 
 1431532758 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
 
-1432288859 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+1432301300 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
 
-1432298635 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+1432302754 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
 	<stdio.h>
 	<time.h>
 	<stdbool.h>

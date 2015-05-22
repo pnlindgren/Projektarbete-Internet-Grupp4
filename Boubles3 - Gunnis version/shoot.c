@@ -8,7 +8,7 @@ int shootFunc(){
 
     bool quit = false;
 
-    bubble_view = true;
+    gameRectangels.bubble_view = true;
 
     gameRectangels.bubble_rect.x = gameRectangels.character_rect.x - 40;
     gameRectangels.bubble_rect.y = gameRectangels.character_rect.y;
@@ -17,7 +17,7 @@ int shootFunc(){
     {
         if(SDL_HasIntersection(&gameRectangels.ghost_rect, &gameRectangels.bubble_rect))
         {
-            bubble_view = false;
+            gameRectangels.bubble_view = false;
             ghosthit++;
             gameRectangels.ghost_rect.x=0;
             gameRectangels.ghost_rect.y=0;
@@ -30,14 +30,14 @@ int shootFunc(){
     }
 
 
-    bubble_view = false;
+    gameRectangels.bubble_view = false;
 }
 
 int shootFuncRight(){
 
     bool quit = false;
 
-    bubble_view = true;
+    gameRectangels.bubble_view = true;
 
     gameRectangels.bubble_rect.x = gameRectangels.character_rect.x + 40;
     gameRectangels.bubble_rect.y = gameRectangels.character_rect.y;
@@ -46,7 +46,7 @@ int shootFuncRight(){
     {
         if(SDL_HasIntersection(&gameRectangels.ghost_rect, &gameRectangels.bubble_rect))
         {
-            bubble_view = false;
+            gameRectangels.bubble_view = false;
             ghosthit++;
             gameRectangels.ghost_rect.x=0;
             gameRectangels.ghost_rect.y=0;
@@ -58,5 +58,5 @@ int shootFuncRight(){
         gameRectangels.bubble_rect.x++;
     }
 
-    bubble_view = false;
+    gameRectangels.bubble_view = false;
 }

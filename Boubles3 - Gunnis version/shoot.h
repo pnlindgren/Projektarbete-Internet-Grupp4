@@ -3,7 +3,6 @@
 
 
 extern rect_objects gameRectangels;
-extern bool bubble_view;
 extern int ghosthit;
 
 

@@ -67,8 +67,8 @@ bool initBuild(int positionStart)
             gameRectangels.game_over.w = 191;
             gameRectangels.game_over.h = 63;
 
-            gameRectangels.bubble_rect.x = 0;
-            gameRectangels.bubble_rect.y = 0;
+            gameRectangels.bubble_rect.x = 1000;
+            gameRectangels.bubble_rect.y = 1000;
             gameRectangels.bubble_rect.w = 40;
             gameRectangels.bubble_rect.h = 40;
 

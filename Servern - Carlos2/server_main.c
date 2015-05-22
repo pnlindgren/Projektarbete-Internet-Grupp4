@@ -13,6 +13,7 @@
 void waitForClients(TCPsocket *sd);
 
 SDL_mutex *positionSetMutex;
+
 bool firstPosition;//Används i startClient vid init av startposition
 int client1Position;
 int clientNr; //För at hålla koll på vilken klient som har vilken socket öppen
@@ -20,6 +21,9 @@ int clientNr; //För at hålla koll på vilken klient som har vilken socket öppen
 int klientPositionX[2];
 int klientPositionY[2];
 
+int bubbleX = 1000;
+int bubbleY = 1000;
+bool bubble_view = false;
 
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 

@@ -20,6 +20,8 @@
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
+#include <stdbool.h>
+
 struct recievedInformation
 {
     SDL_Rect character_rects[2];
@@ -49,6 +51,7 @@ struct rect_struct
     SDL_Rect right_wall;
     SDL_Rect bubble_rect;
     SDL_Rect game_over;
+    bool bubble_view;
 
 }; typedef struct rect_struct rect_objects;
 

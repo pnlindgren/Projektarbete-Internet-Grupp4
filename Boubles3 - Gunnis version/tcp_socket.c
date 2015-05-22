@@ -60,6 +60,8 @@ void clientConnection(TCPsocket *socketPekare)
 
         memcpy(&gameRectangels,&serialiseradStruct,len);
 
+        printf("X:%d Y:%d\n", gameRectangels.bubble_rect.x, gameRectangels.bubble_rect.y);
+
         /*if(result < len)
         {
             printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());

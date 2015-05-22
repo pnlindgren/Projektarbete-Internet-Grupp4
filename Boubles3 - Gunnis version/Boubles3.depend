@@ -424,19 +424,19 @@
 	"main.h"
 	"close.h"
 
-1432287460 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
+1432300364 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
 	<SDL2/SDL.h>
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
+	<stdbool.h>
 
 1431525687 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.h
 
-1432287157 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
+1432300364 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
 	<stdio.h>
-	<stdbool.h>
 	<string.h>
 	<stdlib.h>
 	"main.h"
@@ -455,7 +455,7 @@
 
 1432287157 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.h
 
-1432287157 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
+1432300213 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
 	<stdbool.h>
 
 1432287157 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\dropfunction.h
@@ -497,14 +497,14 @@
 	"collisionHandler.h"
 	"shoot.h"
 
-1432287157 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
+1432300195 c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
 
 1432297895 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
 	<stdbool.h>
 
-1432287157 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
+1432300183 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
