@@ -3,7 +3,7 @@
 
 void jump();
 
-extern SDL_Rect character_rect;
+extern rect_objects gameRectangels;
 extern SDL_mutex *jumpMutex;
 
 #endif // JUMP

@@ -47,11 +47,11 @@ void keyInput2()
                     }
                     case SDLK_LEFT:
                     {
-                        character_rect.x -= 4;
+                        gameRectangels.character_rect.x -= 4;
                         SDL_Delay(30);
-                        if(collisions(character_rect))
+                        if(collisions(gameRectangels.character_rect))
                         {
-                            character_rect.x += 4;
+                            gameRectangels.character_rect.x += 4;
                         }
                         flip = SDL_FLIP_NONE;
                         if(frame == 2)
@@ -69,11 +69,11 @@ void keyInput2()
                     }
                     case SDLK_RIGHT:
                     {
-                        character_rect.x += 4;
+                        gameRectangels.character_rect.x += 4;
                         SDL_Delay(30);
-                        if(collisions(character_rect))
+                        if(collisions(gameRectangels.character_rect))
                         {
-                            character_rect.x -= 4;
+                            gameRectangels.character_rect.x -= 4;
                         }
                         flip = SDL_FLIP_HORIZONTAL;
                         if(frame == 2)

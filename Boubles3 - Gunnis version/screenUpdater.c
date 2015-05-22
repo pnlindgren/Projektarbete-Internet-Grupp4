@@ -6,32 +6,25 @@ int screenUpdateFunction(void * pointer)
 {
     bool quit = false;
 
-    SDL_Rect game_over;
-
-    game_over.x = 200;
-    game_over.y = 200;
-    game_over.w = 191;
-    game_over.h = 63;
-
     while(quit != true)
     {
         if(bubble_view == false)
         {
             // SDL_RenderClear(gRenderer);
-            SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[frame],&character_rect , 0, NULL, flip);
-            SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[8],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderPresent(gRenderer);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.background, &gSpriteClips[6],&gameRectangels.background_rect , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[frame],&gameRectangels.character_rect , 0, NULL, flip);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.ghost, &gSpriteClips[8],&gameRectangels.ghost_rect , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderPresent(gameTextures.renderer);
         }
         else
         {
-            SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[frame],&character_rect , 0, NULL, flip);
-            SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[8],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBubble, &gSpriteClips[10],&bubble_rect , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
-            SDL_RenderPresent(gRenderer);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.background, &gSpriteClips[6],&gameRectangels.background_rect , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[frame],&gameRectangels.character_rect , 0, NULL, flip);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.ghost, &gSpriteClips[8],&gameRectangels.ghost_rect , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.bubble, &gSpriteClips[10],&gameRectangels.bubble_rect , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
+            SDL_RenderPresent(gameTextures.renderer);
         }
 
         if((characterCollision == true) || (ghosthit == 5))
@@ -40,16 +33,16 @@ int screenUpdateFunction(void * pointer)
         }
     }
 
-    SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[8],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderPresent(gRenderer);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.background, &gSpriteClips[6],&gameRectangels.background_rect , 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.ghost, &gSpriteClips[8],&gameRectangels.ghost_rect , 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderPresent(gameTextures.renderer);
 
     SDL_Delay(1000);
 
-    SDL_RenderCopyEx(gRenderer, mBackground, &gSpriteClips[6],&background_rect , 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[frame],&character_rect , 0, NULL, flip);
-    SDL_RenderCopyEx(gRenderer, mGhost, &gSpriteClips[8],&ghost_rect , 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderCopyEx(gRenderer, mBlueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderCopyEx(gRenderer, mGameOver, &gSpriteClips[11],&game_over, 0, NULL, SDL_FLIP_NONE);
-    SDL_RenderPresent(gRenderer);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.background, &gSpriteClips[6],&gameRectangels.background_rect , 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[frame],&gameRectangels.character_rect , 0, NULL, flip);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.ghost, &gSpriteClips[8],&gameRectangels.ghost_rect , 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[1],&recievedI.character_rects[1] , 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(gameTextures.renderer, gameTextures.gameOver, &gSpriteClips[11],&gameRectangels.game_over, 0, NULL, SDL_FLIP_NONE);
+    SDL_RenderPresent(gameTextures.renderer);
 }

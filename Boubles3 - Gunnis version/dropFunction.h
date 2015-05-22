@@ -7,7 +7,6 @@
 int dropFunction(void *pointer);
 int enemyDrop(void *point);
 
-extern SDL_Rect character_rect;
-extern SDL_Rect ghost_rect;
+extern rect_objects gameRectangels;
 
 #endif // DROPFUNCTION

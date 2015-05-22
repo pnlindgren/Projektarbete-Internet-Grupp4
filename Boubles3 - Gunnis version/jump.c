@@ -12,7 +12,7 @@ void jump()
         printf("Jump mutex locked\n");
         for(x = 0; x < 35; x++)
         {
-            character_rect.y -= 4;
+            gameRectangels.character_rect.y -= 4;
             SDL_Delay(20);
         }
         SDL_UnlockMutex(jumpMutex);

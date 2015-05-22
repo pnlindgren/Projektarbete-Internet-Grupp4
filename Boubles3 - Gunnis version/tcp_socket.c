@@ -57,7 +57,7 @@ void clientConnection(TCPsocket *socketPekare)
             // It may be good to disconnect sock because it is likely invalid now.
         }*/
 
-        ghost_rect = recievedI.ghostRect;
+        gameRectangels.ghost_rect = recievedI.ghostRect;
 
         SDL_Delay(100);
     }

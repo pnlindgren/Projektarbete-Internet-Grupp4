@@ -24,38 +24,43 @@ bool initBuild(int positionStart)
         {
             if(positionStart == 1)
             {
-                character_rect.x = 550;
-                character_rect.y = 97;
-                character_rect.w = 50;
-                character_rect.h = 50;
+                gameRectangels.character_rect.x = 550;
+                gameRectangels.character_rect.y = 97;
+                gameRectangels.character_rect.w = 50;
+                gameRectangels.character_rect.h = 50;
             }
             else if(positionStart == 0)
             {
-                character_rect.x = 40;
-                character_rect.y = 97;
-                character_rect.w = 50;
-                character_rect.h = 50;
+                gameRectangels.character_rect.x = 40;
+                gameRectangels.character_rect.y = 97;
+                gameRectangels.character_rect.w = 50;
+                gameRectangels.character_rect.h = 50;
             }
 
-            background_rect.x = 0;
-            background_rect.y = 0;
-            background_rect.w = 640;
-            background_rect.h = 480;
+            gameRectangels.background_rect.x = 0;
+            gameRectangels.background_rect.y = 0;
+            gameRectangels.background_rect.w = 640;
+            gameRectangels.background_rect.h = 480;
 
-            //ghost_rect.x = 250;
-            //ghost_rect.y = 97;
-            //ghost_rect.w = 50;
-            //ghost_rect.h = 50;
+            gameRectangels.left_wall.x = 0;
+            gameRectangels.left_wall.y = 0;
+            gameRectangels.left_wall.w = 16;
+            gameRectangels.left_wall.h = 480;
 
-            left_wall.x = 0;
-            left_wall.y = 0;
-            left_wall.w = 16;
-            left_wall.h = 480;
+            gameRectangels.right_wall.x = 622;
+            gameRectangels.right_wall.y = 0;
+            gameRectangels.right_wall.w = 16;
+            gameRectangels.right_wall.h = 480;
 
-            right_wall.x = 622;
-            right_wall.y = 0;
-            right_wall.w = 16;
-            right_wall.h = 480;
+            gameRectangels.game_over.x = 200;
+            gameRectangels.game_over.y = 200;
+            gameRectangels.game_over.w = 191;
+            gameRectangels.game_over.h = 63;
+
+            gameRectangels.bubble_rect.x = 0;
+            gameRectangels.bubble_rect.y = 0;
+            gameRectangels.bubble_rect.w = 40;
+            gameRectangels.bubble_rect.h = 40;
         }
     }
 
@@ -82,9 +87,9 @@ bool init()
         }
         else
         {
-            gRenderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+            gameTextures.renderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
 
-            if(gRenderer == NULL)
+            if(gameTextures.renderer == NULL)
             {
                 printf("Fungerar ej\n");
                 success = false;
@@ -101,7 +106,7 @@ bool loadMedia()
 
     // sätter bakgrundssurfacen till bakgrundsbilden
     SDL_Surface* gBackground = SDL_LoadBMP(BACKGROUND);
-    mBackground = SDL_CreateTextureFromSurface(gRenderer, gBackground);
+    gameTextures.background = SDL_CreateTextureFromSurface(gameTextures.renderer, gBackground);
 
     if (gBackground == NULL)
     {
@@ -110,21 +115,16 @@ bool loadMedia()
     }
 
     SDL_Surface* gBlueCrocodile = IMG_Load(BLUE_CROCODILE);
-    mBlueCrocodile = SDL_CreateTextureFromSurface(gRenderer, gBlueCrocodile);
-
-    if (gBlueCrocodile == NULL)
-    {
-        printf("Unable to load image %s! SDL_Error: %s\n", BLUE_CROCODILE, SDL_GetError());
-    }
+    gameTextures.blueCrocodile = SDL_CreateTextureFromSurface(gameTextures.renderer, gBlueCrocodile);
 
     SDL_Surface* gGhost = IMG_Load(GHOST);
-    mGhost = SDL_CreateTextureFromSurface(gRenderer, gGhost);
+    gameTextures.ghost = SDL_CreateTextureFromSurface(gameTextures.renderer, gGhost);
 
     SDL_Surface* gBubble = IMG_Load(BUBBLE);
-    mBubble = SDL_CreateTextureFromSurface(gRenderer, gBubble);
+    gameTextures.bubble = SDL_CreateTextureFromSurface(gameTextures.renderer, gBubble);
 
     SDL_Surface* gGameOver = IMG_Load(GAMEOVER);
-    mGameOver = SDL_CreateTextureFromSurface(gRenderer, gGameOver);
+    gameTextures.gameOver = SDL_CreateTextureFromSurface(gameTextures.renderer, gGameOver);
 
     // Crocodile
     gSpriteClips[ 0 ].x = 0;

@@ -2,9 +2,7 @@
 #define SHOOT
 
 
-extern SDL_Rect character_rect;
-extern SDL_Rect bubble_rect;
-extern SDL_Rect ghost_rect;
+extern rect_objects gameRectangels;
 extern bool bubble_view;
 extern int ghosthit;
 

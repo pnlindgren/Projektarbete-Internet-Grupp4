@@ -11,12 +11,7 @@ int position_start_function(TCPsocket *socketPekare);
     SDL_Rect the_character;
 }; typedef struct sendInformation send_information;*/
 
-// ska skickas från klienten
-extern SDL_Rect bubble_rect;
-extern SDL_Rect character_rect;
-
-// ska tas emot från servern
-extern SDL_Rect ghost_rect;
+extern rect_objects gameRectangels;
 
 extern recieved_Information recievedI;
 
