@@ -27,12 +27,14 @@ int startClient(recieved_Information *gameData)
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
         memcpy(&gameRectangles, &serialiseradStruct, len);
 
-        printf("%d\n", gameRectangles.character_rect.x);
+        //printf("%d\n", gameRectangles.character_rect.x);
 
-        /*if(positionNr == 0)
+        if(positionNr == 0)
         {
             klientPositionX[0] = gameRectangles.character_rect.x;
             klientPositionY[0] = gameRectangles.character_rect.y;
+
+            SDL_Delay(100);
 
             gameRectangles.rival_rect.x = klientPositionX[1];
             gameRectangles.rival_rect.y = klientPositionY[1];
@@ -42,15 +44,17 @@ int startClient(recieved_Information *gameData)
             klientPositionX[1] = gameRectangles.character_rect.x;
             klientPositionY[1] = gameRectangles.character_rect.y;
 
+            SDL_Delay(100);
+
             gameRectangles.rival_rect.x = klientPositionX[0];
-            gameRectangles.rival_rect.y = klientPositionX[0];
+            gameRectangles.rival_rect.y = klientPositionY[0];
 
         }
 
         memcpy(&serialiseradStruct, &gameRectangles, len);
 
-        result=SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
-        */
+        SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
+
         SDL_Delay(100);
 
     }

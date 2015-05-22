@@ -28,6 +28,11 @@ bool initBuild(int positionStart)
                 gameRectangels.character_rect.y = 97;
                 gameRectangels.character_rect.w = 50;
                 gameRectangels.character_rect.h = 50;
+
+                gameRectangels.rival_rect.x = 40;
+                gameRectangels.rival_rect.y = 97;
+                gameRectangels.rival_rect.w = 50;
+                gameRectangels.rival_rect.h = 50;
             }
             else if(positionStart == 0)
             {
@@ -35,6 +40,11 @@ bool initBuild(int positionStart)
                 gameRectangels.character_rect.y = 97;
                 gameRectangels.character_rect.w = 50;
                 gameRectangels.character_rect.h = 50;
+
+                gameRectangels.rival_rect.x = 550;
+                gameRectangels.rival_rect.y = 97;
+                gameRectangels.rival_rect.w = 50;
+                gameRectangels.rival_rect.h = 50;
             }
 
             gameRectangels.background_rect.x = 0;
@@ -61,6 +71,7 @@ bool initBuild(int positionStart)
             gameRectangels.bubble_rect.y = 0;
             gameRectangels.bubble_rect.w = 40;
             gameRectangels.bubble_rect.h = 40;
+
         }
     }
 
