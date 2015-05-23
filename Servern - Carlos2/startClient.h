@@ -14,6 +14,7 @@ extern int bubbleX;
 extern int bubbleY;
 extern int frame[2];
 extern SDL_RendererFlip flip[2];
+extern SDL_Rect ghostRect;
 
 
 struct game_struct

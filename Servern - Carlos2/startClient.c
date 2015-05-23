@@ -25,6 +25,8 @@ int startClient(recieved_Information *gameData)
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
         memcpy(&gameVariables, &serialiseradStruct, len);
 
+        gameVariables.ghost_rect = ghostRect;
+
         frame[positionNr] = gameVariables.frame;
         flip[positionNr] = gameVariables.character_flip;
 
