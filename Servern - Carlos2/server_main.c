@@ -29,9 +29,15 @@ bool bubble_view = false;
 
 int frame[2];
 SDL_RendererFlip flip[2];
-SDL_Rect ghostRect;
-SDL_Rect left_wall;
-SDL_Rect right_wall;
+SDL_Rect ghostRect1;
+SDL_Rect ghostRect2;
+SDL_Rect ghostRect3;
+SDL_Rect ghostRect4;
+SDL_Rect ghostRect5;
+SDL_Rect r3p1v;         // rad 3 platform 1 vänstersida (finns 4 rader (0,1,2,3))
+SDL_Rect r3p1h;
+SDL_Rect r2p0v;
+SDL_Rect r2p0h;
 
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 
@@ -39,20 +45,50 @@ int main(int argc, char **argv)
 {
     srand(time(NULL));
 
-    left_wall.x = 0;
-    left_wall.y = 0;
-    left_wall.w = 16;
-    left_wall.h = 480;
+    r3p1v.x = 180;
+    r3p1v.y = 97;
+    r3p1v.w = 16;
+    r3p1v.h = 50;
 
-    right_wall.x = 622;
-    right_wall.y = 0;
-    right_wall.w = 16;
-    right_wall.h = 480;
+    r3p1h.x = 440;
+    r3p1h.y = 97;
+    r3p1h.w = 16;
+    r3p1h.h = 50;
 
-    ghostRect.x = 300;
-    ghostRect.y = 97;
-    ghostRect.w = 50;
-    ghostRect.h = 50;
+    r2p0v.x = 0;
+    r2p0v.y = 195;
+    r2p0v.w = 16;
+    r2p0v.h = 50;
+
+    r2p0h.x = 270;
+    r2p0h.y = 195;
+    r2p0h.w = 16;
+    r2p0h.h = 50;
+
+    ghostRect1.x = 300;
+    ghostRect1.y = 97;
+    ghostRect1.w = 50;
+    ghostRect1.h = 50;
+
+    ghostRect2.x = 50;
+    ghostRect2.y = 195;
+    ghostRect2.w = 50;
+    ghostRect2.h = 50;
+
+    ghostRect3.x = 500;
+    ghostRect3.y = 195;
+    ghostRect3.w = 50;
+    ghostRect3.h = 50;
+
+    ghostRect4.x = 300;
+    ghostRect4.y = 297;
+    ghostRect4.w = 50;
+    ghostRect4.h = 50;
+
+    ghostRect5.x = 400;
+    ghostRect5.y = 415;
+    ghostRect5.w = 50;
+    ghostRect5.h = 50;
 
 	IPaddress ip, *remoteIP;
 	int quit, quit2;
@@ -62,24 +98,7 @@ int main(int argc, char **argv)
 	firstPosition = false;
 	client1Position = 0;
 
-	SDL_Thread *client1, *client2, *enemy;
-
-    recieved_Information gameData;
-    gameData.character_rects[0].x=123;
-    gameData.character_rects[0].y=321;
-    gameData.character_rects[0].w=50;
-    gameData.character_rects[0].h=50;
-
-    gameData.character_rects[1].x=30;
-    gameData.character_rects[1].y=30;
-    gameData.character_rects[1].w=50;
-    gameData.character_rects[1].h=50;
-
-    gameData.ghostRect.x=300;
-    gameData.ghostRect.y=200;
-    gameData.ghostRect.w=50;
-    gameData.ghostRect.h=50;
-
+	SDL_Thread *client1, *client2, *enemy1, *enemy2;
 
     positionSetMutex = SDL_CreateMutex();
     if(!positionSetMutex)
@@ -90,12 +109,13 @@ int main(int argc, char **argv)
 	initFunctions(&ip, &sd); //Initiera TCP för SDL
 
 	waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
-    enemy = SDL_CreateThread(nextMove, "ghost1", (void *)NULL);
-    client1 = SDL_CreateThread(startClient, "Client1", &gameData);
-    client2 = SDL_CreateThread(startClient, "Client2", &gameData);
+    enemy1 = SDL_CreateThread(nextMove, "ghost1", &ghostRect1);
+    enemy2 = SDL_CreateThread(nextMove, "ghost1", &ghostRect2);
+    client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
+    client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
     while(true)
     {
-
+        SDL_Delay(100);
     }
 
 	SDLNet_TCP_Close(sd);

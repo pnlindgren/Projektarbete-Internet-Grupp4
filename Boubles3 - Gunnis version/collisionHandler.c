@@ -22,9 +22,27 @@ bool collisions(SDL_Rect rectangle)
 
 int enemyCollision()
 {
+    SDL_Delay(2000);    // Gör karaktärerna odödliga i början för
+                        // att förhindra att de ska intersecta när de placeras vid början
     while(1)
     {
-        if(SDL_HasIntersection(&gameVariables.ghost_rect, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.rival_rect))
+        {
+            characterCollision = true;
+        }
+        if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.rival_rect))
+        {
+            characterCollision = true;
+        }
+        if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.rival_rect))
+        {
+            characterCollision = true;
+        }
+        if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.rival_rect))
+        {
+            characterCollision = true;
+        }
+        if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.rival_rect))
         {
             characterCollision = true;
         }

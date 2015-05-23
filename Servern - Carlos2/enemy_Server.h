@@ -6,6 +6,6 @@
 
 #include "main.h"
 
-void nextMove(void * pointer);
+void nextMove(SDL_Rect *ghostRect1);
 
 #endif

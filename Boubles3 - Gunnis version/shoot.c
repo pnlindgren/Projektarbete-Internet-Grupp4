@@ -15,12 +15,12 @@ int shootFunc(){
 
     while(gameVariables.bubble_rect.x>0 && quit == false)
     {
-        if(SDL_HasIntersection(&gameVariables.ghost_rect, &gameVariables.bubble_rect))
+        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.bubble_rect))
         {
             gameVariables.bubble_view = false;
             ghosthit++;
-            gameVariables.ghost_rect.x=0;
-            gameVariables.ghost_rect.y=0;
+            gameVariables.ghost_rect1.x=0;
+            gameVariables.ghost_rect1.y=0;
             quit = true;
         }
 
@@ -44,12 +44,12 @@ int shootFuncRight(){
 
     while(gameVariables.bubble_rect.x<600 && quit == false)
     {
-        if(SDL_HasIntersection(&gameVariables.ghost_rect, &gameVariables.bubble_rect))
+        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.bubble_rect))
         {
             gameVariables.bubble_view = false;
             ghosthit++;
-            gameVariables.ghost_rect.x=0;
-            gameVariables.ghost_rect.y=0;
+            gameVariables.ghost_rect1.x=0;
+            gameVariables.ghost_rect1.y=0;
             quit = true;
         }
 

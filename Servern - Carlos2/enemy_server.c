@@ -6,9 +6,8 @@
 //#include "main.h" --> finns i header filen
 #include "enemy_Server.h"
 #include "collisionHandler_server.h"
-#include "dropFunction_server.h"
 
-void nextMove(void * pointer)
+void nextMove(SDL_Rect *ghostRect1)
 {
     int direction = RIGHT;
 
@@ -20,32 +19,30 @@ void nextMove(void * pointer)
 
     direction = rand() % 2;
 
-    droppingEnemy = SDL_CreateThread(enemyDrop, "EnemyDrop", (void *)NULL); // drop detect
-
     while(1)
     {
-        if(collisions(ghostRect) == true)
+        if(collisions(*ghostRect1) == true)
         {
             if(direction == RIGHT)
             {
                 direction = LEFT;
-                ghostRect.x = ghostRect.x + 4;
+                ghostRect1->x = ghostRect1->x + 4;
             }
             else
             {
                 direction = RIGHT;
-                ghostRect.x = ghostRect.x - 4;
+                ghostRect1->x = ghostRect1->x - 4;
             }
         }
         else
         {
             if(direction == RIGHT)
             {
-                ghostRect.x = ghostRect.x - 4;    // lista ut senare hur mycket
+                ghostRect1->x = ghostRect1->x - 4;    // lista ut senare hur mycket
             }
             else if(direction == LEFT)
             {
-                ghostRect.x = ghostRect.x + 4;    // lista ut senare hur mycket
+                ghostRect1->x = ghostRect1->x + 4;    // lista ut senare hur mycket
             }
         }
 

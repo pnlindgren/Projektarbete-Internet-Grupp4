@@ -29,8 +29,6 @@ bool initBuild(int positionStart)
                 gameVariables.character_rect.w = 50;
                 gameVariables.character_rect.h = 50;
 
-                gameVariables.rival_rect.x = 40;
-                gameVariables.rival_rect.y = 97;
                 gameVariables.rival_rect.w = 50;
                 gameVariables.rival_rect.h = 50;
             }
@@ -41,8 +39,6 @@ bool initBuild(int positionStart)
                 gameVariables.character_rect.w = 50;
                 gameVariables.character_rect.h = 50;
 
-                gameVariables.rival_rect.x = 550;
-                gameVariables.rival_rect.y = 97;
                 gameVariables.rival_rect.w = 50;
                 gameVariables.rival_rect.h = 50;
             }
@@ -72,6 +68,30 @@ bool initBuild(int positionStart)
             gameVariables.bubble_rect.w = 40;
             gameVariables.bubble_rect.h = 40;
 
+            gameVariables.ghost_rect1.x = 300;
+            gameVariables.ghost_rect1.y = 97;
+            gameVariables.ghost_rect1.w = 50;
+            gameVariables.ghost_rect1.h = 50;
+
+            gameVariables.ghost_rect2.x = 50;
+            gameVariables.ghost_rect2.y = 195;
+            gameVariables.ghost_rect2.w = 50;
+            gameVariables.ghost_rect2.h = 50;
+
+            gameVariables.ghost_rect3.x = 500;
+            gameVariables.ghost_rect3.y = 195;
+            gameVariables.ghost_rect3.w = 50;
+            gameVariables.ghost_rect3.h = 50;
+
+            gameVariables.ghost_rect4.x = 300;
+            gameVariables.ghost_rect4.y = 297;
+            gameVariables.ghost_rect4.w = 50;
+            gameVariables.ghost_rect4.h = 50;
+
+            gameVariables.ghost_rect5.x = 400;
+            gameVariables.ghost_rect5.y = 415;
+            gameVariables.ghost_rect5.w = 50;
+            gameVariables.ghost_rect5.h = 50;
         }
     }
 

@@ -7,7 +7,7 @@
 
 int setPosition();
 
-int startClient(recieved_Information *gameData)
+int startClient(void * pointer)
 {
 
     int positionNr = setPosition();//0 eller 1, slumpas och båda kan inte få samma
@@ -25,7 +25,11 @@ int startClient(recieved_Information *gameData)
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
         memcpy(&gameVariables, &serialiseradStruct, len);
 
-        gameVariables.ghost_rect = ghostRect;
+        gameVariables.ghost_rect1 = ghostRect1;
+        gameVariables.ghost_rect2 = ghostRect2;
+        gameVariables.ghost_rect3 = ghostRect3;
+        gameVariables.ghost_rect4 = ghostRect4;
+        gameVariables.ghost_rect5 = ghostRect5;
 
         frame[positionNr] = gameVariables.frame;
         flip[positionNr] = gameVariables.character_flip;
@@ -94,8 +98,8 @@ int setPosition()
         int sendInfo = 0;
 
         int len_int = sizeof(sendInfo)+1;
-        SDLNet_TCP_Send(csd[0], &sendInfo, len_int);
 
+        SDLNet_TCP_Send(csd[0], &sendInfo, len_int);
     }
     else
     {

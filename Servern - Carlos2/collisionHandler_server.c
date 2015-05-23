@@ -8,15 +8,21 @@ bool collisions(SDL_Rect rectangle)
 {
     bool collision = false;
 
-    if(SDL_HasIntersection(&left_wall, &rectangle))
+    if(SDL_HasIntersection(&r3p1v, &rectangle))
     {
         collision = true;
-        //printf("\nLeft wall\n");
     }
-    if(SDL_HasIntersection(&right_wall, &rectangle))
+    if(SDL_HasIntersection(&r3p1h, &rectangle))
     {
         collision = true;
-        //printf("\nRight wall\n");
+    }
+    if(SDL_HasIntersection(&r2p0v, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r2p0h, &rectangle))
+    {
+        collision = true;
     }
 
     return collision;

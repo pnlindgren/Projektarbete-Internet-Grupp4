@@ -88,11 +88,11 @@ int dropFunction(void *pointer)
     }
 }
 
-int enemyDrop(void *pointer)
+/*int enemyDrop(void *pointer)
 {
     while(true)
     {
-        int x = gameVariables.ghost_rect.x, y = gameVariables.ghost_rect.y;
+        int x = gameVariables.ghost_rect1.x, y = gameVariables.ghost_rect1.y;
         // Rad 3 hål 1
         if(y <= 97 && x <= 160 && x >= 80)
         {
@@ -140,4 +140,4 @@ int enemyDrop(void *pointer)
             }
         }
     }
-}
+}*/

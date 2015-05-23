@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="collisionHandler_server.h" />
-		<Unit filename="dropFunction_server.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="dropFunction_server.h" />
 		<Unit filename="enemy_server.c">
 			<Option compilerVar="CC" />
 		</Unit>
