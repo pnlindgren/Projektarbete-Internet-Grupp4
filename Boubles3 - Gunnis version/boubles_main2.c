@@ -18,23 +18,19 @@ textures gameTextures;
 
 SDL_Rect gSpriteClips[13];
 
-rect_objects gameRectangels;
+game_objects gameVariables;
 
-SDL_RendererFlip flip = SDL_FLIP_HORIZONTAL;
-
-int frame = 3;  // vilken frame blåa krokodilen börjar på
 bool characterCollision = false;
 int ghosthit = 0;
-
-recieved_Information recievedI;
-
-// Nytt *******************************************************
 
 int main(int argc, char * argv[])
 {
     int positionStart = 2;
 
-    gameRectangels.bubble_view = false;
+    gameVariables.frame = 3;
+    gameVariables.bubble_view = false;
+    gameVariables.enemy_flip = SDL_FLIP_NONE;
+    gameVariables.character_flip = SDL_FLIP_NONE;
 
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;

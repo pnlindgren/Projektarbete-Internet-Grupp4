@@ -45,45 +45,46 @@ void keyInput2()
                             bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
                         break;
                     }
+                    // Länk till var vi fick den här gåanimationen från
                     case SDLK_LEFT:
                     {
-                        gameRectangels.character_rect.x -= 4;
+                        gameVariables.character_rect.x -= 4;
                         SDL_Delay(30);
-                        if(collisions(gameRectangels.character_rect))
+                        if(collisions(gameVariables.character_rect))
                         {
-                            gameRectangels.character_rect.x += 4;
+                            gameVariables.character_rect.x += 4;
                         }
-                        flip = SDL_FLIP_NONE;
-                        if(frame == 2)
-                            frame = 1;
-                        else if(frame == 1)
-                            frame = 0;
-                        else if (frame == 0)
-                            frame = 3;
+                        gameVariables.character_flip = SDL_FLIP_NONE;
+                        if(gameVariables.frame == 2)
+                            gameVariables.frame = 1;
+                        else if(gameVariables.frame == 1)
+                            gameVariables.frame = 0;
+                        else if (gameVariables.frame == 0)
+                            gameVariables.frame = 3;
                         else
-                            frame = 2;
-                        //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                            gameVariables.frame = 2;
                         lookDirection = LEFT;
 
                         break;
                     }
+                    // Länk till var vi fick den här gåanimationen från
                     case SDLK_RIGHT:
                     {
-                        gameRectangels.character_rect.x += 4;
+                        gameVariables.character_rect.x += 4;
                         SDL_Delay(30);
-                        if(collisions(gameRectangels.character_rect))
+                        if(collisions(gameVariables.character_rect))
                         {
-                            gameRectangels.character_rect.x -= 4;
+                            gameVariables.character_rect.x -= 4;
                         }
-                        flip = SDL_FLIP_HORIZONTAL;
-                        if(frame == 2)
-                            frame = 1;
-                        else if (frame == 1)
-                            frame = 0;
-                        else if (frame == 0)
-                            frame = 3;
+                        gameVariables.character_flip = SDL_FLIP_HORIZONTAL;
+                        if(gameVariables.frame == 2)
+                            gameVariables.frame = 1;
+                        else if (gameVariables.frame == 1)
+                            gameVariables.frame = 0;
+                        else if (gameVariables.frame == 0)
+                            gameVariables.frame = 3;
                         else
-                            frame = 2;
+                            gameVariables.frame = 2;
                         //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
                         lookDirection = RIGHT;
 

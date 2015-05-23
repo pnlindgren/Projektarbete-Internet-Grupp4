@@ -2,7 +2,7 @@
 #define SHOOT
 
 
-extern rect_objects gameRectangels;
+extern game_objects gameVariables;
 extern int ghosthit;
 
 

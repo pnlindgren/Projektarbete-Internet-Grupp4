@@ -6,12 +6,8 @@ int screenUpdateFunction(void * pointer);
 
 extern textures gameTextures;
 extern SDL_Rect gSpriteClips[13];
-extern rect_objects gameRectangels;
-extern SDL_RendererFlip flip;
-extern int frame;
+extern game_objects gameVariables;
 extern bool characterCollision;
 extern int ghosthit;
-
-extern recieved_Information recievedI;
 
 #endif

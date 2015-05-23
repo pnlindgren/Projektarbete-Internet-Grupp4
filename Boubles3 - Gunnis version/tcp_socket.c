@@ -46,21 +46,22 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 void clientConnection(TCPsocket *socketPekare)
 {
     int len,result;
-    len = sizeof(gameRectangels);
+    len = sizeof(gameVariables);
     char serialiseradStruct[len];
 
     while(1)
     {
+        SDL_Delay(10);
 
-        memcpy(&serialiseradStruct, &gameRectangels, len);
+        memcpy(&serialiseradStruct, &gameVariables, len);
 
         result = SDLNet_TCP_Send(*socketPekare, &serialiseradStruct, len);
 
+        SDL_Delay(10);
+
         result=SDLNet_TCP_Recv(*socketPekare,&serialiseradStruct,len);
 
-        memcpy(&gameRectangels,&serialiseradStruct,len);
-
-        printf("X:%d Y:%d\n", gameRectangels.bubble_rect.x, gameRectangels.bubble_rect.y);
+        memcpy(&gameVariables,&serialiseradStruct,len);
 
         /*if(result < len)
         {

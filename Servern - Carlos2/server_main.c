@@ -23,7 +23,11 @@ int klientPositionY[2];
 
 int bubbleX = 1000;
 int bubbleY = 1000;
+
 bool bubble_view = false;
+
+int frame[2];
+SDL_RendererFlip flip[2];
 
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 

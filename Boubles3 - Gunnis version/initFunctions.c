@@ -24,53 +24,53 @@ bool initBuild(int positionStart)
         {
             if(positionStart == 1)
             {
-                gameRectangels.character_rect.x = 550;
-                gameRectangels.character_rect.y = 97;
-                gameRectangels.character_rect.w = 50;
-                gameRectangels.character_rect.h = 50;
+                gameVariables.character_rect.x = 550;
+                gameVariables.character_rect.y = 97;
+                gameVariables.character_rect.w = 50;
+                gameVariables.character_rect.h = 50;
 
-                gameRectangels.rival_rect.x = 40;
-                gameRectangels.rival_rect.y = 97;
-                gameRectangels.rival_rect.w = 50;
-                gameRectangels.rival_rect.h = 50;
+                gameVariables.rival_rect.x = 40;
+                gameVariables.rival_rect.y = 97;
+                gameVariables.rival_rect.w = 50;
+                gameVariables.rival_rect.h = 50;
             }
             else if(positionStart == 0)
             {
-                gameRectangels.character_rect.x = 40;
-                gameRectangels.character_rect.y = 97;
-                gameRectangels.character_rect.w = 50;
-                gameRectangels.character_rect.h = 50;
+                gameVariables.character_rect.x = 40;
+                gameVariables.character_rect.y = 97;
+                gameVariables.character_rect.w = 50;
+                gameVariables.character_rect.h = 50;
 
-                gameRectangels.rival_rect.x = 550;
-                gameRectangels.rival_rect.y = 97;
-                gameRectangels.rival_rect.w = 50;
-                gameRectangels.rival_rect.h = 50;
+                gameVariables.rival_rect.x = 550;
+                gameVariables.rival_rect.y = 97;
+                gameVariables.rival_rect.w = 50;
+                gameVariables.rival_rect.h = 50;
             }
 
-            gameRectangels.background_rect.x = 0;
-            gameRectangels.background_rect.y = 0;
-            gameRectangels.background_rect.w = 640;
-            gameRectangels.background_rect.h = 480;
+            gameVariables.background_rect.x = 0;
+            gameVariables.background_rect.y = 0;
+            gameVariables.background_rect.w = 640;
+            gameVariables.background_rect.h = 480;
 
-            gameRectangels.left_wall.x = 0;
-            gameRectangels.left_wall.y = 0;
-            gameRectangels.left_wall.w = 16;
-            gameRectangels.left_wall.h = 480;
+            gameVariables.left_wall.x = 0;
+            gameVariables.left_wall.y = 0;
+            gameVariables.left_wall.w = 16;
+            gameVariables.left_wall.h = 480;
 
-            gameRectangels.right_wall.x = 622;
-            gameRectangels.right_wall.y = 0;
-            gameRectangels.right_wall.w = 16;
-            gameRectangels.right_wall.h = 480;
+            gameVariables.right_wall.x = 622;
+            gameVariables.right_wall.y = 0;
+            gameVariables.right_wall.w = 16;
+            gameVariables.right_wall.h = 480;
 
-            gameRectangels.game_over.x = 200;
-            gameRectangels.game_over.y = 200;
-            gameRectangels.game_over.w = 191;
-            gameRectangels.game_over.h = 63;
+            gameVariables.game_over.x = 200;
+            gameVariables.game_over.y = 200;
+            gameVariables.game_over.w = 191;
+            gameVariables.game_over.h = 63;
 
-            gameRectangels.bubble_rect.x = 1000;
-            gameRectangels.bubble_rect.y = 1000;
-            gameRectangels.bubble_rect.w = 40;
-            gameRectangels.bubble_rect.h = 40;
+            gameVariables.bubble_rect.x = 1000;
+            gameVariables.bubble_rect.y = 1000;
+            gameVariables.bubble_rect.w = 40;
+            gameVariables.bubble_rect.h = 40;
 
         }
     }

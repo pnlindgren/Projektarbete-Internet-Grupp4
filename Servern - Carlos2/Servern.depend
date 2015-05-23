@@ -96,3 +96,40 @@
 	"server_main.h"
 	"startClient.h"
 
+1431717337 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_net.h"
+	"initFunctions.h"
+
+1431717337 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
+
+1432312245 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<time.h>
+	"SDL.h"
+	"SDL_net.h"
+	"server_main.h"
+	"initFunctions.h"
+	"startClient.h"
+
+1431717337 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1432368805 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+
+1432368769 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+	<stdio.h>
+	<time.h>
+	<stdbool.h>
+	"server_main.h"
+	"startClient.h"
+

@@ -7,6 +7,6 @@
 int dropFunction(void *pointer);
 int enemyDrop(void *point);
 
-extern rect_objects gameRectangels;
+extern game_objects gameVariables;
 
 #endif // DROPFUNCTION

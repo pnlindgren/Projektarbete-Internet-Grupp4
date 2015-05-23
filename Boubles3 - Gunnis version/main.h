@@ -22,13 +22,6 @@
 
 #include <stdbool.h>
 
-struct recievedInformation
-{
-    SDL_Rect character_rects[2];
-    SDL_Rect ghostRect;
-
-}; typedef struct recievedInformation recieved_Information;
-
 struct graphic_struct
 {
     SDL_Renderer*   renderer;
@@ -41,7 +34,7 @@ struct graphic_struct
 
 }; typedef struct graphic_struct textures;
 
-struct rect_struct
+struct game_struct
 {
     SDL_Rect character_rect;
     SDL_Rect rival_rect;
@@ -51,8 +44,13 @@ struct rect_struct
     SDL_Rect right_wall;
     SDL_Rect bubble_rect;
     SDL_Rect game_over;
-    bool bubble_view;
 
-}; typedef struct rect_struct rect_objects;
+    bool bubble_view;
+    int frame;
+    int enemy_frame;
+    SDL_RendererFlip character_flip;
+    SDL_RendererFlip enemy_flip;
+
+}; typedef struct game_struct game_objects;
 
 #endif

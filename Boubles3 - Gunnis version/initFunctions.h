@@ -16,6 +16,6 @@ SDL_Surface* loadSurface(char path[100]);
 extern SDL_Window* gWindow;
 extern textures gameTextures;
 extern SDL_Rect gSpriteClips[13];
-extern rect_objects gameRectangels;
+extern game_objects gameVariables;
 
 #endif

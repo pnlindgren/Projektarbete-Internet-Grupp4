@@ -6,9 +6,7 @@
 void keyInput2();
 
 extern SDL_Rect gSpriteClips[13];
-extern rect_objects gameRectangels;
-extern SDL_RendererFlip flip;
-extern int frame;
+extern game_objects gameVariables;
 
 #endif
 

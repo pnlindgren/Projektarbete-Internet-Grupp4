@@ -14,54 +14,58 @@ int startClient(recieved_Information *gameData)
 
     int sendNumberX, sendNumberY;
 
-    rect_objects gameRectangles;
+    game_objects gameVariables;
 
-    int len = sizeof(gameRectangles);
+    int len = sizeof(gameVariables);
 
     char serialiseradStruct[len];
-
-
 
     while(1)
     {
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
-        memcpy(&gameRectangles, &serialiseradStruct, len);
+        memcpy(&gameVariables, &serialiseradStruct, len);
 
-        //printf("%d\n", gameRectangles.character_rect.x);
+        frame[positionNr] = gameVariables.frame;
+        flip[positionNr] = gameVariables.character_flip;
 
-        if(gameRectangles.bubble_view == true)
+        SDL_Delay(10);
+
+        if(gameVariables.bubble_view == true)
         {
-            printf("bubble view visar sig vara true\n");
-
-            bubbleX = gameRectangles.bubble_rect.x;
-            bubbleY = gameRectangles.bubble_rect.y;
+            bubbleX = gameVariables.bubble_rect.x;
+            bubbleY = gameVariables.bubble_rect.y;
         }
 
-        gameRectangles.bubble_rect.x = bubbleX;
-        gameRectangles.bubble_rect.y = bubbleY;
+        gameVariables.bubble_rect.x = bubbleX;
+        gameVariables.bubble_rect.y = bubbleY;
 
         if(positionNr == 0)
         {
-            klientPositionX[0] = gameRectangles.character_rect.x;
-            klientPositionY[0] = gameRectangles.character_rect.y;
+            klientPositionX[0] = gameVariables.character_rect.x;
+            klientPositionY[0] = gameVariables.character_rect.y;
 
-            gameRectangles.rival_rect.x = klientPositionX[1];
-            gameRectangles.rival_rect.y = klientPositionY[1];
+            gameVariables.rival_rect.x = klientPositionX[1];
+            gameVariables.rival_rect.y = klientPositionY[1];
+
+            gameVariables.enemy_frame = frame[1];
+            gameVariables.enemy_flip = flip[1];
         }
         else
         {
-            klientPositionX[1] = gameRectangles.character_rect.x;
-            klientPositionY[1] = gameRectangles.character_rect.y;
+            klientPositionX[1] = gameVariables.character_rect.x;
+            klientPositionY[1] = gameVariables.character_rect.y;
 
-            gameRectangles.rival_rect.x = klientPositionX[0];
-            gameRectangles.rival_rect.y = klientPositionY[0];
+            gameVariables.rival_rect.x = klientPositionX[0];
+            gameVariables.rival_rect.y = klientPositionY[0];
 
+            gameVariables.enemy_frame = frame[0];
+            gameVariables.enemy_flip = flip[0];
         }
 
-        memcpy(&serialiseradStruct, &gameRectangles, len);
-
+        memcpy(&serialiseradStruct, &gameVariables, len);
         SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
 
+        SDL_Delay(10);
     }
 
 }
