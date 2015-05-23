@@ -23,12 +23,43 @@ int shootFunc(){
             gameVariables.ghost_rect1.y=0;
             quit = true;
         }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect2.x=0;
+            gameVariables.ghost_rect2.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect3.x=0;
+            gameVariables.ghost_rect3.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect4.x=0;
+            gameVariables.ghost_rect4.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect5.x=0;
+            gameVariables.ghost_rect5.y=0;
+            quit = true;
+        }
 
         gameVariables.bubble_rect.x = gameVariables.bubble_rect.x - 1;
         SDL_Delay(30);
         gameVariables.bubble_rect.x--;
     }
-
 
     gameVariables.bubble_view = false;
 }
@@ -50,6 +81,38 @@ int shootFuncRight(){
             ghosthit++;
             gameVariables.ghost_rect1.x=0;
             gameVariables.ghost_rect1.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect2.x=0;
+            gameVariables.ghost_rect2.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect3.x=0;
+            gameVariables.ghost_rect3.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect4.x=0;
+            gameVariables.ghost_rect4.y=0;
+            quit = true;
+        }
+        else if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.bubble_rect))
+        {
+            gameVariables.bubble_view = false;
+            ghosthit++;
+            gameVariables.ghost_rect5.x=0;
+            gameVariables.ghost_rect5.y=0;
             quit = true;
         }
 

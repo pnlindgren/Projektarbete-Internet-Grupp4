@@ -24,6 +24,30 @@ bool collisions(SDL_Rect rectangle)
     {
         collision = true;
     }
+    if(SDL_HasIntersection(&r2p1v, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r2p1h, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r1p1v, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r1p1h, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r0p0v, &rectangle))
+    {
+        collision = true;
+    }
+    if(SDL_HasIntersection(&r0p0h, &rectangle))
+    {
+        collision = true;
+    }
 
     return collision;
 }
