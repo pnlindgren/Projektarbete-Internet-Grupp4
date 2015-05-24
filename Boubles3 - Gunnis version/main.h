@@ -47,11 +47,13 @@ struct game_struct
     SDL_Rect left_wall;
     SDL_Rect right_wall;
     SDL_Rect bubble_rect;
+    SDL_Rect enemy_bubble;
     SDL_Rect game_over;
 
     bool bubble_view;
     int frame;
     int enemy_frame;
+    int ghosthit;
     SDL_RendererFlip character_flip;
     SDL_RendererFlip enemy_flip;
 

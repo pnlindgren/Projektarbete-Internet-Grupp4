@@ -9,15 +9,18 @@ int setPosition();
 
 int startClient(void * pointer)
 {
-
-    int positionNr = setPosition();//0 eller 1, slumpas och båda kan inte få samma
+    //0 eller 1, slumpas och båda kan inte få samma
+    int positionNr = setPosition();
 
     int sendNumberX, sendNumberY;
 
+    // Spelvariabler som ska uppdateras
     game_objects gameVariables;
 
+    // längden på structen som sedan ska skickas (structens längd är samma som den serialiserade structen)
     int len = sizeof(gameVariables);
 
+    // Serialiseradestructen kopierar varje bit med memcpy
     char serialiseradStruct[len];
 
     while(1)
@@ -25,26 +28,67 @@ int startClient(void * pointer)
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
         memcpy(&gameVariables, &serialiseradStruct, len);
 
+        SDL_LockMutex(ghostHitMutex);
+        if(gameVariables.ghost_rect1.x == 0 && gameVariables.ghost_rect1.y == 600 && ghostHitFlag[0] == false)
+        {
+            ghostRect1.x = 0;
+            ghostRect1.y = 600;
+            ghostHitCount++;
+            ghostHitFlag[0] = true;
+        }
+
+        else if(gameVariables.ghost_rect2.x == 0 && gameVariables.ghost_rect2.y == 600 && ghostHitFlag[1] == false)
+        {
+            ghostRect2.x = 0;
+            ghostRect2.y = 600;
+            ghostHitCount++;
+            ghostHitFlag[1] = true;
+        }
+
+        else if(gameVariables.ghost_rect3.x == 0 && gameVariables.ghost_rect3.y == 600 && ghostHitFlag[2] == false)
+        {
+            ghostRect3.x = 0;
+            ghostRect3.y = 600;
+            ghostHitCount++;
+            ghostHitFlag[2] = true;
+        }
+
+        else if(gameVariables.ghost_rect4.x == 0 && gameVariables.ghost_rect4.y == 600 && ghostHitFlag[3] == false)
+        {
+            ghostRect4.x = 0;
+            ghostRect4.y = 600;
+            ghostHitCount++;
+            ghostHitFlag[3] = true;
+        }
+
+        else if(gameVariables.ghost_rect5.x == 0 && gameVariables.ghost_rect5.y == 600 && ghostHitFlag[4] == false)
+        {
+            ghostRect5.x = 0;
+            ghostRect5.y = 600;
+            ghostHitCount++;
+            ghostHitFlag[4] = true;
+        }
+
         gameVariables.ghost_rect1 = ghostRect1;
         gameVariables.ghost_rect2 = ghostRect2;
         gameVariables.ghost_rect3 = ghostRect3;
         gameVariables.ghost_rect4 = ghostRect4;
         gameVariables.ghost_rect5 = ghostRect5;
 
+        gameVariables.ghosthit = ghostHitCount;
+
+        SDL_UnlockMutex(ghostHitMutex);
+
+        // Båda trådarna kommer nu ha uppdaterat sina bubblor vilket tillåter servern sedan
+        // att ändra enemy_bubble
+        bubble[positionNr] = gameVariables.bubble_rect;
+
         frame[positionNr] = gameVariables.frame;
         flip[positionNr] = gameVariables.character_flip;
 
         SDL_Delay(10);
 
-        if(gameVariables.bubble_view == true)
-        {
-            bubbleX = gameVariables.bubble_rect.x;
-            bubbleY = gameVariables.bubble_rect.y;
-        }
-
-        gameVariables.bubble_rect.x = bubbleX;
-        gameVariables.bubble_rect.y = bubbleY;
-
+        // klient 1
         if(positionNr == 0)
         {
             klientPositionX[0] = gameVariables.character_rect.x;
@@ -55,7 +99,10 @@ int startClient(void * pointer)
 
             gameVariables.enemy_frame = frame[1];
             gameVariables.enemy_flip = flip[1];
+
+            gameVariables.enemy_bubble = bubble[1];
         }
+        // klient 2
         else
         {
             klientPositionX[1] = gameVariables.character_rect.x;
@@ -66,6 +113,8 @@ int startClient(void * pointer)
 
             gameVariables.enemy_frame = frame[0];
             gameVariables.enemy_flip = flip[0];
+
+            gameVariables.enemy_bubble = bubble[0];
         }
 
         memcpy(&serialiseradStruct, &gameVariables, len);

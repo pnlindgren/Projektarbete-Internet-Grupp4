@@ -4,14 +4,12 @@
 int startClient(void * pointer);
 
 extern SDL_mutex *positionSetMutex;
+extern SDL_mutex *ghostHitMutex;
 extern bool firstPosition;
 extern int client1Position;
 extern TCPsocket csd[];
 extern klientPositionX[2];
 extern klientPositionY[2];
-extern bool bubble_view;
-extern int bubbleX;
-extern int bubbleY;
 extern int frame[2];
 extern SDL_RendererFlip flip[2];
 extern SDL_Rect ghostRect1;
@@ -19,6 +17,9 @@ extern SDL_Rect ghostRect2;
 extern SDL_Rect ghostRect3;
 extern SDL_Rect ghostRect4;
 extern SDL_Rect ghostRect5;
+extern SDL_Rect bubble[2];
+extern int ghostHitCount;
+extern bool ghostHitFlag[5];
 
 struct game_struct
 {
@@ -33,11 +34,13 @@ struct game_struct
     SDL_Rect left_wall;
     SDL_Rect right_wall;
     SDL_Rect bubble_rect;
+    SDL_Rect enemy_bubble;
     SDL_Rect game_over;
 
     bool bubble_view;
     int frame;
     int enemy_frame;
+    int ghosthit;
     SDL_RendererFlip character_flip;
     SDL_RendererFlip enemy_flip;
 

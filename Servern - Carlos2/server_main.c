@@ -13,7 +13,7 @@
 
 void waitForClients(TCPsocket *sd);
 
-SDL_mutex *positionSetMutex;
+SDL_mutex *positionSetMutex, *ghostHitMutex;
 
 bool firstPosition;//Används i startClient vid init av startposition
 int client1Position;
@@ -22,18 +22,17 @@ int clientNr; //För at hålla koll på vilken klient som har vilken socket öppen
 int klientPositionX[2];
 int klientPositionY[2];
 
-int bubbleX = 1000;
-int bubbleY = 1000;
-
-bool bubble_view = false;
+SDL_Rect bubble[2];
 
 int frame[2];
 SDL_RendererFlip flip[2];
+
 SDL_Rect ghostRect1;
 SDL_Rect ghostRect2;
 SDL_Rect ghostRect3;
 SDL_Rect ghostRect4;
 SDL_Rect ghostRect5;
+
 SDL_Rect r3p1v;         // rad 3 platform 1 vänstersida (finns 4 rader (0,1,2,3))
 SDL_Rect r3p1h;
 SDL_Rect r2p0v;
@@ -45,11 +44,16 @@ SDL_Rect r1p1h;
 SDL_Rect r0p0v;
 SDL_Rect r0p0h;
 
+int ghostHitCount;
+bool ghostHitFlag[5] = {false, false, false, false, false};
+
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 
 int main(int argc, char **argv)
 {
     srand(time(NULL));
+
+    ghostHitCount = 0;
 
     r3p1v.x = 180;
     r3p1v.y = 97;
@@ -137,9 +141,15 @@ int main(int argc, char **argv)
 	SDL_Thread *client1, *client2, *enemy1, *enemy2, *enemy3, *enemy4, *enemy5;
 
     positionSetMutex = SDL_CreateMutex();
+    ghostHitMutex = SDL_CreateMutex();
     if(!positionSetMutex)
     {
         printf("Error: Cannot create mutex");
+        return 0;
+    }
+    if(!ghostHitMutex)
+    {
+        printf("Error: Cannot create ghost mutex");
         return 0;
     }
 	initFunctions(&ip, &sd); //Initiera TCP för SDL

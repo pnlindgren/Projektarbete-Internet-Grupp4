@@ -21,7 +21,6 @@ SDL_Rect gSpriteClips[13];
 game_objects gameVariables;
 
 bool characterCollision = false;
-int ghosthit = 0;
 
 int main(int argc, char * argv[])
 {
@@ -31,6 +30,7 @@ int main(int argc, char * argv[])
     gameVariables.bubble_view = false;
     gameVariables.enemy_flip = SDL_FLIP_NONE;
     gameVariables.character_flip = SDL_FLIP_NONE;
+    gameVariables.ghosthit = 0;
 
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;

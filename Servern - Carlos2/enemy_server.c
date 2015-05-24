@@ -7,7 +7,7 @@
 #include "enemy_Server.h"
 #include "collisionHandler_server.h"
 
-void nextMove(SDL_Rect *ghostRect1)
+void nextMove(SDL_Rect *ghostRect)
 {
     int direction = RIGHT;
 
@@ -19,30 +19,30 @@ void nextMove(SDL_Rect *ghostRect1)
 
     direction = rand() % 2;
 
-    while(1)
+    while(ghostRect->y != 600)
     {
-        if(collisions(*ghostRect1) == true)
+        if(collisions(*ghostRect) == true)
         {
-            if(direction == RIGHT)
+            if(direction == RIGHT && ghostRect->y != 600)
             {
                 direction = LEFT;
-                ghostRect1->x = ghostRect1->x + 4;
+                ghostRect->x = ghostRect->x + 4;
             }
-            else
+            else if(direction == LEFT && ghostRect->y != 600)
             {
                 direction = RIGHT;
-                ghostRect1->x = ghostRect1->x - 4;
+                ghostRect->x = ghostRect->x - 4;
             }
         }
         else
         {
-            if(direction == RIGHT)
+            if(direction == RIGHT && ghostRect->y != 600)
             {
-                ghostRect1->x = ghostRect1->x - 4;    // lista ut senare hur mycket
+                ghostRect->x = ghostRect->x - 4;    // lista ut senare hur mycket
             }
-            else if(direction == LEFT)
+            else if(direction == LEFT && ghostRect->y != 600)
             {
-                ghostRect1->x = ghostRect1->x + 4;    // lista ut senare hur mycket
+                ghostRect->x = ghostRect->x + 4;    // lista ut senare hur mycket
             }
         }
 

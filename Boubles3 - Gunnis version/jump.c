@@ -5,12 +5,12 @@
 
 void jump()
 {
-    int x;
+    int y;
     int status = SDL_TryLockMutex(jumpMutex);
     if (status == 0)
     {
         printf("Jump mutex locked\n");
-        for(x = 0; x < 35; x++)
+        for(y = 0; y < 40; y++)
         {
             gameVariables.character_rect.y -= 4;
             SDL_Delay(20);

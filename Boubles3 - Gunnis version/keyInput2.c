@@ -6,10 +6,14 @@
 #include "collisionHandler.h"
 #include "shoot.h"
 
+// If it's allowed to shoot
+bool shootFlag;
+
 void keyInput2()
 {
     bool quit = false;
     bool lookDirection = RIGHT;
+    shootFlag = true;
 
     SDL_Event e;
 
@@ -39,9 +43,9 @@ void keyInput2()
                     }
                     case SDLK_SPACE:
                     {
-                        if (lookDirection == RIGHT)
+                        if (lookDirection == RIGHT && shootFlag == true)
                             bubble_thread = SDL_CreateThread(shootFuncRight, "clientConnection", (void *)NULL);
-                        else if (lookDirection == LEFT)
+                        else if (lookDirection == LEFT && shootFlag == true)
                             bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
                         break;
                     }

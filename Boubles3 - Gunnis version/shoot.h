@@ -3,8 +3,7 @@
 
 
 extern game_objects gameVariables;
-extern int ghosthit;
-
+extern bool shootFlag;
 
 int shootFunc();
 

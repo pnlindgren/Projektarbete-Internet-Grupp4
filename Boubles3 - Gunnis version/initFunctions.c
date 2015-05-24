@@ -68,6 +68,11 @@ bool initBuild(int positionStart)
             gameVariables.bubble_rect.w = 40;
             gameVariables.bubble_rect.h = 40;
 
+            gameVariables.enemy_bubble.x = 1000;
+            gameVariables.enemy_bubble.y = 1000;
+            gameVariables.enemy_bubble.w = 40;
+            gameVariables.enemy_bubble.h = 40;
+
             gameVariables.ghost_rect1.x = 300;
             gameVariables.ghost_rect1.y = 97;
             gameVariables.ghost_rect1.w = 50;
