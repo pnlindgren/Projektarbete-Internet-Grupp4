@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "SDL_net.h"
+#include "SDL2/SDL_net.h"
 #include "initFunctions.h"
 
 void initFunctions(IPaddress *ip, TCPsocket *sd)
