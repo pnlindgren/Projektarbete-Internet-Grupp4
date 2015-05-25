@@ -4,12 +4,12 @@
 #include <stdbool.h>
 #include <time.h>
 
-#include "SDL.h"
-#include "SDL_net.h"
+#include "SDL2/SDL.h"
+#include "SDL2/SDL_net.h"
 #include "server_main.h"
 #include "initFunctions.h"
 #include "startClient.h"
-#include "enemy_server.h"
+#include "enemy_Server.h"
 
 void waitForClients(TCPsocket *sd);
 void resetVariables();
