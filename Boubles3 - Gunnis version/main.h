@@ -51,6 +51,7 @@ struct game_struct
     SDL_Rect game_over;
 
     bool bubble_view;
+    bool characterCollision;
     int frame;
     int enemy_frame;
     int ghosthit;

@@ -180,7 +180,7 @@
 	"main.h"
 	"close.h"
 
-1432466638 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
+1432551153 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
@@ -213,15 +213,15 @@
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\walldetector.h
 
-1432468009 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
+1432549103 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
 	<stdbool.h>
 
-1432466876 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
+1432551191 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
 	<stdbool.h>
 
-1432466720 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
+1432551174 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
@@ -288,13 +288,13 @@
 
 1432367695 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\jump.h
 
-1432381166 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.c
+1432551273 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"collisionHandler.h"
 
-1432367670 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.h
+1432551206 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.h
 
 1430916395 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\enemy.c
 	<stdio.h>

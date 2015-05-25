@@ -6,6 +6,5 @@ int enemyCollision();
 
 extern game_objects gameVariables;
 extern int frame;
-extern bool characterCollision;
 
 #endif

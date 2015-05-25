@@ -7,7 +7,7 @@
 #include "enemy_Server.h"
 #include "collisionHandler_server.h"
 
-void nextMove(SDL_Rect *ghostRect)
+int nextMove(SDL_Rect *ghostRect)
 {
     int direction = RIGHT;
 
@@ -52,4 +52,6 @@ void nextMove(SDL_Rect *ghostRect)
 
         SDL_Delay(1000);
     }
+
+    return 0;
 }
