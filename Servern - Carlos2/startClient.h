@@ -7,7 +7,7 @@ extern SDL_mutex *positionSetMutex;
 extern SDL_mutex *ghostHitMutex;
 extern bool firstPosition;
 extern int client1Position;
-extern TCPsocket csd[];
+extern TCPsocket csd[2];
 extern klientPositionX[2];
 extern klientPositionY[2];
 extern int frame[2];
@@ -20,6 +20,7 @@ extern SDL_Rect ghostRect5;
 extern SDL_Rect bubble[2];
 extern int ghostHitCount;
 extern bool ghostHitFlag[5];
+extern bool gameOver;
 
 struct game_struct
 {

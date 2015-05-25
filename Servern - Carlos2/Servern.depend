@@ -104,7 +104,7 @@
 
 1431717337 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
 
-1432469503 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+1432549512 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -125,9 +125,9 @@
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
 
-1432469519 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+1432549724 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
 
-1432469712 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+1432548910 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
 	<stdio.h>
 	<time.h>
 	<stdbool.h>
@@ -159,7 +159,7 @@
 
 1432369975 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\dropfunction_server.h
 
-1432465721 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.c
+1432549340 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>

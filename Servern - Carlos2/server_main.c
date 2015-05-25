@@ -12,6 +12,7 @@
 #include "enemy_server.h"
 
 void waitForClients(TCPsocket *sd);
+void resetVariables();
 
 SDL_mutex *positionSetMutex, *ghostHitMutex;
 
@@ -44,14 +45,18 @@ SDL_Rect r1p1h;
 SDL_Rect r0p0v;
 SDL_Rect r0p0h;
 
+// ghostHitCount håller koll på hur många spöken som har blivit träffade
 int ghostHitCount;
-bool ghostHitFlag[5] = {false, false, false, false, false};
+bool ghostHitFlag[5];
+bool gameOver;
 
 TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 
 int main(int argc, char **argv)
 {
     srand(time(NULL));
+
+    gameOver = true;
 
     ghostHitCount = 0;
 
@@ -136,7 +141,7 @@ int main(int argc, char **argv)
 	bool clientInitiated;
 
 	firstPosition = false;
-	client1Position = 0;
+	//client1Position = 0;
 
 	SDL_Thread *client1, *client2, *enemy1, *enemy2, *enemy3, *enemy4, *enemy5;
 
@@ -154,17 +159,27 @@ int main(int argc, char **argv)
     }
 	initFunctions(&ip, &sd); //Initiera TCP för SDL
 
-	waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
+	//waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
     enemy1 = SDL_CreateThread(nextMove, "ghost1", &ghostRect1);
     enemy2 = SDL_CreateThread(nextMove, "ghost1", &ghostRect2);
     enemy3 = SDL_CreateThread(nextMove, "ghost1", &ghostRect3);
     enemy4 = SDL_CreateThread(nextMove, "ghost1", &ghostRect4);
     enemy5 = SDL_CreateThread(nextMove, "ghost1", &ghostRect5);
-    client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
-    client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
+    //client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
+    //client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
     while(true)
     {
-        SDL_Delay(100);
+        if(gameOver == true)
+        {
+                waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
+                resetVariables();
+                gameOver = false;
+                client1Position = 0;
+                client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
+                client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
+        }
+
+        SDL_Delay(1000);
     }
 
 	SDLNet_TCP_Close(sd);
@@ -205,4 +220,32 @@ void waitForClients(TCPsocket *sd)
         }
 
     }
+}
+
+void resetVariables()
+{
+    gameOver = false;
+    client1Position = 0;
+    ghostHitCount = 0;
+
+    ghostRect1.x = 300;
+    ghostRect1.y = 97;
+
+    ghostRect2.x = 50;
+    ghostRect2.y = 195;
+
+    ghostRect3.x = 500;
+    ghostRect3.y = 195;
+
+    ghostRect4.x = 300;
+    ghostRect4.y = 297;
+
+    ghostRect5.x = 400;
+    ghostRect5.y = 415;
+
+    ghostHitFlag[0] = false;
+    ghostHitFlag[1] = false;
+    ghostHitFlag[2] = false;
+    ghostHitFlag[3] = false;
+    ghostHitFlag[4] = false;
 }

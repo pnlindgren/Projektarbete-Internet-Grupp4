@@ -12,8 +12,6 @@ int startClient(void * pointer)
     //0 eller 1, slumpas och båda kan inte få samma
     int positionNr = setPosition();
 
-    int sendNumberX, sendNumberY;
-
     // Spelvariabler som ska uppdateras
     game_objects gameVariables;
 
@@ -23,7 +21,7 @@ int startClient(void * pointer)
     // Serialiseradestructen kopierar varje bit med memcpy
     char serialiseradStruct[len];
 
-    while(1)
+    while(!gameOver)
     {
         SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
         memcpy(&gameVariables, &serialiseradStruct, len);
@@ -121,8 +119,29 @@ int startClient(void * pointer)
         SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
 
         SDL_Delay(10);
+
+        if(ghostHitCount == 5)
+        {
+            SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
+            memcpy(&gameVariables, &serialiseradStruct, len);
+
+            gameVariables.ghosthit = 5;
+            ghostRect1.y = 600;
+            ghostRect2.y = 600;
+            ghostRect3.y = 600;
+            ghostRect4.y = 600;
+            ghostRect5.y = 600;
+
+            memcpy(&serialiseradStruct, &gameVariables, len);
+            SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
+
+            SDLNet_TCP_Close(csd[positionNr]);
+            SDL_Delay(1000);
+            gameOver = true;
+        }
     }
 
+    return 0;
 }
 
 /* Första klienten som nåt till mutexen får slumptal

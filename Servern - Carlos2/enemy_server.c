@@ -18,34 +18,38 @@ void nextMove(SDL_Rect *ghostRect)
     srand(time(NULL));
 
     direction = rand() % 2;
-
-    while(ghostRect->y != 600)
+    while(true)
     {
-        if(collisions(*ghostRect) == true)
+        while(ghostRect->y != 600)
         {
-            if(direction == RIGHT && ghostRect->y != 600)
+            if(collisions(*ghostRect) == true)
             {
-                direction = LEFT;
-                ghostRect->x = ghostRect->x + 4;
+                if(direction == RIGHT && ghostRect->y != 600)
+                {
+                    direction = LEFT;
+                    ghostRect->x = ghostRect->x + 4;
+                }
+                else if(direction == LEFT && ghostRect->y != 600)
+                {
+                    direction = RIGHT;
+                    ghostRect->x = ghostRect->x - 4;
+                }
             }
-            else if(direction == LEFT && ghostRect->y != 600)
+            else
             {
-                direction = RIGHT;
-                ghostRect->x = ghostRect->x - 4;
+                if(direction == RIGHT && ghostRect->y != 600)
+                {
+                    ghostRect->x = ghostRect->x - 4;    // lista ut senare hur mycket
+                }
+                else if(direction == LEFT && ghostRect->y != 600)
+                {
+                    ghostRect->x = ghostRect->x + 4;    // lista ut senare hur mycket
+                }
             }
-        }
-        else
-        {
-            if(direction == RIGHT && ghostRect->y != 600)
-            {
-                ghostRect->x = ghostRect->x - 4;    // lista ut senare hur mycket
-            }
-            else if(direction == LEFT && ghostRect->y != 600)
-            {
-                ghostRect->x = ghostRect->x + 4;    // lista ut senare hur mycket
-            }
+
+            SDL_Delay(100);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
         }
 
-        SDL_Delay(100);       // för att se till så att funktionen inte körs hela tiden (sparar skickningar mellan server och client)
+        SDL_Delay(1000);
     }
 }
