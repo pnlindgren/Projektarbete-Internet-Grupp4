@@ -115,6 +115,11 @@ int startClient(void * pointer)
             gameVariables.enemy_bubble = bubble[0];
         }
 
+        if(gameVariables.characterCollision == true)
+        {
+            ghostHitCount = 5;
+        }
+
         memcpy(&serialiseradStruct, &gameVariables, len);
         SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
 

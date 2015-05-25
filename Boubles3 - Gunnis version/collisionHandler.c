@@ -28,23 +28,23 @@ int enemyCollision()
     {
         if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.rival_rect))
         {
-            characterCollision = true;
+            gameVariables.characterCollision = true;
         }
         if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.rival_rect))
         {
-            characterCollision = true;
+            gameVariables.characterCollision = true;
         }
         if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.rival_rect))
         {
-            characterCollision = true;
+            gameVariables.characterCollision = true;
         }
         if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.rival_rect))
         {
-            characterCollision = true;
+            gameVariables.characterCollision = true;
         }
         if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.rival_rect))
         {
-            characterCollision = true;
+            gameVariables.characterCollision = true;
         }
         SDL_Delay(50);
     }

@@ -21,7 +21,7 @@ int screenUpdateFunction(void * pointer)
         SDL_RenderCopyEx(gameTextures.renderer, gameTextures.bubble, &gSpriteClips[10],&gameVariables.enemy_bubble , 0, NULL, SDL_FLIP_NONE);
         SDL_RenderPresent(gameTextures.renderer);
 
-        if((characterCollision == true) || (gameVariables.ghosthit == 5))
+        if((gameVariables.characterCollision == true) || (gameVariables.ghosthit == 5))
         {
             SDL_RenderCopyEx(gameTextures.renderer, gameTextures.background, &gSpriteClips[6],&gameVariables.background_rect , 0, NULL, SDL_FLIP_NONE);
             SDL_RenderCopyEx(gameTextures.renderer, gameTextures.blueCrocodile, &gSpriteClips[gameVariables.frame],&gameVariables.character_rect , 0, NULL, gameVariables.character_flip);

@@ -7,6 +7,5 @@ int screenUpdateFunction(void * pointer);
 extern textures gameTextures;
 extern SDL_Rect gSpriteClips[13];
 extern game_objects gameVariables;
-extern bool characterCollision;
 
 #endif
