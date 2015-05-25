@@ -38,6 +38,7 @@ void keyInput2()
                 {
                     case SDLK_UP:
                     {
+                        soundJump();
                         jump();
                         break;
                     }
