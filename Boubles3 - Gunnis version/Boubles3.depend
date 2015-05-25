@@ -180,13 +180,15 @@
 	"main.h"
 	"close.h"
 
-1432551153 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
+1432553693 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 	<SDL2/SDL.h>
 	<SDL2_net/SDL_net.h>
 	<SDL2_image/SDL_image.h>
+	<SDL2/SDL_mixer.h>
 	<stdbool.h>
 
 1430909451 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.h
@@ -213,7 +215,7 @@
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\walldetector.h
 
-1432549103 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
+1432551283 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
 	<stdbool.h>
@@ -245,13 +247,13 @@
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\clientfunctions.h
 
-1432458262 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.c
+1432553246 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"initFunctions.h"
 
-1432470726 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.c
+1432553246 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
@@ -621,6 +623,10 @@
 	"tcp_socket.h"
 
 1432552025 source:c:\users\nicklas\documents\projektarbete-internet-grupp4\boubles3 - gunnis version\sound.c
+	<stdio.h>
+	"main.h"
+
+1432553246 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\sound.c
 	<stdio.h>
 	"main.h"
 
