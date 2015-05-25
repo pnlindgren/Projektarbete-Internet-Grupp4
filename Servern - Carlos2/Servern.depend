@@ -96,10 +96,10 @@
 	"server_main.h"
 	"startClient.h"
 
-1431717337 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
+1432557323 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
 	<stdio.h>
 	<stdlib.h>
-	"SDL_net.h"
+	"SDL2/SDL_net.h"
 	"initFunctions.h"
 
 1431717337 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
@@ -140,13 +140,9 @@
 	"main.h"
 	"collisionHandler_server.h"
 
-1432367599 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\main.h
+1432557323 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
-	<SDL2/SDL_image.h>
-	<SDL2/SDL.h>
-	<SDL2_net/SDL_net.h>
-	<SDL2_image/SDL_image.h>
 	<stdbool.h>
 
 1432383701 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\collisionhandler_server.h
@@ -159,7 +155,7 @@
 
 1432369975 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\dropfunction_server.h
 
-1432549340 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.c
+1432552368 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>

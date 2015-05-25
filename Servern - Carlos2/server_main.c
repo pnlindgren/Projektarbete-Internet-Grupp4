@@ -214,11 +214,8 @@ void waitForClients(TCPsocket *sd)
                     printf("Client 2 connected.\n");
                     quit2 = true;
                 }
-
             }
-
         }
-
     }
 }
 

@@ -125,7 +125,7 @@ int startClient(void * pointer)
 
         SDL_Delay(10);
 
-        if(ghostHitCount == 5)
+        if(ghostHitCount == 5 || gameVariables.end_game == true)
         {
             SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
             memcpy(&gameVariables, &serialiseradStruct, len);

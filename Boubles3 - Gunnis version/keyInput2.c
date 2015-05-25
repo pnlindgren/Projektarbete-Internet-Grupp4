@@ -30,6 +30,7 @@ void keyInput2()
             {
                 printf( "QUIT!\n" );
                 quit = true;
+                gameVariables.end_game = true;
             }
             else if( e.type == SDL_KEYDOWN )
             {

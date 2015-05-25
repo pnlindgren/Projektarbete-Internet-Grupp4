@@ -30,6 +30,7 @@ int main(int argc, char * argv[])
     gameVariables.character_flip = SDL_FLIP_NONE;
     gameVariables.ghosthit = 0;
     gameVariables.characterCollision = false;
+    gameVariables.end_game = false;
 
     SDL_Thread *enemy;
     SDL_Thread *updateScreen;

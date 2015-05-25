@@ -55,6 +55,7 @@ struct game_struct
 
     bool bubble_view;
     bool characterCollision;
+    bool end_game;
     int frame;
     int enemy_frame;
     int ghosthit;
