@@ -45,10 +45,12 @@ int main(int argc, char * argv[])
 
     if(initBuild(positionStart)) // Om init och loadmedia fungerar körs programmet
     {
+
         serverInformation   = SDL_CreateThread(clientConnection, "clientConnection", socketPekare);
         updateScreen        = SDL_CreateThread(screenUpdateFunction, "updateThread", (void *)NULL);
         dropGravitation     = SDL_CreateThread(dropFunction, "dropThread", (void*)NULL);
         enemy               = SDL_CreateThread(enemyCollision, "enemyCollision", (void*)NULL);
+        backgroundMusic();
 
         keyInput2(); // Funktion för att ta hand om knapptryckningar
     }

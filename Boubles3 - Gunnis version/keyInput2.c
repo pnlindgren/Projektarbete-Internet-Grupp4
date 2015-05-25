@@ -44,6 +44,7 @@ void keyInput2()
                     }
                     case SDLK_SPACE:
                     {
+                        soundShoot();
                         if (lookDirection == RIGHT && shootFlag == true)
                             bubble_thread = SDL_CreateThread(shootFuncRight, "clientConnection", (void *)NULL);
                         else if (lookDirection == LEFT && shootFlag == true)
