@@ -1,0 +1,172 @@
+# depslib dependency file v1.0
+1430296357 source:c:\users\sandy\desktop\projektet\projektarbete-internet-grupp4\servern\server_main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"SDL_net.h"
+	"server_main.h"
+
+1430296357 c:\users\sandy\desktop\projektet\projektarbete-internet-grupp4\servern\server_main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1432302848 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<time.h>
+	"SDL.h"
+	"SDL_net.h"
+	"server_main.h"
+	"initFunctions.h"
+	"startClient.h"
+
+1431530461 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1431529356 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\initiatetcp.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_net.h"
+	"initiateTCP.h"
+
+1431527897 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\initiatetcp.h
+
+1431532776 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_net.h"
+	"initFunctions.h"
+
+1431532758 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
+
+1432301300 c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+
+1432302754 source:c:\users\carlos\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+	<stdio.h>
+	<time.h>
+	<stdbool.h>
+	"server_main.h"
+	"startClient.h"
+
+1431532776 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_net.h"
+	"initFunctions.h"
+
+1431532758 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
+
+1431613680 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<time.h>
+	"SDL.h"
+	"SDL_net.h"
+	"server_main.h"
+	"initFunctions.h"
+	"startClient.h"
+
+1431530461 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\server_main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1431555801 d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+
+1431613710 source:d:\carlos\grupp4\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+	<stdio.h>
+	<time.h>
+	<stdbool.h>
+	"server_main.h"
+	"startClient.h"
+
+1431717337 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.c
+	<stdio.h>
+	<stdlib.h>
+	"SDL_net.h"
+	"initFunctions.h"
+
+1431717337 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\initfunctions.h
+
+1432549512 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<time.h>
+	"SDL.h"
+	"SDL_net.h"
+	"server_main.h"
+	"initFunctions.h"
+	"startClient.h"
+	"enemy_server.h"
+
+1432376857 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\server_main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+
+1432551148 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.h
+
+1432551995 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\startclient.c
+	<stdio.h>
+	<time.h>
+	<stdbool.h>
+	"server_main.h"
+	"startClient.h"
+
+1432383728 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\collisionhandler_server.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"collisionHandler_server.h"
+
+1432367599 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\main.h
+	<SDL2/SDL.h>
+	<SDL2/SDL_net.h>
+	<SDL2/SDL_image.h>
+	<SDL2/SDL.h>
+	<SDL2_net/SDL_net.h>
+	<SDL2_image/SDL_image.h>
+	<stdbool.h>
+
+1432383701 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\collisionhandler_server.h
+
+1432370046 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\dropfunction_server.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"dropFunction_server.h"
+
+1432369975 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\dropfunction_server.h
+
+1432549340 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.c
+	<stdio.h>
+	<stdbool.h>
+	<stdlib.h>
+	<time.h>
+	"enemy_Server.h"
+	"collisionHandler_server.h"
+
+1432552350 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\servern - carlos2\enemy_server.h
+	"main.h"
+
