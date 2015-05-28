@@ -3,6 +3,6 @@
 
 void closeProgram();
 
-extern SDL_Window* gWindow;
+extern SDL_Window* gameWindow;
 
 #endif

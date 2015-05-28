@@ -6,8 +6,8 @@
 
 void closeProgram()
 {
-    SDL_DestroyWindow(gWindow);
-    gWindow = NULL;
+    SDL_DestroyWindow(gameWindow);
+    gameWindow = NULL;
 
     SDL_Quit();
 }

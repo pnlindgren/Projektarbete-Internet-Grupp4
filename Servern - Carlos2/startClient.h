@@ -33,7 +33,7 @@ struct game_struct
     SDL_Rect enemy_bubble;
 
     bool bubble_view;
-    bool characterCollision;
+    bool character_collision;
     bool end_game;
     int character_frame;
     int enemy_frame;
@@ -49,14 +49,15 @@ struct game_struct
 
 }; typedef struct game_struct game_objects;
 
+
 struct client_send_struct
 {
     int charX;
     int charY;
-    int char_boubleX;
-    int char_boubleY;
+    int char_bubbleX;
+    int char_bubbleY;
     int char_frame;
-    bool charCollision;
+    bool char_collision;
     bool ghostFlag1;
     bool ghostFlag2;
     bool ghostFlag3;
@@ -71,8 +72,8 @@ struct client_recieve_struct
 {
     int rivalX;
     int rivalY;
-    int rival_boubleX;
-    int rival_boubleY;
+    int rival_bubbleX;
+    int rival_bubbleY;
     int rival_frame;
     SDL_RendererFlip rival_flip;
     int ghost1X;

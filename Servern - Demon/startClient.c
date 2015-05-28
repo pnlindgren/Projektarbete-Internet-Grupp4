@@ -120,7 +120,7 @@ int startClient(void * pointer)
             gameVariables.enemy_bubble = bubble[0];
         }
 
-        if(gameVariables.characterCollision == true)
+        if(gameVariables.character_collision == true)
         {
             ghostHitCount = 5;
         }
@@ -210,10 +210,10 @@ game_objects convertSend(client_send_information *clientSendData, game_objects g
 {
     gameVariables.character_rect.x = clientSendData->charX;
     gameVariables.character_rect.y = clientSendData->charY;
-    gameVariables.bubble_rect.x = clientSendData->char_boubleX;
-    gameVariables.bubble_rect.y = clientSendData->char_boubleY;
+    gameVariables.bubble_rect.x = clientSendData->char_bubbleX;
+    gameVariables.bubble_rect.y = clientSendData->char_bubbleY;
     gameVariables.character_frame = clientSendData->char_frame;
-    gameVariables.characterCollision = clientSendData->charCollision;
+    gameVariables.character_collision = clientSendData->char_collision;
     gameVariables.ghostFlag1 = clientSendData->ghostFlag1;
     gameVariables.ghostFlag2 = clientSendData->ghostFlag2;
     gameVariables.ghostFlag3 = clientSendData->ghostFlag3;
@@ -229,8 +229,8 @@ void convertRecieve(client_recieve_information *clientRecieveData, game_objects 
 {
     clientRecieveData->rivalX = gameVariables.rival_rect.x;
     clientRecieveData->rivalY = gameVariables.rival_rect.y;
-    clientRecieveData->rival_boubleX = gameVariables.enemy_bubble.x;
-    clientRecieveData->rival_boubleY = gameVariables.enemy_bubble.y;
+    clientRecieveData->rival_bubbleX = gameVariables.enemy_bubble.x;
+    clientRecieveData->rival_bubbleY = gameVariables.enemy_bubble.y;
     clientRecieveData->rival_frame = gameVariables.enemy_frame;
     clientRecieveData->rival_flip = gameVariables.enemy_flip;
     clientRecieveData->ghost1X = gameVariables.ghost_rect1.x;

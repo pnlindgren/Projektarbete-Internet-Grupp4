@@ -1,6 +1,6 @@
-
 #include <stdio.h>
 #include "main.h"
+#include "sound.h"
 
 
 void soundJump(){
@@ -44,8 +44,6 @@ void soundShoot(){
         printf("ERROR: %s\n", Mix_GetError());
     }
     while(Mix_Playing(channel) != 0);
-
-
 }
 
 void backgroundMusic(){
@@ -72,6 +70,4 @@ int channel;
             return 1;
         }
     }
-
-
 }

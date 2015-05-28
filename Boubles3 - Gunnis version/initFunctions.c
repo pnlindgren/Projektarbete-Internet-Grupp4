@@ -104,7 +104,7 @@ bool initBuild(int positionStart)
 
     return buildSuccess;
 }
-// tagen från lazy foo
+// funktionen är baserad på lazy foo
 bool init()
 {
     bool success = true;
@@ -117,15 +117,15 @@ bool init()
     else
     {
         // här skapar vi spelfönstret med odefinerad position (X,Y) och inte minimerat
-        gWindow = SDL_CreateWindow("Game Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-        if(gWindow == NULL)
+        gameWindow = SDL_CreateWindow("Game Window", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+        if(gameWindow == NULL)
         {
             printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
             success = false;
         }
         else
         {
-            gameTextures.renderer = SDL_CreateRenderer(gWindow, -1, SDL_RENDERER_ACCELERATED);
+            gameTextures.renderer = SDL_CreateRenderer(gameWindow, -1, SDL_RENDERER_ACCELERATED);
 
             if(gameTextures.renderer == NULL)
             {
@@ -143,92 +143,89 @@ bool loadMedia()
     bool success = true;
 
     // sätter bakgrundssurfacen till bakgrundsbilden
-    SDL_Surface* gBackground = SDL_LoadBMP(BACKGROUND);
-    gameTextures.background = SDL_CreateTextureFromSurface(gameTextures.renderer, gBackground);
+    SDL_Surface* backgroundSurface = SDL_LoadBMP(BACKGROUND);
+    gameTextures.background = SDL_CreateTextureFromSurface(gameTextures.renderer, backgroundSurface);
 
-    if (gBackground == NULL)
-    {
-        printf("Unable to load image %s! SDL_Error: %s\n", BACKGROUND, SDL_GetError());
-        success = false;
-    }
+    SDL_Surface* blueCroc = IMG_Load(BLUE_CROCODILE);
+    gameTextures.blueCrocodile = SDL_CreateTextureFromSurface(gameTextures.renderer, blueCroc);
 
-    SDL_Surface* gBlueCrocodile = IMG_Load(BLUE_CROCODILE);
-    gameTextures.blueCrocodile = SDL_CreateTextureFromSurface(gameTextures.renderer, gBlueCrocodile);
+    SDL_Surface* pinkCroc = IMG_Load(PINK_CROCODILE);
+    gameTextures.pinkCrocodile = SDL_CreateTextureFromSurface(gameTextures.renderer, pinkCroc);
 
-    SDL_Surface* gGhost = IMG_Load(GHOST);
-    gameTextures.ghost = SDL_CreateTextureFromSurface(gameTextures.renderer, gGhost);
+    SDL_Surface* ghostSurface = IMG_Load(GHOST);
+    gameTextures.ghost = SDL_CreateTextureFromSurface(gameTextures.renderer, ghostSurface);
 
-    SDL_Surface* gBubble = IMG_Load(BUBBLE);
-    gameTextures.bubble = SDL_CreateTextureFromSurface(gameTextures.renderer, gBubble);
+    SDL_Surface* bubbleSurface = IMG_Load(BUBBLE);
+    gameTextures.bubble = SDL_CreateTextureFromSurface(gameTextures.renderer, bubbleSurface);
 
-    SDL_Surface* gGameOver = IMG_Load(GAMEOVER);
-    gameTextures.gameOver = SDL_CreateTextureFromSurface(gameTextures.renderer, gGameOver);
+    SDL_Surface* gameOverSurface = IMG_Load(GAMEOVER);
+    gameTextures.gameOver = SDL_CreateTextureFromSurface(gameTextures.renderer, gameOverSurface);
 
     // Crocodile
-    gSpriteClips[ 0 ].x = 0;
-    gSpriteClips[ 0 ].y = 0;
-    gSpriteClips[ 0 ].w = 50;
-    gSpriteClips[ 0 ].h = 50;
+    spriteClips[ 0 ].x = 0;
+    spriteClips[ 0 ].y = 0;
+    spriteClips[ 0 ].w = 50;
+    spriteClips[ 0 ].h = 50;
 
-    gSpriteClips[ 1 ].x = 50;
-    gSpriteClips[ 1 ].y = 0;
-    gSpriteClips[ 1 ].w = 50;
-    gSpriteClips[ 1 ].h = 50;
+    spriteClips[ 1 ].x = 50;
+    spriteClips[ 1 ].y = 0;
+    spriteClips[ 1 ].w = 50;
+    spriteClips[ 1 ].h = 50;
 
-    gSpriteClips[ 2 ].x = 100;
-    gSpriteClips[ 2 ].y = 0;
-    gSpriteClips[ 2 ].w = 50;
-    gSpriteClips[ 2 ].h = 50;
+    spriteClips[ 2 ].x = 100;
+    spriteClips[ 2 ].y = 0;
+    spriteClips[ 2 ].w = 50;
+    spriteClips[ 2 ].h = 50;
 
-    gSpriteClips[ 3 ].x = 150;
-    gSpriteClips[ 3 ].y = 0;
-    gSpriteClips[ 3 ].w = 50;
-    gSpriteClips[ 3 ].h = 50;
+    spriteClips[ 3 ].x = 150;
+    spriteClips[ 3 ].y = 0;
+    spriteClips[ 3 ].w = 50;
+    spriteClips[ 3 ].h = 50;
 
-    gSpriteClips[ 4 ].x = 200;
-    gSpriteClips[ 4 ].y = 0;
-    gSpriteClips[ 4 ].w = 50;
-    gSpriteClips[ 4 ].h = 50;
+    //spriteClips[ 4 ].x = 200;     /* Används inte längre - kan anpassas för bilder med 6 frames */
+    //spriteClips[ 4 ].y = 0;
+    //spriteClips[ 4 ].w = 50;
+    //spriteClips[ 4 ].h = 50;
 
-    gSpriteClips[ 5 ].x = 250;
-    gSpriteClips[ 5 ].y = 0;
-    gSpriteClips[ 5 ].w = 50;
-    gSpriteClips[ 5 ].h = 50;
+    //spriteClips[ 5 ].x = 250;
+    //spriteClips[ 5 ].y = 0;
+    //spriteClips[ 5 ].w = 50;
+    //spriteClips[ 5 ].h = 50;
 
     // Background sprite
-    gSpriteClips[ 6 ].x = 0;
-    gSpriteClips[ 6 ].y = 0;
-    gSpriteClips[ 6 ].w = 640;
-    gSpriteClips[ 6 ].h = 480;
+    spriteClips[ 6 ].x = 0;
+    spriteClips[ 6 ].y = 0;
+    spriteClips[ 6 ].w = 640;
+    spriteClips[ 6 ].h = 480;
 
     // Ghost sprite
-    gSpriteClips[ 7 ].x = 0;
-    gSpriteClips[ 7 ].y = 0;
-    gSpriteClips[ 7 ].w = 50;
-    gSpriteClips[ 7 ].h = 50;
+    spriteClips[ 7 ].x = 0;
+    spriteClips[ 7 ].y = 0;
+    spriteClips[ 7 ].w = 50;
+    spriteClips[ 7 ].h = 50;
 
-    gSpriteClips[ 8 ].x = 50;
-    gSpriteClips[ 8 ].y = 0;
-    gSpriteClips[ 8 ].w = 50;
-    gSpriteClips[ 8 ].h = 50;
+    spriteClips[ 8 ].x = 50;
+    spriteClips[ 8 ].y = 0;
+    spriteClips[ 8 ].w = 50;
+    spriteClips[ 8 ].h = 50;
 
     // Right wall
-    gSpriteClips[ 9 ].x = 0;
-    gSpriteClips[ 9 ].y = 0;
-    gSpriteClips[ 9 ].w = 16;
-    gSpriteClips[ 9 ].h = 480;
+    spriteClips[ 9 ].x = 0;
+    spriteClips[ 9 ].y = 0;
+    spriteClips[ 9 ].w = 16;
+    spriteClips[ 9 ].h = 480;
 
     // Bubbla
-    gSpriteClips[ 10 ].x = 0;
-    gSpriteClips[ 10 ].y = 0;
-    gSpriteClips[ 10 ].w = 40;
-    gSpriteClips[ 10 ].h = 40;
+    spriteClips[ 10 ].x = 0;
+    spriteClips[ 10 ].y = 0;
+    spriteClips[ 10 ].w = 40;
+    spriteClips[ 10 ].h = 40;
 
     // Game Over
-    gSpriteClips[ 11 ].x = 0;
-    gSpriteClips[ 11 ].y = 0;
-    gSpriteClips[ 11 ].w = 191;
-    gSpriteClips[ 11 ].h = 63;
+    spriteClips[ 11 ].x = 0;
+    spriteClips[ 11 ].y = 0;
+    spriteClips[ 11 ].w = 191;
+    spriteClips[ 11 ].h = 63;
 
     return success;
 }
