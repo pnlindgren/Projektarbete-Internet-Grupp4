@@ -14,20 +14,25 @@ int startClient(void * pointer)
 
     // Spelvariabler som ska uppdateras
     game_objects gameVariables;
+    client_send_information clientSendData;
+    client_recieve_information clientRecieveData;
 
     // längden på structen som sedan ska skickas (structens längd är samma som den serialiserade structen)
-    int len = sizeof(gameVariables);
+    int len1 = sizeof(clientSendData);
+    int len2 = sizeof(clientRecieveData);
 
     // Serialiseradestructen kopierar varje bit med memcpy
-    char serialiseradStruct[len];
+    char serialiseradStruct1[len1];
+    char serialiseradStruct2[len2];
 
     while(!gameOver)
     {
-        SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
-        memcpy(&gameVariables, &serialiseradStruct, len);
+        SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct1, len1);
+        memcpy(&clientSendData, &serialiseradStruct1, len1);
+        gameVariables = convertSend(&clientSendData, gameVariables);
 
         SDL_LockMutex(ghostHitMutex);
-        if(gameVariables.ghost_rect1.x == 0 && gameVariables.ghost_rect1.y == 600 && ghostHitFlag[0] == false)
+        if(gameVariables.ghostFlag1 == true && ghostHitFlag[0] == false)
         {
             ghostRect1.x = 0;
             ghostRect1.y = 600;
@@ -35,7 +40,7 @@ int startClient(void * pointer)
             ghostHitFlag[0] = true;
         }
 
-        else if(gameVariables.ghost_rect2.x == 0 && gameVariables.ghost_rect2.y == 600 && ghostHitFlag[1] == false)
+        else if(gameVariables.ghostFlag2 == true && ghostHitFlag[1] == false)
         {
             ghostRect2.x = 0;
             ghostRect2.y = 600;
@@ -43,7 +48,7 @@ int startClient(void * pointer)
             ghostHitFlag[1] = true;
         }
 
-        else if(gameVariables.ghost_rect3.x == 0 && gameVariables.ghost_rect3.y == 600 && ghostHitFlag[2] == false)
+        else if(gameVariables.ghostFlag3 == true && ghostHitFlag[2] == false)
         {
             ghostRect3.x = 0;
             ghostRect3.y = 600;
@@ -51,7 +56,7 @@ int startClient(void * pointer)
             ghostHitFlag[2] = true;
         }
 
-        else if(gameVariables.ghost_rect4.x == 0 && gameVariables.ghost_rect4.y == 600 && ghostHitFlag[3] == false)
+        else if(gameVariables.ghostFlag4 == true && ghostHitFlag[3] == false)
         {
             ghostRect4.x = 0;
             ghostRect4.y = 600;
@@ -59,7 +64,7 @@ int startClient(void * pointer)
             ghostHitFlag[3] = true;
         }
 
-        else if(gameVariables.ghost_rect5.x == 0 && gameVariables.ghost_rect5.y == 600 && ghostHitFlag[4] == false)
+        else if(gameVariables.ghostFlag5 == true && ghostHitFlag[4] == false)
         {
             ghostRect5.x = 0;
             ghostRect5.y = 600;
@@ -73,7 +78,7 @@ int startClient(void * pointer)
         gameVariables.ghost_rect4 = ghostRect4;
         gameVariables.ghost_rect5 = ghostRect5;
 
-        gameVariables.ghosthit = ghostHitCount;
+        gameVariables.ghostHit = ghostHitCount;
 
         SDL_UnlockMutex(ghostHitMutex);
 
@@ -81,7 +86,7 @@ int startClient(void * pointer)
         // att ändra enemy_bubble
         bubble[positionNr] = gameVariables.bubble_rect;
 
-        frame[positionNr] = gameVariables.frame;
+        frame[positionNr] = gameVariables.character_frame;
         flip[positionNr] = gameVariables.character_flip;
 
         SDL_Delay(10);
@@ -120,25 +125,28 @@ int startClient(void * pointer)
             ghostHitCount = 5;
         }
 
-        memcpy(&serialiseradStruct, &gameVariables, len);
-        SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
+        convertRecieve(&clientRecieveData, gameVariables);
+        memcpy(&serialiseradStruct2, &clientRecieveData, len2);
+        SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct2,len2);
 
         SDL_Delay(10);
 
-        if(ghostHitCount == 5)
+        if(ghostHitCount == 5 || gameVariables.end_game == true)
         {
-            SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct, len);
-            memcpy(&gameVariables, &serialiseradStruct, len);
+            SDLNet_TCP_Recv(csd[positionNr], &serialiseradStruct1, len1);
+            memcpy(&clientSendData, &serialiseradStruct1, len1);
+            gameVariables = convertSend(&clientSendData, gameVariables);
 
-            gameVariables.ghosthit = 5;
+            gameVariables.ghostHit = 5;
             ghostRect1.y = 600;
             ghostRect2.y = 600;
             ghostRect3.y = 600;
             ghostRect4.y = 600;
             ghostRect5.y = 600;
 
-            memcpy(&serialiseradStruct, &gameVariables, len);
-            SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct,len);
+            convertRecieve(&clientRecieveData, gameVariables);
+            memcpy(&serialiseradStruct2, &clientRecieveData, len2);
+            SDLNet_TCP_Send(csd[positionNr],&serialiseradStruct2,len2);
 
             SDLNet_TCP_Close(csd[positionNr]);
             SDL_Delay(1000);
@@ -196,4 +204,44 @@ int setPosition()
     SDL_UnlockMutex(positionSetMutex);
 
     return setNr;
+}
+
+game_objects convertSend(client_send_information *clientSendData, game_objects gameVariables)
+{
+    gameVariables.character_rect.x = clientSendData->charX;
+    gameVariables.character_rect.y = clientSendData->charY;
+    gameVariables.bubble_rect.x = clientSendData->char_boubleX;
+    gameVariables.bubble_rect.y = clientSendData->char_boubleY;
+    gameVariables.character_frame = clientSendData->char_frame;
+    gameVariables.characterCollision = clientSendData->charCollision;
+    gameVariables.ghostFlag1 = clientSendData->ghostFlag1;
+    gameVariables.ghostFlag2 = clientSendData->ghostFlag2;
+    gameVariables.ghostFlag3 = clientSendData->ghostFlag3;
+    gameVariables.ghostFlag4 = clientSendData->ghostFlag4;
+    gameVariables.ghostFlag5 = clientSendData->ghostFlag5;
+    gameVariables.end_game = clientSendData->end_game;
+    gameVariables.character_flip = clientSendData->char_flip;
+
+    return gameVariables;
+}
+
+void convertRecieve(client_recieve_information *clientRecieveData, game_objects gameVariables)
+{
+    clientRecieveData->rivalX = gameVariables.rival_rect.x;
+    clientRecieveData->rivalY = gameVariables.rival_rect.y;
+    clientRecieveData->rival_boubleX = gameVariables.enemy_bubble.x;
+    clientRecieveData->rival_boubleY = gameVariables.enemy_bubble.y;
+    clientRecieveData->rival_frame = gameVariables.enemy_frame;
+    clientRecieveData->rival_flip = gameVariables.enemy_flip;
+    clientRecieveData->ghost1X = gameVariables.ghost_rect1.x;
+    clientRecieveData->ghost1Y = gameVariables.ghost_rect1.y;
+    clientRecieveData->ghost2X = gameVariables.ghost_rect2.x;
+    clientRecieveData->ghost2Y = gameVariables.ghost_rect2.y;
+    clientRecieveData->ghost3X = gameVariables.ghost_rect3.x;
+    clientRecieveData->ghost3Y = gameVariables.ghost_rect3.y;
+    clientRecieveData->ghost4X = gameVariables.ghost_rect4.x;
+    clientRecieveData->ghost4Y = gameVariables.ghost_rect4.y;
+    clientRecieveData->ghost5X = gameVariables.ghost_rect5.x;
+    clientRecieveData->ghost5Y = gameVariables.ghost_rect5.y;
+    clientRecieveData->ghostHit = gameVariables.ghostHit;
 }

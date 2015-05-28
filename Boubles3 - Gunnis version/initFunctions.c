@@ -39,29 +39,31 @@ bool initBuild(int positionStart)
                 gameVariables.character_rect.w = 50;
                 gameVariables.character_rect.h = 50;
 
+                gameVariables.character_flip =SDL_FLIP_HORIZONTAL;
+
                 gameVariables.rival_rect.w = 50;
                 gameVariables.rival_rect.h = 50;
             }
 
-            gameVariables.background_rect.x = 0;
-            gameVariables.background_rect.y = 0;
-            gameVariables.background_rect.w = 640;
-            gameVariables.background_rect.h = 480;
+            localRects.background_rect.x = 0;
+            localRects.background_rect.y = 0;
+            localRects.background_rect.w = 640;
+            localRects.background_rect.h = 480;
 
-            gameVariables.left_wall.x = 0;
-            gameVariables.left_wall.y = 0;
-            gameVariables.left_wall.w = 16;
-            gameVariables.left_wall.h = 480;
+            localRects.left_wall.x = 0;
+            localRects.left_wall.y = 0;
+            localRects.left_wall.w = 16;
+            localRects.left_wall.h = 480;
 
-            gameVariables.right_wall.x = 622;
-            gameVariables.right_wall.y = 0;
-            gameVariables.right_wall.w = 16;
-            gameVariables.right_wall.h = 480;
+            localRects.right_wall.x = 622;
+            localRects.right_wall.y = 0;
+            localRects.right_wall.w = 16;
+            localRects.right_wall.h = 480;
 
-            gameVariables.game_over.x = 200;
-            gameVariables.game_over.y = 200;
-            gameVariables.game_over.w = 191;
-            gameVariables.game_over.h = 63;
+            localRects.game_over.x = 200;
+            localRects.game_over.y = 200;
+            localRects.game_over.w = 191;
+            localRects.game_over.h = 63;
 
             gameVariables.bubble_rect.x = 1000;
             gameVariables.bubble_rect.y = 1000;

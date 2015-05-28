@@ -174,13 +174,13 @@
 
 1430736634 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles2\clientfunctions.h
 
-1430908031 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.c
+1432825674 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"close.h"
 
-1432559485 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
+1432834449 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\main.h
 	<SDL2/SDL.h>
 	<SDL2/SDL_net.h>
 	<SDL2/SDL_image.h>
@@ -191,7 +191,7 @@
 	<SDL2_image/SDL_mixer.h>
 	<stdbool.h>
 
-1430909451 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.h
+1432825657 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\close.h
 
 1432377092 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\dropfunction.c
 	<stdio.h>
@@ -215,45 +215,44 @@
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\walldetector.h
 
-1432551283 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
+1432827524 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.c
 	"main.h"
 	"screenUpdater.h"
 	<stdbool.h>
 
-1432551191 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
+1432824524 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\screenupdater.h
 	<stdbool.h>
 
-1432551174 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
+1432832928 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\boubles_main2.c
 	<stdio.h>
 	<string.h>
 	<stdlib.h>
 	"main.h"
 	"initFunctions.h"
 	"close.h"
-	"enemy.h"
-	"keyInput2.h"
+	"keyInput.h"
 	"screenUpdater.h"
 	"dropFunction.h"
 	"tcp_socket.h"
 	"collisionHandler.h"
 
-1432367648 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.h
+1432824490 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.h
 
-1430908150 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput.h
+1432827816 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput.h
 
 1432367703 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.h
 
-1432367733 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.h
+1432834489 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.h
 
 1430819779 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\clientfunctions.h
 
-1432553246 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.c
+1432827767 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\initfunctions.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"initFunctions.h"
 
-1432553246 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.c
+1432824744 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput2.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
@@ -261,15 +260,16 @@
 	"collisionHandler.h"
 	"shoot.h"
 
-1432470775 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
+1432830032 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.h
 
-1432471063 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
+1432833012 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\shoot.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"shoot.h"
+	"sound.h"
 
-1432368310 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.c
+1432830356 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\tcp_socket.c
 	<stdio.h>
 	<stdbool.h>
 	<stdlib.h>
@@ -290,13 +290,13 @@
 
 1432367695 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\jump.h
 
-1432551273 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.c
+1432824553 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.c
 	<stdio.h>
 	<stdbool.h>
 	"main.h"
 	"collisionHandler.h"
 
-1432551206 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.h
+1432824496 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\collisionhandler.h
 
 1430916395 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\enemy.c
 	<stdio.h>
@@ -629,4 +629,14 @@
 1432558894 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\sound.c
 	<stdio.h>
 	"main.h"
+
+1432828539 source:c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\keyinput.c
+	<stdio.h>
+	<stdbool.h>
+	"main.h"
+	"keyInput.h"
+	"collisionHandler.h"
+	"shoot.h"
+
+1432558894 c:\users\mr.loser\documents\github\projektarbete-internet-grupp4\boubles3 - gunnis version\sound.h
 

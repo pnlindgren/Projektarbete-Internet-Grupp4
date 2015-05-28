@@ -8,11 +8,11 @@ bool collisions(SDL_Rect rectangle)
 {
     bool collision = false;
 
-    if(SDL_HasIntersection(&gameVariables.left_wall, &rectangle))
+    if(SDL_HasIntersection(&localRects.left_wall, &rectangle))
     {
         collision = true;
     }
-    if(SDL_HasIntersection(&gameVariables.right_wall, &rectangle))
+    if(SDL_HasIntersection(&localRects.right_wall, &rectangle))
     {
         collision = true;
     }

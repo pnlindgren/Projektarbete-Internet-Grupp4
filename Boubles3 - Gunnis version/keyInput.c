@@ -2,40 +2,52 @@
 #include <stdbool.h>
 
 #include "main.h"
-#include "keyInput2.h"
+#include "keyInput.h"
 #include "collisionHandler.h"
 #include "shoot.h"
 
 // If it's allowed to shoot
 bool shootFlag;
 
-void keyInput2()
+void keyInput(int positionStart)
 {
     bool quit = false;
-    bool lookDirection = RIGHT;
+    bool lookDirection;
+
+    // baserat på vilken position krokodilen är på
+    if(positionStart == 1)
+    {
+        lookDirection = LEFT;
+    }
+    else if(positionStart == 0)
+    {
+        lookDirection = RIGHT;
+    }
+
     shootFlag = true;
 
-    SDL_Event e;
+    SDL_Event keyInputEvent;
 
     SDL_Thread *bubble_thread;
 
-    //While application is running
     while(!quit)
     {
-        //Handle events on queue
-        while( SDL_PollEvent( &e ) != 0 )
+        // Kollar om ett event kallats
+        while( SDL_PollEvent( &keyInputEvent ) != 0 )
         {
-            //User requests quit
-            if( e.type == SDL_QUIT )
+            // Stoppar loopen om användaren stängt ner spelet (röda krysset)
+            if( keyInputEvent.type == SDL_QUIT )
             {
-                printf( "QUIT!\n" );
                 quit = true;
                 gameVariables.end_game = true;
             }
-            else if( e.type == SDL_KEYDOWN )
+            // kollar om en knapp har blivit tryckt
+            else if( keyInputEvent.type == SDL_KEYDOWN )
             {
-                //Select surfaces based on key press
-                switch( e.key.keysym.sym )
+                SDL_Delay(5);
+
+                // Kollar vilken knapp som har blivit tryckt
+                switch( keyInputEvent.key.keysym.sym )
                 {
                     case SDLK_UP:
                     {
@@ -45,14 +57,19 @@ void keyInput2()
                     }
                     case SDLK_SPACE:
                     {
-                        soundShoot();
                         if (lookDirection == RIGHT && shootFlag == true)
+                        {
+                            shootFlag = false;
                             bubble_thread = SDL_CreateThread(shootFuncRight, "clientConnection", (void *)NULL);
+                        }
                         else if (lookDirection == LEFT && shootFlag == true)
+                        {
+                            shootFlag = false;
                             bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
+                        }
                         break;
                     }
-                    // Länk till var vi fick den här gåanimationen från
+                    // Baserat på Jonas spaceman (F4.c)
                     case SDLK_LEFT:
                     {
                         gameVariables.character_rect.x -= 4;
@@ -62,19 +79,19 @@ void keyInput2()
                             gameVariables.character_rect.x += 4;
                         }
                         gameVariables.character_flip = SDL_FLIP_NONE;
-                        if(gameVariables.frame == 2)
-                            gameVariables.frame = 1;
-                        else if(gameVariables.frame == 1)
-                            gameVariables.frame = 0;
-                        else if (gameVariables.frame == 0)
-                            gameVariables.frame = 3;
+                        if(gameVariables.character_frame == 2)
+                            gameVariables.character_frame = 1;
+                        else if(gameVariables.character_frame == 1)
+                            gameVariables.character_frame = 0;
+                        else if (gameVariables.character_frame == 0)
+                            gameVariables.character_frame = 3;
                         else
-                            gameVariables.frame = 2;
+                            gameVariables.character_frame = 2;
                         lookDirection = LEFT;
 
                         break;
                     }
-                    // Länk till var vi fick den här gåanimationen från
+                    // Baserat på Jonas spaceman (F4.c)
                     case SDLK_RIGHT:
                     {
                         gameVariables.character_rect.x += 4;
@@ -84,15 +101,14 @@ void keyInput2()
                             gameVariables.character_rect.x -= 4;
                         }
                         gameVariables.character_flip = SDL_FLIP_HORIZONTAL;
-                        if(gameVariables.frame == 2)
-                            gameVariables.frame = 1;
-                        else if (gameVariables.frame == 1)
-                            gameVariables.frame = 0;
-                        else if (gameVariables.frame == 0)
-                            gameVariables.frame = 3;
+                        if(gameVariables.character_frame == 2)
+                            gameVariables.character_frame = 1;
+                        else if (gameVariables.character_frame == 1)
+                            gameVariables.character_frame = 0;
+                        else if (gameVariables.character_frame == 0)
+                            gameVariables.character_frame = 3;
                         else
-                            gameVariables.frame = 2;
-                        //printf("Position: (%d,%d)\n", character_rect.x, character_rect.y);
+                            gameVariables.character_frame = 2;
                         lookDirection = RIGHT;
 
                         break;

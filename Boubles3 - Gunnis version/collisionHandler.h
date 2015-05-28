@@ -5,6 +5,6 @@ bool collisions(SDL_Rect rectangle);
 int enemyCollision();
 
 extern game_objects gameVariables;
-extern int frame;
+extern local_rect_objects localRects;
 
 #endif

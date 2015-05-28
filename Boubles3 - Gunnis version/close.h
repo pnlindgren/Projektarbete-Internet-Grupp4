@@ -1,7 +1,7 @@
 #ifndef CLOSE
 #define CLOSE
 
-void close1();
+void closeProgram();
 
 extern SDL_Window* gWindow;
 

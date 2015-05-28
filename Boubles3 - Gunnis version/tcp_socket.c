@@ -45,29 +45,29 @@ void tcp_socket_connect(TCPsocket *socketPekare)
 
 void clientConnection(TCPsocket *socketPekare)
 {
-    int len,result;
-    len = sizeof(gameVariables);
-    char serialiseradStruct[len];
+    client_send_information clientSendData;
+    client_recieve_information clientRecieveData;
+
+    int len1,len2, result;
+    len1 = sizeof(clientSendData);
+    len2 = sizeof(clientRecieveData);
+    char serialiseradStruct1[len1];
+    char serialiseradStruct2[len2];
 
     while(1)
     {
         SDL_Delay(10);
 
-        memcpy(&serialiseradStruct, &gameVariables, len);
-
-        result = SDLNet_TCP_Send(*socketPekare, &serialiseradStruct, len);
+        convertSend(&clientSendData);
+        memcpy(&serialiseradStruct1, &clientSendData, len1);
+        result = SDLNet_TCP_Send(*socketPekare, &serialiseradStruct1, len1);
 
         SDL_Delay(10);
 
-        result=SDLNet_TCP_Recv(*socketPekare,&serialiseradStruct,len);
+        result=SDLNet_TCP_Recv(*socketPekare,&serialiseradStruct2,len2);
+        memcpy(&clientRecieveData,&serialiseradStruct2,len2);
+        convertRecieve(&clientRecieveData);
 
-        memcpy(&gameVariables,&serialiseradStruct,len);
-
-        /*if(result < len)
-        {
-            printf("SDLNet_TCP_Send: %s\n", SDLNet_GetError());
-            // It may be good to disconnect sock because it is likely invalid now.
-        }*/
         SDL_Delay(100);
     }
 }
@@ -87,4 +87,42 @@ int position_start_function(TCPsocket *socketPekare)
     printf("%d\n", startPosition);
 
     return startPosition;
+}
+
+void convertSend(client_send_information *clientSendData)
+{
+    clientSendData->charX = gameVariables.character_rect.x;
+    clientSendData->charY = gameVariables.character_rect.y;
+    clientSendData->char_boubleX = gameVariables.bubble_rect.x;
+    clientSendData->char_boubleY = gameVariables.bubble_rect.y;
+    clientSendData->char_frame = gameVariables.character_frame;
+    clientSendData->charCollision = gameVariables.characterCollision;
+    clientSendData->ghostFlag1 = gameVariables.ghostFlag1;
+    clientSendData->ghostFlag2 = gameVariables.ghostFlag2;
+    clientSendData->ghostFlag3 = gameVariables.ghostFlag3;
+    clientSendData->ghostFlag4 = gameVariables.ghostFlag4;
+    clientSendData->ghostFlag5 = gameVariables.ghostFlag5;
+    clientSendData->end_game = gameVariables.end_game;
+    clientSendData->char_flip = gameVariables.character_flip;
+}
+
+void convertRecieve(client_recieve_information *clientRecieveData)
+{
+    gameVariables.rival_rect.x = clientRecieveData->rivalX;
+    gameVariables.rival_rect.y = clientRecieveData->rivalY;
+    gameVariables.enemy_bubble.x = clientRecieveData->rival_boubleX;
+    gameVariables.enemy_bubble.y = clientRecieveData->rival_boubleY;
+    gameVariables.enemy_frame = clientRecieveData->rival_frame;
+    gameVariables.enemy_flip = clientRecieveData->rival_flip;
+    gameVariables.ghost_rect1.x = clientRecieveData->ghost1X;
+    gameVariables.ghost_rect1.y = clientRecieveData->ghost1Y;
+    gameVariables.ghost_rect2.x = clientRecieveData->ghost2X;
+    gameVariables.ghost_rect2.y = clientRecieveData->ghost2Y;
+    gameVariables.ghost_rect3.x = clientRecieveData->ghost3X;
+    gameVariables.ghost_rect3.y = clientRecieveData->ghost3Y;
+    gameVariables.ghost_rect4.x = clientRecieveData->ghost4X;
+    gameVariables.ghost_rect4.y = clientRecieveData->ghost4Y;
+    gameVariables.ghost_rect5.x = clientRecieveData->ghost5X;
+    gameVariables.ghost_rect5.y = clientRecieveData->ghost5Y;
+    gameVariables.ghostHit = clientRecieveData->ghostHit;
 }
