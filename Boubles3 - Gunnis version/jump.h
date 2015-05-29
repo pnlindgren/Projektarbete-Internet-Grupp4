@@ -3,7 +3,7 @@
 
 void jump();
 
-extern game_objects gameVariables;
+extern local_rect_objects localRects;
 extern SDL_mutex *jumpMutex;
 
 #endif // JUMP

@@ -69,15 +69,16 @@ void keyInput(int positionStart)
                         }
                         break;
                     }
-                    // Baserat på Jonas spaceman (F4.c)
+                    // Gåanimationen är baserad på Jonas spaceman (F4.c)
                     case SDLK_LEFT:
                     {
-                        gameVariables.character_rect.x -= 4;
-                        SDL_Delay(30);
-                        if(collisions(gameVariables.character_rect))
+                        if(localRects.character_rect.x > 14)
                         {
-                            gameVariables.character_rect.x += 4;
+                            localRects.character_rect.x -= 4;
                         }
+
+                        SDL_Delay(30);
+
                         gameVariables.character_flip = SDL_FLIP_NONE;
                         if(gameVariables.character_frame == 2)
                             gameVariables.character_frame = 1;
@@ -91,15 +92,16 @@ void keyInput(int positionStart)
 
                         break;
                     }
-                    // Baserat på Jonas spaceman (F4.c)
+                    // Gåanimationen är baserad på Jonas spaceman (F4.c)
                     case SDLK_RIGHT:
                     {
-                        gameVariables.character_rect.x += 4;
-                        SDL_Delay(30);
-                        if(collisions(gameVariables.character_rect))
+                        if(localRects.character_rect.x < 572)
                         {
-                            gameVariables.character_rect.x -= 4;
+                            localRects.character_rect.x += 4;
                         }
+
+                        SDL_Delay(30);
+
                         gameVariables.character_flip = SDL_FLIP_HORIZONTAL;
                         if(gameVariables.character_frame == 2)
                             gameVariables.character_frame = 1;
@@ -116,6 +118,5 @@ void keyInput(int positionStart)
                 }
             }
         }
-
     }
 }

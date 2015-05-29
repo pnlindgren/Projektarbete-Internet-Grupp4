@@ -24,25 +24,25 @@ bool initBuild(int positionStart)
         {
             if(positionStart == 1)
             {
-                gameVariables.character_rect.x = 550;
-                gameVariables.character_rect.y = 97;
-                gameVariables.character_rect.w = 50;
-                gameVariables.character_rect.h = 50;
+                localRects.character_rect.x = 550;
+                localRects.character_rect.y = 97;
+                localRects.character_rect.w = 50;
+                localRects.character_rect.h = 50;
 
-                gameVariables.rival_rect.w = 50;
-                gameVariables.rival_rect.h = 50;
+                localRects.rival_rect.w = 50;
+                localRects.rival_rect.h = 50;
             }
             else if(positionStart == 0)
             {
-                gameVariables.character_rect.x = 40;
-                gameVariables.character_rect.y = 97;
-                gameVariables.character_rect.w = 50;
-                gameVariables.character_rect.h = 50;
+                localRects.character_rect.x = 40;
+                localRects.character_rect.y = 97;
+                localRects.character_rect.w = 50;
+                localRects.character_rect.h = 50;
 
                 gameVariables.character_flip =SDL_FLIP_HORIZONTAL;
 
-                gameVariables.rival_rect.w = 50;
-                gameVariables.rival_rect.h = 50;
+                localRects.rival_rect.w = 50;
+                localRects.rival_rect.h = 50;
             }
 
             localRects.background_rect.x = 0;
@@ -65,40 +65,40 @@ bool initBuild(int positionStart)
             localRects.game_over.w = 191;
             localRects.game_over.h = 63;
 
-            gameVariables.bubble_rect.x = 1000;
-            gameVariables.bubble_rect.y = 1000;
-            gameVariables.bubble_rect.w = 40;
-            gameVariables.bubble_rect.h = 40;
+            localRects.bubble_rect.x = 1000;
+            localRects.bubble_rect.y = 1000;
+            localRects.bubble_rect.w = 40;
+            localRects.bubble_rect.h = 40;
 
-            gameVariables.enemy_bubble.x = 1000;
-            gameVariables.enemy_bubble.y = 1000;
-            gameVariables.enemy_bubble.w = 40;
-            gameVariables.enemy_bubble.h = 40;
+            localRects.enemy_bubble.x = 1000;
+            localRects.enemy_bubble.y = 1000;
+            localRects.enemy_bubble.w = 40;
+            localRects.enemy_bubble.h = 40;
 
-            gameVariables.ghost_rect1.x = 300;
-            gameVariables.ghost_rect1.y = 97;
-            gameVariables.ghost_rect1.w = 50;
-            gameVariables.ghost_rect1.h = 50;
+            localRects.ghost_rect1.x = 300;
+            localRects.ghost_rect1.y = 97;
+            localRects.ghost_rect1.w = 50;
+            localRects.ghost_rect1.h = 50;
 
-            gameVariables.ghost_rect2.x = 50;
-            gameVariables.ghost_rect2.y = 195;
-            gameVariables.ghost_rect2.w = 50;
-            gameVariables.ghost_rect2.h = 50;
+            localRects.ghost_rect2.x = 50;
+            localRects.ghost_rect2.y = 195;
+            localRects.ghost_rect2.w = 50;
+            localRects.ghost_rect2.h = 50;
 
-            gameVariables.ghost_rect3.x = 500;
-            gameVariables.ghost_rect3.y = 195;
-            gameVariables.ghost_rect3.w = 50;
-            gameVariables.ghost_rect3.h = 50;
+            localRects.ghost_rect3.x = 500;
+            localRects.ghost_rect3.y = 195;
+            localRects.ghost_rect3.w = 50;
+            localRects.ghost_rect3.h = 50;
 
-            gameVariables.ghost_rect4.x = 300;
-            gameVariables.ghost_rect4.y = 297;
-            gameVariables.ghost_rect4.w = 50;
-            gameVariables.ghost_rect4.h = 50;
+            localRects.ghost_rect4.x = 300;
+            localRects.ghost_rect4.y = 297;
+            localRects.ghost_rect4.w = 50;
+            localRects.ghost_rect4.h = 50;
 
-            gameVariables.ghost_rect5.x = 400;
-            gameVariables.ghost_rect5.y = 415;
-            gameVariables.ghost_rect5.w = 50;
-            gameVariables.ghost_rect5.h = 50;
+            localRects.ghost_rect5.x = 400;
+            localRects.ghost_rect5.y = 415;
+            localRects.ghost_rect5.w = 50;
+            localRects.ghost_rect5.h = 50;
         }
     }
 

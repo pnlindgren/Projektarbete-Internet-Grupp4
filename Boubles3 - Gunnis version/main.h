@@ -43,11 +43,6 @@ struct local_rect_struct
     SDL_Rect left_wall;
     SDL_Rect right_wall;
     SDL_Rect game_over;
-
-}; typedef struct local_rect_struct local_rect_objects;
-
-struct game_struct
-{
     SDL_Rect character_rect;
     SDL_Rect rival_rect;
     SDL_Rect ghost_rect1;
@@ -58,6 +53,10 @@ struct game_struct
     SDL_Rect bubble_rect;
     SDL_Rect enemy_bubble;
 
+}; typedef struct local_rect_struct local_rect_objects;
+
+struct game_struct
+{
     bool bubble_view;
     bool character_collision;
     bool end_game;

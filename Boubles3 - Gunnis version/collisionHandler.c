@@ -26,23 +26,23 @@ int enemyCollision()
                         // att förhindra att de ska intersecta när de placeras vid början
     while(1)
     {
-        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect1, &localRects.character_rect) || SDL_HasIntersection(&localRects.ghost_rect1, &localRects.rival_rect))
         {
             gameVariables.character_collision = true;
         }
-        if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect2, &localRects.character_rect) || SDL_HasIntersection(&localRects.ghost_rect2, &localRects.rival_rect))
         {
             gameVariables.character_collision = true;
         }
-        if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect3, &localRects.character_rect) || SDL_HasIntersection(&localRects.ghost_rect3, &localRects.rival_rect))
         {
             gameVariables.character_collision = true;
         }
-        if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect4, &localRects.character_rect) || SDL_HasIntersection(&localRects.ghost_rect4, &localRects.rival_rect))
         {
             gameVariables.character_collision = true;
         }
-        if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.character_rect) || SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.rival_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect5, &localRects.character_rect) || SDL_HasIntersection(&localRects.ghost_rect5, &localRects.rival_rect))
         {
             gameVariables.character_collision = true;
         }

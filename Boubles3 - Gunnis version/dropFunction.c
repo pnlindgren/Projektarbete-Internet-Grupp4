@@ -13,7 +13,7 @@ int dropFunction(void *pointer)
     while(true)
     {
         status = SDL_LockMutex(jumpMutex);
-        int x = gameVariables.character_rect.x, y = gameVariables.character_rect.y;
+        int x = localRects.character_rect.x, y = localRects.character_rect.y;
         if(status != 0)
         {
             printf("Mutex failed to lock");
@@ -21,66 +21,66 @@ int dropFunction(void *pointer)
         //om karaktären är nånstans ovanför rad 3
         if( y < 97)
         {
-            while(gameVariables.character_rect.y < 97)
+            while(localRects.character_rect.y < 97)
             {
-                gameVariables.character_rect.y++;
+                localRects.character_rect.y++;
                 SDL_Delay(5);
             }
         }
         // om karaktären är mellan rad 2 och 3
         else if(y > 97 && y < 196)
         {
-            while(gameVariables.character_rect.y < 196)
+            while(localRects.character_rect.y < 196)
             {
-                gameVariables.character_rect.y ++;
+                localRects.character_rect.y ++;
                 SDL_Delay(5);
             }
         }
         //om karaktären är mellan rad 1 och 2
         else if(y > 196 && y < 297)
         {
-            while(gameVariables.character_rect.y < 297)
+            while(localRects.character_rect.y < 297)
             {
-                gameVariables.character_rect.y ++;
+                localRects.character_rect.y ++;
                 SDL_Delay(5);
             }
         }
         //om karaktären är mellan rad 0(golv) och 1
         else if (y > 297 && y < 416)
         {
-            while(gameVariables.character_rect.y < 416)
+            while(localRects.character_rect.y < 416)
             {
-                gameVariables.character_rect.y ++;
+                localRects.character_rect.y ++;
                 SDL_Delay(5);
             }
         }
         // Rad 3 hål 1
         else if(y == 97 && x <= 160 && x >= 80)
         {
-            gameVariables.character_rect.y ++;
+            localRects.character_rect.y ++;
             SDL_Delay(5);
         }
         // Rad 3 hål 2
         else if(y == 97 && x <= 516 && x >= 428)
         {
-            gameVariables.character_rect.y ++;
+            localRects.character_rect.y ++;
             SDL_Delay(5);
         }
         // Rad 2 hål 1
         else if(y == 196 && x <= 344 && x >= 256)
         {
-            gameVariables.character_rect.y ++;
+            localRects.character_rect.y ++;
             SDL_Delay(5);
         }
         // Rad 1 hål 1
         else if(y == 297 && x <= 160 && x >= 80)
         {
-            gameVariables.character_rect.y ++;
+            localRects.character_rect.y ++;
             SDL_Delay(5);
         }
         else if(y == 297 && x <= 516 && x >= 432)
         {
-            gameVariables.character_rect.y ++;
+            localRects.character_rect.y ++;
             SDL_Delay(5);
         }
         SDL_UnlockMutex(jumpMutex);

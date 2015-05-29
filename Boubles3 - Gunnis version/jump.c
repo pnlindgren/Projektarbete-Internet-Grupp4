@@ -1,7 +1,5 @@
-
 #include "main.h"
 #include "jump.h"
-#include "dropFunction.h"
 
 void jump()
 {
@@ -9,12 +7,23 @@ void jump()
     int status = SDL_TryLockMutex(jumpMutex);
     if (status == 0)
     {
-        printf("Jump mutex locked\n");
-        for(y = 0; y < 40; y++)
+        if(localRects.character_rect.y < 150)
         {
-            gameVariables.character_rect.y -= 4;
-            SDL_Delay(20);
+            for(y = 0; y < 20; y++)
+            {
+                localRects.character_rect.y -= 4;
+                SDL_Delay(20);
+            }
         }
+        else
+        {
+            for(y = 0; y < 36; y++)
+            {
+                localRects.character_rect.y -= 4;
+                SDL_Delay(20);
+            }
+        }
+
         SDL_UnlockMutex(jumpMutex);
     }
 }

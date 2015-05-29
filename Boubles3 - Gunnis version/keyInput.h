@@ -7,6 +7,7 @@ void keyInput(int positionStart);
 
 extern SDL_Rect gSpriteClips[13];
 extern game_objects gameVariables;
+extern local_rect_objects localRects;
 
 #endif
 

@@ -16,50 +16,50 @@ int shootFunc()
 
     gameVariables.bubble_view = true;
 
-    gameVariables.bubble_rect.x = gameVariables.character_rect.x - 40;
-    gameVariables.bubble_rect.y = gameVariables.character_rect.y;
+    localRects.bubble_rect.x = localRects.character_rect.x - 40;
+    localRects.bubble_rect.y = localRects.character_rect.y;
 
-    while(gameVariables.bubble_rect.x>0 && quit == false)
+    while(localRects.bubble_rect.x>0 && quit == false)
     {
-        gameVariables.bubble_rect.x = gameVariables.bubble_rect.x - SPEED;
+        localRects.bubble_rect.x = localRects.bubble_rect.x - SPEED;
 
-        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.bubble_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect1, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect1.x=0;
-            gameVariables.ghost_rect1.y=600;
+            localRects.ghost_rect1.x=0;
+            localRects.ghost_rect1.y=600;
             quit = true;
             gameVariables.ghostFlag1 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect2, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect2.x=0;
-            gameVariables.ghost_rect2.y=600;
+            localRects.ghost_rect2.x=0;
+            localRects.ghost_rect2.y=600;
             quit = true;
             gameVariables.ghostFlag2 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect3, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect3.x=0;
-            gameVariables.ghost_rect3.y=600;
+            localRects.ghost_rect3.x=0;
+            localRects.ghost_rect3.y=600;
             quit = true;
             gameVariables.ghostFlag3 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect4, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect4.x=0;
-            gameVariables.ghost_rect4.y=600;
+            localRects.ghost_rect4.x=0;
+            localRects.ghost_rect4.y=600;
             quit = true;
             gameVariables.ghostFlag4 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect5, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect5.x=0;
-            gameVariables.ghost_rect5.y=600;
+            localRects.ghost_rect5.x=0;
+            localRects.ghost_rect5.y=600;
             quit = true;
             gameVariables.ghostFlag5 = true;
         }
@@ -70,8 +70,8 @@ int shootFunc()
     shootFlag = true;
     gameVariables.bubble_view = false;
 
-    gameVariables.bubble_rect.x = 600;
-    gameVariables.bubble_rect.y = 600;
+    localRects.bubble_rect.x = 600;
+    localRects.bubble_rect.y = 600;
 }
 
 // ---->
@@ -83,50 +83,50 @@ int shootFuncRight()
 
     gameVariables.bubble_view = true;
 
-    gameVariables.bubble_rect.x = gameVariables.character_rect.x + 40;
-    gameVariables.bubble_rect.y = gameVariables.character_rect.y;
+    localRects.bubble_rect.x = localRects.character_rect.x + 40;
+    localRects.bubble_rect.y = localRects.character_rect.y;
 
-    while(gameVariables.bubble_rect.x<640 && quit == false)
+    while(localRects.bubble_rect.x<580 && quit == false)
     {
-        gameVariables.bubble_rect.x = gameVariables.bubble_rect.x + SPEED;
+        localRects.bubble_rect.x = localRects.bubble_rect.x + SPEED;
 
-        if(SDL_HasIntersection(&gameVariables.ghost_rect1, &gameVariables.bubble_rect))
+        if(SDL_HasIntersection(&localRects.ghost_rect1, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect1.x=0;
-            gameVariables.ghost_rect1.y=600;
+            localRects.ghost_rect1.x=0;
+            localRects.ghost_rect1.y=600;
             quit = true;
             gameVariables.ghostFlag1 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect2, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect2, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect2.x=0;
-            gameVariables.ghost_rect2.y=600;
+            localRects.ghost_rect2.x=0;
+            localRects.ghost_rect2.y=600;
             quit = true;
             gameVariables.ghostFlag2 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect3, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect3, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect3.x=0;
-            gameVariables.ghost_rect3.y=600;
+            localRects.ghost_rect3.x=0;
+            localRects.ghost_rect3.y=600;
             quit = true;
             gameVariables.ghostFlag3 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect4, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect4, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect4.x=0;
-            gameVariables.ghost_rect4.y=600;
+            localRects.ghost_rect4.x=0;
+            localRects.ghost_rect4.y=600;
             quit = true;
             gameVariables.ghostFlag4 = true;
         }
-        else if(SDL_HasIntersection(&gameVariables.ghost_rect5, &gameVariables.bubble_rect))
+        else if(SDL_HasIntersection(&localRects.ghost_rect5, &localRects.bubble_rect))
         {
             gameVariables.bubble_view = false;
-            gameVariables.ghost_rect5.x=0;
-            gameVariables.ghost_rect5.y=600;
+            localRects.ghost_rect5.x=0;
+            localRects.ghost_rect5.y=600;
             quit = true;
             gameVariables.ghostFlag5 = true;
         }
@@ -137,6 +137,6 @@ int shootFuncRight()
     shootFlag = true;
     gameVariables.bubble_view = false;
 
-    gameVariables.bubble_rect.x = 600;
-    gameVariables.bubble_rect.y = 600;
+    localRects.bubble_rect.x = 600;
+    localRects.bubble_rect.y = 600;
 }

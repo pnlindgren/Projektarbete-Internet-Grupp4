@@ -8,5 +8,6 @@ void convertSend(client_send_information *clientSendData);
 void convertRecieve(client_recieve_information *clientRecieveData);
 
 extern game_objects gameVariables;
+extern local_rect_objects localRects;
 
 #endif
