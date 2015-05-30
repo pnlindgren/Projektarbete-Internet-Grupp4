@@ -159,14 +159,12 @@ int main(int argc, char **argv)
     }
 	initFunctions(&ip, &sd); //Initiera TCP för SDL
 
-	//waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
     enemy1 = SDL_CreateThread(nextMove, "ghost1", &ghostRect1);
     enemy2 = SDL_CreateThread(nextMove, "ghost1", &ghostRect2);
     enemy3 = SDL_CreateThread(nextMove, "ghost1", &ghostRect3);
     enemy4 = SDL_CreateThread(nextMove, "ghost1", &ghostRect4);
     enemy5 = SDL_CreateThread(nextMove, "ghost1", &ghostRect5);
-    //client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
-    //client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
+
     while(true)
     {
         if(gameOver == true)
@@ -177,6 +175,8 @@ int main(int argc, char **argv)
                 client1Position = 0;
                 client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
                 client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
+                SDL_DetachThread(client1);  // Förhindrar att tråden tar upp minne efter att den stänger ner
+                SDL_DetachThread(client2);
         }
 
         SDL_Delay(1000);
