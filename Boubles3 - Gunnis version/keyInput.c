@@ -60,12 +60,12 @@ void keyInput(int positionStart)
                         if (lookDirection == RIGHT && shootFlag == true)
                         {
                             shootFlag = false;
-                            bubble_thread = SDL_CreateThread(shootFuncRight, "clientConnection", (void *)NULL);
+                            bubble_thread = SDL_CreateThread(shootFuncRight, "shootThread", (void *)NULL);
                         }
                         else if (lookDirection == LEFT && shootFlag == true)
                         {
                             shootFlag = false;
-                            bubble_thread = SDL_CreateThread(shootFunc, "clientConnection", (void *)NULL);
+                            bubble_thread = SDL_CreateThread(shootFunc, "shootThread", (void *)NULL);
                         }
                         break;
                     }
