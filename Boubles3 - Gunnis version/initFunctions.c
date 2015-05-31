@@ -224,8 +224,8 @@ bool loadMedia()
     // Game Over
     spriteClips[ 11 ].x = 0;
     spriteClips[ 11 ].y = 0;
-    spriteClips[ 11 ].w = 191;
-    spriteClips[ 11 ].h = 63;
+    spriteClips[ 11 ].w = 388;
+    spriteClips[ 11 ].h = 314;
 
     return success;
 }

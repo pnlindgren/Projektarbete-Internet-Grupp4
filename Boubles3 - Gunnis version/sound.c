@@ -2,6 +2,9 @@
 #include "main.h"
 #include "sound.h"
 
+// Kod för ljudimplementering skriven med hjälp av Lazy Foo Tutorials
+// och SDLWIKI för SDL_Mixer
+
 
 void soundJump(){
     Mix_Chunk *sound1 = NULL;
