@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
     if(argc == 1)
     {
-        execlp("/bin/sh", "/sh", "-c", "./server", NULL);
+        execlp("/bin/sh", "/sh", "-c", "./servern", NULL);
         perror("start: execlp()\n");
         exit(1);
     } else

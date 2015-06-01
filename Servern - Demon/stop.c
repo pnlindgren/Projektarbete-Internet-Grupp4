@@ -6,7 +6,7 @@
 
 #define FILE_NAME "/home/carlos/pid/startdem.pid"
 
-//Tar fram pid nummret, avslutar process med pidnummret och tar bort filen så att
+//Tar fram pid nummret, avslutar process med pidnummret och tar bort filen s
 int main()
 {
     FILE *fp = fopen(FILE_NAME, "r");

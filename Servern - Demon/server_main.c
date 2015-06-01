@@ -4,6 +4,23 @@
 #include <stdbool.h>
 #include <time.h>
 
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <errno.h>
+#include <string.h>
+//#include <sys/socket.h>
+//#include <sys/un.h>
+//#include <sys/wait.h>
+
+#define SOCK_PATH "/tmp/echo_socket"
+#define FILE_NAME "/home/carlos/pid/startdem.pid"
+#define EXIT_SUCCESS 0
+#define EXIT_FAILURE 1
+#define READ 0
+#define WRITE 1
+#define ERROR 2
+
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_net.h"
 #include "server_main.h"
@@ -13,6 +30,8 @@
 
 void waitForClients(TCPsocket *sd);
 void resetVariables();
+static void daemonize(void); // demonexempel - beej
+void storepid();
 
 SDL_mutex *positionSetMutex, *ghostHitMutex;
 
@@ -54,6 +73,8 @@ TCPsocket sd, csd[2]; // Socket descriptor, Client socket descriptor
 
 int main(int argc, char **argv)
 {
+    daemonize();
+    storepid();//Lagra pid nummer för att kunna stänga med stop-skript
     srand(time(NULL));
 
     gameOver = true;
@@ -149,22 +170,24 @@ int main(int argc, char **argv)
     ghostHitMutex = SDL_CreateMutex();
     if(!positionSetMutex)
     {
-        printf("Error: Cannot create mutex");
+        //printf("Error: Cannot create mutex");
         return 0;
     }
     if(!ghostHitMutex)
     {
-        printf("Error: Cannot create ghost mutex");
+        //printf("Error: Cannot create ghost mutex");
         return 0;
     }
 	initFunctions(&ip, &sd); //Initiera TCP för SDL
 
+	//waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
     enemy1 = SDL_CreateThread(nextMove, "ghost1", &ghostRect1);
     enemy2 = SDL_CreateThread(nextMove, "ghost1", &ghostRect2);
     enemy3 = SDL_CreateThread(nextMove, "ghost1", &ghostRect3);
     enemy4 = SDL_CreateThread(nextMove, "ghost1", &ghostRect4);
     enemy5 = SDL_CreateThread(nextMove, "ghost1", &ghostRect5);
-
+    //client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
+    //client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
     while(true)
     {
         if(gameOver == true)
@@ -175,8 +198,9 @@ int main(int argc, char **argv)
                 client1Position = 0;
                 client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
                 client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
-                SDL_DetachThread(client1);  // Förhindrar att tråden tar upp minne efter att den stänger ner
+                SDL_DetachThread(client1); // Förhindrar att tråden tar upp minne efter att den stänger ner
                 SDL_DetachThread(client2);
+
         }
 
         SDL_Delay(1000);
@@ -192,7 +216,7 @@ void waitForClients(TCPsocket *sd)
 {
     bool quit = false, quit2 = false;
     bool connectedClient = false;
-    printf("Waiting for connection\n");
+    //printf("Waiting for connection\n");
 
     while (!quit)
 	{
@@ -203,7 +227,7 @@ void waitForClients(TCPsocket *sd)
 
 		if ((csd[0] = SDLNet_TCP_Accept(*sd)))
 		{
-		    printf("Client 1 connected.\n");
+		    //printf("Client 1 connected.\n");
 			//clientInitiated = initiateClient();
 			quit = true;
 
@@ -211,11 +235,14 @@ void waitForClients(TCPsocket *sd)
             {
                 if((csd[1] = SDLNet_TCP_Accept(*sd)))
                 {
-                    printf("Client 2 connected.\n");
+                    //printf("Client 2 connected.\n");
                     quit2 = true;
                 }
+
             }
+
         }
+
     }
 }
 
@@ -245,4 +272,61 @@ void resetVariables()
     ghostHitFlag[2] = false;
     ghostHitFlag[3] = false;
     ghostHitFlag[4] = false;
+}
+
+//"How to demonize"-exempel på demon - beej
+static void daemonize(void)
+{
+    pid_t pid, sid;
+
+    /* already a daemon */
+    if ( getppid() == 1 ) return;
+
+    /* Fork off the parent process */
+    pid = fork();
+    if (pid < 0) {
+        exit(EXIT_FAILURE);
+    }
+    /* If we got a good PID, then we can exit the parent process. */
+    if (pid > 0) {
+        exit(EXIT_SUCCESS);
+    }
+
+    /* At this point we are executing as the child process */
+
+    /* Change the file mode mask */
+    umask(0);
+
+    /* Create a new SID for the child process */
+    sid = setsid();
+    if (sid < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    /* Change the current working directory.  This prevents the current
+       directory from being locked; hence not being able to remove it. */
+    if ((chdir("/")) < 0) {
+        exit(EXIT_FAILURE);
+    }
+
+    /* Redirect standard files to /dev/null */
+    freopen( "/dev/null", "r", stdin);
+    freopen( "/dev/null", "w", stdout);
+    freopen( "/dev/null", "w", stderr);
+}
+
+// Lagrar pid nummret i hårddisken för att senare kunna stoppa den med stopscript
+void storepid()
+{
+    pid_t pid;
+    pid = getpid();
+    FILE *fp;
+    fp = fopen(FILE_NAME, "w");
+    if(fp == NULL)
+    {
+        perror("Open pidfile.");
+        exit(1);
+    }
+    fprintf(fp, "%d", pid);
+    fclose(fp);
 }
