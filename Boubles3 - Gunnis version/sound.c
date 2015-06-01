@@ -48,6 +48,27 @@ void soundShoot(){
     }
     while(Mix_Playing(channel) != 0);
 }
+void soundHit(){
+
+    Mix_Chunk *sound2 = NULL;
+    int channel;
+
+    if(Mix_OpenAudio(22050, AUDIO_S16SYS, 2, 4096) != 0) {
+    printf("ERROR: %s\n", Mix_GetError());
+    exit(1);
+    }
+
+    sound2 = Mix_LoadWAV("sound/hit.wav");
+    if(sound2 == NULL) {
+        printf("ERROR: %s\n", Mix_GetError());
+    }
+
+    channel = Mix_PlayChannel(-1, sound2, 0);
+    if(channel == -1) {
+        printf("ERROR: %s\n", Mix_GetError());
+    }
+    while(Mix_Playing(channel) != 0);
+}
 
 void backgroundMusic(){
 Mix_Music *sound3 = NULL;
