@@ -168,8 +168,9 @@ int setPosition()
     if(!client1Position)//Flagga om det är första klienten som besöker den här
     {
         setNr = rand()%2;
-        client1Position = setNr + 1;
+        client1Position = setNr + 1; // Används för att determinera andra klientens position
 
+        //Initiering av kliente
         klientPositionX[0]=15;
         klientPositionY[0]=15;
 
@@ -178,26 +179,20 @@ int setPosition()
 
         int sendInfo = 0;
 
-        int len_int = sizeof(sendInfo)+1;
+        int len_int = sizeof(setNr)+1;
 
-        SDLNet_TCP_Send(csd[0], &sendInfo, len_int);
+        SDLNet_TCP_Send(csd[0], &setNr, len_int); // Buggar med random, kör hårdkodad 0 och 1 istället
     }
     else
     {
         //Andra klienten är igång, skickar även startpositioner till båda klienter
         setNr = client1Position % 2;//Motsatt till första klienten
 
-        x = client1Position - 1;
-        //SDLNet_TCP_Send(csd[0], &x, sizeof(int));
-
-        x = client1Position % 2;
-        //SDLNet_TCP_Send(csd[1], &x, sizeof(int));
-
         int sendInfo = 1;
 
+        int len_int = sizeof(setNr)+1;
 
-        int len_int = sizeof(sendInfo)+1;
-        SDLNet_TCP_Send(csd[1], &sendInfo, len_int);
+        SDLNet_TCP_Send(csd[1], &setNr, len_int);// Buggar med random, kör hårdkodad 0 och 1
 
     }
 

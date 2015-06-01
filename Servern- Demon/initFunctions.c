@@ -4,6 +4,9 @@
 #include "SDL2/SDL_net.h"
 #include "initFunctions.h"
 
+#define PORT 2000
+
+// Nödvändiga funktioner för initiering av socketen
 void initFunctions(IPaddress *ip, TCPsocket *sd)
 {
     if (SDLNet_Init() < 0)
@@ -12,7 +15,7 @@ void initFunctions(IPaddress *ip, TCPsocket *sd)
 		exit(EXIT_FAILURE);
 	}
     // Resolving the host using NULL make network interface to listen
-	if (SDLNet_ResolveHost(ip, NULL, 2000) < 0)
+	if (SDLNet_ResolveHost(ip, NULL, PORT) < 0)
 	{
 		fprintf(stderr, "SDLNet_ResolveHost: %s\n", SDLNet_GetError());
 		exit(EXIT_FAILURE);

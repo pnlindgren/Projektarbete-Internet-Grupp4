@@ -9,9 +9,6 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <string.h>
-//#include <sys/socket.h>
-//#include <sys/un.h>
-//#include <sys/wait.h>
 
 #define SOCK_PATH "/tmp/echo_socket"
 #define FILE_NAME "/home/carlos/pid/startdem.pid"
@@ -30,7 +27,7 @@
 
 void waitForClients(TCPsocket *sd);
 void resetVariables();
-static void daemonize(void); // demonexempel - beej
+static void daemonize(void); // baserat på http://www.ics.uzh.ch/~dpotter/howto/daemonize
 void storepid();
 
 SDL_mutex *positionSetMutex, *ghostHitMutex;
@@ -162,7 +159,6 @@ int main(int argc, char **argv)
 	bool clientInitiated;
 
 	firstPosition = false;
-	//client1Position = 0;
 
 	SDL_Thread *client1, *client2, *enemy1, *enemy2, *enemy3, *enemy4, *enemy5;
 
@@ -170,24 +166,20 @@ int main(int argc, char **argv)
     ghostHitMutex = SDL_CreateMutex();
     if(!positionSetMutex)
     {
-        //printf("Error: Cannot create mutex");
         return 0;
     }
     if(!ghostHitMutex)
     {
-        //printf("Error: Cannot create ghost mutex");
         return 0;
     }
 	initFunctions(&ip, &sd); //Initiera TCP för SDL
 
-	//waitForClients(&sd); // Väntar på 2 st klienter ska koppla upp sig
     enemy1 = SDL_CreateThread(nextMove, "ghost1", &ghostRect1);
     enemy2 = SDL_CreateThread(nextMove, "ghost1", &ghostRect2);
     enemy3 = SDL_CreateThread(nextMove, "ghost1", &ghostRect3);
     enemy4 = SDL_CreateThread(nextMove, "ghost1", &ghostRect4);
     enemy5 = SDL_CreateThread(nextMove, "ghost1", &ghostRect5);
-    //client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
-    //client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
+
     while(true)
     {
         if(gameOver == true)
@@ -198,7 +190,7 @@ int main(int argc, char **argv)
                 client1Position = 0;
                 client1 = SDL_CreateThread(startClient, "Client1", (void *)NULL);
                 client2 = SDL_CreateThread(startClient, "Client2", (void *)NULL);
-                SDL_DetachThread(client1); // Förhindrar att tråden tar upp minne efter att den stänger ner
+                SDL_DetachThread(client1); // FÃ¶rhindrar att trÃ¥den tar upp minne efter att den stÃ¤nger ner
                 SDL_DetachThread(client2);
 
         }
@@ -220,22 +212,17 @@ void waitForClients(TCPsocket *sd)
 
     while (!quit)
 	{
-		// This check the sd if there is a pending connection.
-		// If there is one, accept that, and open a new socket for communicating
 
 		//Väntar på klienter
 
 		if ((csd[0] = SDLNet_TCP_Accept(*sd)))
 		{
-		    //printf("Client 1 connected.\n");
-			//clientInitiated = initiateClient();
 			quit = true;
 
 			while(!quit2)
             {
                 if((csd[1] = SDLNet_TCP_Accept(*sd)))
                 {
-                    //printf("Client 2 connected.\n");
                     quit2 = true;
                 }
 
@@ -274,7 +261,7 @@ void resetVariables()
     ghostHitFlag[4] = false;
 }
 
-//"How to demonize"-exempel på demon - beej
+// Baserat på http://www.ics.uzh.ch/~dpotter/howto/daemonize
 static void daemonize(void)
 {
     pid_t pid, sid;
