@@ -1,0 +1,6 @@
+Boubles3 - Gunnis version:	är klienten
+
+Servern - Carlos2: 		är servern som kan köras lokalt 
+				(utan demoniseringsfunktionen som forkar vilket inte är möjligt på windows)
+
+Servern - Demon:		Nästan identisk med Servern - Carlos2 men har en demoniseringsfunktion
