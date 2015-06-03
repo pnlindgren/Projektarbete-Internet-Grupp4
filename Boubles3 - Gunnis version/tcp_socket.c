@@ -43,7 +43,7 @@ void tcp_socket_connect(TCPsocket *socketPekare)
     }
 }
 
-void clientConnection(TCPsocket *socketPekare)
+int clientConnection(TCPsocket *socketPekare)
 {
     client_send_information clientSendData;
     client_recieve_information clientRecieveData;
@@ -68,6 +68,8 @@ void clientConnection(TCPsocket *socketPekare)
         memcpy(&clientRecieveData,&serialiseradStruct2,len2);
         convertRecieve(&clientRecieveData);
     }
+
+    return 0;
 }
 
 int position_start_function(TCPsocket *socketPekare)

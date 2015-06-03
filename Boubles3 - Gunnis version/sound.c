@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 #include "sound.h"
+#include "stdlib.h"
 
 // Kod för ljudimplementering skriven med hjälp av Lazy Foo Tutorials
 // och SDLWIKI för SDL_Mixer
@@ -83,7 +84,7 @@ int channel;
         printf("ERROR: %s\n", Mix_GetError());
     }
 
-    channel = Mix_PlayChannel(-1, sound3, 0);
+    channel = Mix_PlayMusic(sound3, -1);
     if(channel == -1) {
         printf("ERROR: %s\n", Mix_GetError());
     }
@@ -91,7 +92,7 @@ int channel;
     {
         if( Mix_PlayMusic( sound3, -1 ) == -1 )
         {
-            return 1;
+            return;
         }
     }
 }
